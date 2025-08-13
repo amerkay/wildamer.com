@@ -1,15 +1,22 @@
 <template>
-  <div>
-    <h1>Welcome to My Vue App</h1>
-    <p>This is the home page.</p>
+  <section>
+    <!-- <Container>
+      <h1>Welcome to My Vue App</h1>
+      <p>This is the home page.</p>
+      <Button>Click me</Button>
 
-    <h2>Projects</h2>
-    <ul>
-      <li v-for="project in projects" :key="project.path">
-        <NuxtLink :to="project.path">{{ project.title }}</NuxtLink>
-      </li>
-    </ul>
-  </div>
+      <h2>Projects</h2>
+      <ul>
+        <li v-for="project in projects" :key="project.path">
+          <NuxtLink :to="project.path">{{ project.title }}</NuxtLink>
+        </li>
+      </ul>
+    </Container> -->
+
+    <Hero />
+    <!-- <Intro />
+    <HowItWorks /> -->
+  </section>
 </template>
 
 <script setup lang="ts">

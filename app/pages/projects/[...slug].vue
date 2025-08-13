@@ -12,7 +12,7 @@ const { data: project } = await useAsyncData(route.path, () => {
 </script>
 
 <template>
-  <div>
+  <Container>
     <ContentRenderer v-if="project" :value="project" />
-  </div>
+  </Container>
 </template>
