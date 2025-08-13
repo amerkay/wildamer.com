@@ -1,0 +1,12 @@
+{
+    "editor.formatOnSave": true,
+    "files.exclude": {
+        "**/node_modules": true,
+        "**/.nuxt": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/pnpm-lock.yaml": true,
+        "**/.nuxt": true
+    }
+}

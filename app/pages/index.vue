@@ -1,0 +1,19 @@
+<template>
+  <div>
+    <h1>Welcome to My Vue App</h1>
+    <p>This is the home page.</p>
+
+    <h2>Projects</h2>
+    <ul>
+      <li v-for="project in projects" :key="project.path">
+        <NuxtLink :to="project.path">{{ project.title }}</NuxtLink>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script setup lang="ts">
+const { data: projects } = await useAsyncData("projects-list", () => {
+  return queryCollection("projects").all();
+});
+</script>
