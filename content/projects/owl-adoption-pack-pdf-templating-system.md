@@ -9,9 +9,10 @@ imageDark: /imgs/project-screenshots/wildlife-adoption-pack-pdf-templating-syste
 # featuredOrder 1 is first, 2 is second, empty values shown after numbered items
 featuredOrder: 2
 isFeatured: true
+isComingSoon: true
 
 cardPreHeading: Using Carbone.io for PDF Templating
-cardHeading: Owl Adoption Pack PDF Templating System
+cardHeading: Owl Adoption Pack PDF Templating System (internal tool)
 forOrganization: Barn Owl Trust
 forOrganizationLink: https://www.barnowltrust.org.uk
 githubLink: https://github.com/Robbottoe/access-pdf-generator

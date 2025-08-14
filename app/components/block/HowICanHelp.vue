@@ -99,7 +99,8 @@ const features = [
   {
     icon: "lucide:infinity",
     title: "And more…",
-    description: "If it saves time or money, I can build it.",
+    description:
+      "If it makes you more efficient at running your conservation non-profit, I can build it.",
   },
 ];
 </script>

@@ -10,6 +10,7 @@ export default defineContentConfig({
         title: z.string(),
         description: z.string(),
         isFeatured: z.boolean(),
+        isComingSoon: z.boolean().optional(),
         featuredOrder: z.number().optional(),
         tags: z.array(z.string()),
         image: z.string(),

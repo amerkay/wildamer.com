@@ -1,16 +1,25 @@
 <template>
   <div>
     <!-- Handle .webm video files -->
-    <video
-      v-if="image?.endsWith('.webm')"
-      :class="cn(['w-full', mediaClasses])"
-      autoplay
-      loop
-      muted
-      playsinline
-    >
-      <source :src="image" type="video/webm" />
-    </video>
+    <template v-if="image?.endsWith('.webm')">
+      <video
+        :class="cn(['w-full', mediaClasses, 'dark:hidden'])"
+        :src="image"
+        autoplay
+        loop
+        muted
+        playsinline
+      />
+      <video
+        v-if="imageDark"
+        :class="cn(['w-full', mediaClasses, 'hidden dark:block'])"
+        :src="imageDark"
+        autoplay
+        loop
+        muted
+        playsinline
+      />
+    </template>
     <!-- Handle regular images with light/dark variants -->
     <template v-else>
       <img

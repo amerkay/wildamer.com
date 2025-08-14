@@ -29,6 +29,9 @@
         <p class="mt-2 max-w-lg text-sm/6 text-muted-foreground">
           {{ project.description }}
         </p>
+        <Badge v-if="project.isComingSoon" variant="secondary" class="mt-4">
+          Write up coming soon&hellip;
+        </Badge>
       </div>
     </div>
     <div
@@ -43,19 +46,11 @@
 </template>
 
 <script setup lang="ts">
+import type { ProjectsCollectionItem } from "@nuxt/content";
 import { cn } from "~/lib/utils";
 
-interface Project {
-  image: string;
-  imageDark?: string;
-  title: string;
-  cardPreHeading?: string;
-  cardHeading?: string;
-  description: string;
-}
-
 interface Props {
-  project: Project;
+  project: ProjectsCollectionItem;
   gridClasses: string;
   backgroundModifiers?: string;
   contentModifiers?: string;

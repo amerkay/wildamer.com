@@ -4,11 +4,12 @@ description: I built a web app to visualize barn owl sightings using Kepler.gl, 
 tags: [GIS, Web App, Barn Owl]
 date: 2025-08-10
 image: /imgs/project-screenshots/barn-owl-sightings-gis-data-viz.webm
-#imageDark: /imgs/project-screenshots/barn-owl-sightings-gis-data-viz.webm
+imageDark: /imgs/project-screenshots/barn-owl-sightings-gis-data-viz-dark.webm
 
 # featuredOrder 1 is first, 2 is second, empty values shown after numbered items
 featuredOrder: 1
 isFeatured: true
+isComingSoon: true
 
 cardPreHeading: Using open source Kepler.gl
 cardHeading: Barn Owl Sightings GIS Data Mapping Web App
