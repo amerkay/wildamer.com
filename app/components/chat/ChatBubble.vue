@@ -109,7 +109,7 @@ const { text, typing, showName, label } = toRefs(props);
   height: 0.35rem;
   border-radius: 9999px;
   color: inherit;
-  background: color-mix(in oklab, currentColor 90%, transparent);
+  background: color-mix(in oklab, currentColor 70%, transparent);
   display: inline-block;
   margin-inline: 0.125rem;
   animation: dot-bounce 1.2s infinite ease-in-out;

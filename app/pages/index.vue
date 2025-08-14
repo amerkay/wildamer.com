@@ -1,8 +1,9 @@
 <template>
   <section>
     <Hero />
+    <HowICanHelp />
 
-    <Container>
+    <!-- <Container>
       <h1>Welcome to My Vue App</h1>
       <p>This is the home page.</p>
       <Button>Click me</Button>
@@ -13,14 +14,14 @@
           <NuxtLink :to="project.path">{{ project.title }}</NuxtLink>
         </li>
       </ul>
-    </Container>
+    </Container> -->
     <!-- <Intro />
     <HowItWorks /> -->
   </section>
 </template>
 
 <script setup lang="ts">
-const { data: projects } = await useAsyncData("projects-list", () => {
-  return queryCollection("projects").all();
-});
+// const { data: projects } = await useAsyncData("projects-list", () => {
+//   return queryCollection("projects").all();
+// });
 </script>

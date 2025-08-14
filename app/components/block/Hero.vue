@@ -2,17 +2,17 @@
 
 <template>
   <div class="relative w-full">
-    <Container class="flex flex-col gap-y-5 lg:flex-row lg:gap-10 lg:h-[700px]">
+    <Container class="flex flex-col gap-y-5 lg:flex-row lg:gap-10">
       <div class="flex h-full items-center justify-center lg:w-2/3 xl:w-1/2">
         <div class="text-center lg:text-left">
-          <!-- <Badge
+          <Badge
             to="#"
             variant="outline"
-            class="px-3 py-1.5 text-xs font-normal lg:text-sm lg:py-2"
-            >Help us protect Barn Owls,
-            <NuxtLink to="#" class="font-bold">signup now</NuxtLink>
-            <ArrowRight class="ml-1 h-4 w-4"
-          /></Badge> -->
+            class="px-3 py-1.5 text-xs font-normal lg:text-sm lg:py-2 flex-wrap"
+            >Currently volunteering at no charge.
+            <NuxtLink to="#" class="font-bold">Contact me</NuxtLink>
+            <Icon name="lucide:arrow-right" class="ml-1 h-4 w-4" />
+          </Badge>
           <h1
             class="mb-4 mt-7 text-4xl font-bold md:text-4xl lg:mb-6 lg:mt-5 xl:text-5xl"
           >
@@ -26,10 +26,15 @@
           </p>
           <div class="mt-8 grid grid-cols-1 gap-3 lg:flex lg:mt-12">
             <NuxtLink to="#">
-              <Button size="lg" variant="outline">My recent projects</Button>
+              <Button size="lg" variant="outline" class="w-full sm:w-auto"
+                >My recent projects</Button
+              >
             </NuxtLink>
             <NuxtLink to="#">
-              <Button size="lg" class="min-w-56">Let's talk</Button>
+              <Button size="lg" class="min-w-56 w-full sm:w-auto"
+                >Let's talk
+                <small>(free for non-profits)</small>
+              </Button>
             </NuxtLink>
           </div>
           <p class="mt-5 text-sm text-muted-foreground">
@@ -42,7 +47,7 @@
       <div
         class="mt-12 lg:mt-0 flex h-full items-center justify-center lg:justify-end lg:w-1/3 xl:w-1/2"
       >
-        <WildChat class="max-w-md h-[80vh] md:h-[50vh]" />
+        <WildChat class="max-w-md h-[85vh] md:h-[60vh]" />
       </div>
     </Container>
   </div>

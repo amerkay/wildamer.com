@@ -37,7 +37,7 @@ const props = withDefaults(defineProps<ContainerProps>(), {
 
         [
           {
-            'my-0 py-16': isFullWidth,
+            'my-0 py-24 md:py-24': isFullWidth,
             'my-16 rounded-xl border-2 border-accent-border bg-background p-4 sm:p-6 md:p-8 lg:p-12':
               !isFullWidth,
 

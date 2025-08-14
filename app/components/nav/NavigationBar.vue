@@ -79,7 +79,7 @@ const getDropdownClasses = (active: boolean) => [
     class="dark top-0 z-50 w-full bg-background text-foreground"
     as="header"
   >
-    <Container class="py-0">
+    <Container class="!py-0">
       <div class="relative flex h-20 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->

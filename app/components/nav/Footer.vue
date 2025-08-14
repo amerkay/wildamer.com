@@ -23,8 +23,8 @@ const props = defineProps<FooterProps>();
 </script>
 
 <template>
-  <footer class="dark bg-background py-12">
-    <Container class="py-0 text-foreground dark:text-white">
+  <footer class="dark bg-background">
+    <Container class="!py-12 text-foreground dark:text-white">
       <div class="flex flex-col items-start justify-between gap-8 md:flex-row">
         <div class="flex-1">
           <NuxtLink to="/" class="inline-block">
