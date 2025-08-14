@@ -67,7 +67,7 @@ const steps = [
     description:
       "Complete our short survey form. Now, mobile friendly, with automatic location detection.",
     linkText: "Survey Form",
-    href: "/my/sightings/new",
+    href: "#",
     icon: "lucide:file-text",
   },
   {

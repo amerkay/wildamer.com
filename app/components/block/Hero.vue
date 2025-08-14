@@ -20,30 +20,33 @@
             <span>👋</span>
           </h1>
           <p class="text-lg text-muted-foreground lg:text-xl">
-            Help us conserve Barn Owls by reporting nest sites, roost locations,
-            and sightings across the UK. Your observations provide invaluable
-            data for conservation efforts.
+            I'm a full-stack software & product engineer with 15+ years of
+            experience building tech solutions.
+            <strong
+              >I'm on a mission to advance tech for wildlife
+              conservation.</strong
+            >
           </p>
           <div class="mt-8 grid grid-cols-1 gap-3 lg:flex lg:mt-12">
-            <NuxtLink to="/public-barn-owl-map">
+            <NuxtLink to="#">
               <Button size="lg" variant="outline">View Public Map</Button>
             </NuxtLink>
-            <NuxtLink to="/my/sightings/new">
+            <NuxtLink to="#">
               <Button size="lg" class="min-w-56">Report a Sighting</Button>
             </NuxtLink>
           </div>
-          <p class="mt-5 text-sm text-muted-foreground">
+          <!-- <p class="mt-5 text-sm text-muted-foreground">
             Already registered?
             <NuxtLink to="/auth/login" class="font-bold">Log in</NuxtLink> to
             quickly submit reports and view your contributions.
-          </p>
+          </p> -->
         </div>
       </div>
 
       <div
         class="mt-12 lg:mt-0 flex h-full items-center justify-center lg:justify-end lg:w-1/3 xl:w-1/2"
       >
-        <WildChat class="" />
+        <WildChat class="max-w-md h-[90vh] md:h-[60vh]" />
       </div>
     </Container>
   </div>
