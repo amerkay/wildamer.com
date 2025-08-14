@@ -78,7 +78,7 @@ const chatScript = [
   },
   {
     from: "amer",
-    text: "Of course you guys! Let's get you sorted! <3",
+    text: "Of course you guys! Let's get you sorted! ❤️",
     typingMs: 700,
     afterDelay: 0,
     showName: true,

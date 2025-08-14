@@ -76,7 +76,7 @@ const getDropdownClasses = (active: boolean) => [
 <template>
   <Disclosure
     v-slot="{ open, close }"
-    class="dark top-0 z-50 w-full bg-background text-foreground"
+    class="dark top-0 z-50 w-full bg-background text-foreground border-b"
     as="header"
   >
     <Container class="!py-0">

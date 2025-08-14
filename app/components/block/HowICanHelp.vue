@@ -4,14 +4,14 @@
       <!-- <p class="text-center font-semibold text-muted-foreground">
         Currently, accepting non-profits to be your volunteer tech consultant
       </p> -->
+
       <h2
-        class="mb-4 mt-3 text-center text-3xl font-black lg:mb-5 lg:text-4xl text-primary"
+        class="mb-4 mt-3 text-4xl font-black lg:mb-5 lg:text-5xl text-foreground max-w-2xl"
       >
         I'm offering to be your tech consultant volunteer.
       </h2>
-      <p
-        class="mx-auto max-w-[760px] text-center text-lg text-foreground lg:text-xl"
-      >
+
+      <p class="max-w-2xl text-lg lg:text-xl text-primary">
         I can help you modernize your tech stack, saving you time and money
       </p>
 
@@ -26,7 +26,7 @@
               <Icon
                 :name="f.icon"
                 size="24"
-                class="h-52 w-52 transition-transform duration-300 text-secondary-foreground transform group-hover:scale-110"
+                class="h-52 w-52 transition-transform duration-300 text-secondary-foreground dark:text-white/90 transform group-hover:scale-110"
               />
             </div>
             <h3

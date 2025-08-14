@@ -23,7 +23,7 @@ const props = defineProps<FooterProps>();
 </script>
 
 <template>
-  <footer class="dark bg-background">
+  <footer class="dark bg-background border-t">
     <Container class="!py-12 text-foreground dark:text-white">
       <div class="flex flex-col items-start justify-between gap-8 md:flex-row">
         <div class="flex-1">

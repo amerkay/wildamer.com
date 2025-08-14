@@ -47,7 +47,7 @@
       <div
         class="mt-12 lg:mt-0 flex h-full items-center justify-center lg:justify-end lg:w-1/3 xl:w-1/2"
       >
-        <WildChat class="max-w-md h-[85vh] md:h-[60vh]" />
+        <WildChat class="max-w-md h-[490px]" />
       </div>
     </Container>
   </div>
