@@ -25,7 +25,7 @@
             chat about how I can help your org thrive.
           </p>
           <div class="mt-8 grid grid-cols-1 gap-3 lg:flex lg:mt-12">
-            <NuxtLink to="#">
+            <NuxtLink to="#featured-projects">
               <Button size="lg" variant="outline" class="w-full sm:w-auto"
                 >My recent projects</Button
               >

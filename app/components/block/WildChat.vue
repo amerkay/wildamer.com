@@ -21,28 +21,28 @@ const participants = [
     label: "Amer Kawar",
     emoji: "👋",
     avatarImg: "/imgs/avatar-me.jpg",
-    // avatarClass: "bg-primary text-primary-foreground shadow-sm",
+    avatarClass: "bg-primary text-primary-foreground shadow-sm",
   },
   {
     id: "owl",
     label: "Barn Owl Trust UK",
     emoji: "🦉",
     avatarImg: "/imgs/avatar-barnowl.jpg",
-    // avatarClass: "bg-secondary text-secondary-foreground",
+    avatarClass: "bg-secondary text-secondary-foreground",
   },
   {
     id: "seal",
     label: "Seal Rescue Ireland",
     emoji: "🦭",
     avatarImg: "/imgs/avatar-seal.jpg",
-    // avatarClass: "bg-accent text-accent-foreground",
+    avatarClass: "bg-accent text-accent-foreground",
   },
   {
     id: "flying-fox",
     label: "Bat Society of Cairns",
     emoji: "🦇",
     avatarImg: "/imgs/avatar-flyingfox2.jpg",
-    // avatarClass: "bg-accent text-accent-foreground",
+    avatarClass: "bg-accent text-accent-foreground",
   },
 ];
 
@@ -57,7 +57,7 @@ const chatScript = [
   },
   {
     from: "owl",
-    text: "Oh, and I loved Kepler.GL for sighting maps. Let's get it online.",
+    text: "Oh, and I loved the map visualizations. Let's get the sighting site online.",
     typingMs: 900,
     afterDelay: 350,
     // showName: true,
@@ -78,7 +78,7 @@ const chatScript = [
   },
   {
     from: "amer",
-    text: "Of course you guys! Let's get you sorted! ❤️",
+    text: "Of course you guys! Let's get you sorted!",
     typingMs: 700,
     afterDelay: 0,
     showName: true,

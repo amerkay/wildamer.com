@@ -182,6 +182,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 input,
 textarea,
 select {

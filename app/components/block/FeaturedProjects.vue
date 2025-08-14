@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-background border-t">
+  <section id="featured-projects" class="bg-background border-t">
     <Container>
       <h2
         class="text-base/7 font-semibold text-secondary-foreground dark:text-secondary"
@@ -29,7 +29,7 @@
         />
       </div>
     </Container>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

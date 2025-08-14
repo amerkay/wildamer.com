@@ -4,7 +4,7 @@
   <div class="inline-block">
     <div class="flex items-center space-x-4">
       <div
-        class="logo-circle relative flex items-center justify-center rounded-full bg-primary transition-all duration-300 ease-in-out overflow-hidden shadow-md hover:shadow-lg"
+        class="logo-circle relative flex items-center justify-center rounded-full border-2 bg-primary transition-all duration-300 ease-in-out overflow-hidden shadow-md hover:shadow-lg"
       >
         <img
           class="logo-image w-12 h-12 sm:w-16 sm:h-16 object-contain filter grayscale-[20%] hover:grayscale-0 dark:grayscale-[20%] dark:hover:grayscale-0 transition-all duration-300 ease-in-out hover:scale-105"
