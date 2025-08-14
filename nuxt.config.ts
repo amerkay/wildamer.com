@@ -14,6 +14,8 @@ export default defineNuxtConfig({
     // docs @ https://www.shadcn-vue.com/docs/installation/nuxt.html
     "shadcn-nuxt",
     "@nuxtjs/color-mode",
+    // docs @ https://motion.vueuse.org/getting-started/nuxt
+    "@vueuse/motion/nuxt",
   ],
 
   components: [

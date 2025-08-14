@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-const { data: projects } = await useAsyncData("projects-list", () => {
-  return queryCollection("projects").all();
-});
+// const { data: projects } = await useAsyncData("projects-list", () => {
+//   return queryCollection("projects").all();
+// });
 </script>

@@ -2,13 +2,13 @@
 
 <template>
   <div class="relative w-full">
-    <Container class="flex flex-col gap-y-5 md:flex-row md:gap-10 lg:h-[720px]">
-      <div class="flex h-full items-center justify-center md:w-2/3 xl:w-1/2">
-        <div class="text-center md:text-left">
+    <Container class="flex flex-col gap-y-5 lg:flex-row lg:gap-10 lg:h-[720px]">
+      <div class="flex h-full items-center justify-center lg:w-2/3 xl:w-1/2">
+        <div class="text-center lg:text-left">
           <!-- <Badge
             to="#"
             variant="outline"
-            class="px-3 py-1.5 text-xs font-normal md:text-sm lg:py-2"
+            class="px-3 py-1.5 text-xs font-normal lg:text-sm lg:py-2"
             >Help us protect Barn Owls,
             <NuxtLink to="#" class="font-bold">signup now</NuxtLink>
             <ArrowRight class="ml-1 h-4 w-4"
@@ -24,7 +24,7 @@
             and sightings across the UK. Your observations provide invaluable
             data for conservation efforts.
           </p>
-          <div class="mt-8 grid grid-cols-1 gap-3 md:flex lg:mt-12">
+          <div class="mt-8 grid grid-cols-1 gap-3 lg:flex lg:mt-12">
             <NuxtLink to="/public-barn-owl-map">
               <Button size="lg" variant="outline">View Public Map</Button>
             </NuxtLink>
@@ -39,30 +39,12 @@
           </p>
         </div>
       </div>
-    </Container>
 
-    <div
-      class="md:absolute md:top-0 md:right-0 h-[350px] md:h-full md:w-1/3 xl:w-1/2"
-    >
-      <WildChat />
-      <!-- <img
-        class="dark:hidden h-full w-full object-cover lg:[clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)]"
-        src="https://placehold.co/1000x1000"
-        alt="Heat Map showing Barn Owl sightings"
-        loading="eager"
-        width="1000"
-        height="1000"
-        :title="`BOT hero section two header`"
-      />
-      <img
-        class="hidden dark:block h-full w-full object-cover lg:[clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)] mix-blend-multiply"
-        src="https://placehold.co/1000x1000"
-        alt="Heat Map showing Barn Owl sightings"
-        loading="eager"
-        width="1000"
-        height="1000"
-        :title="`BOT hero section two header`"
-      /> -->
-    </div>
+      <div
+        class="mt-12 lg:mt-0 flex h-full items-center justify-center lg:justify-end lg:w-1/3 xl:w-1/2"
+      >
+        <WildChat class="" />
+      </div>
+    </Container>
   </div>
 </template>
