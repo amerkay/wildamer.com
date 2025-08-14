@@ -37,7 +37,9 @@
   --sidebar-border: hsl(0 0% 88%);
   --sidebar-ring: hsl(0 0% 63%);
 
-  --font-sans: Poppins, sans-serif;
+  --font-sans: Bricolage Grotesque, sans-serif;
+
+  /* --font-sans: Chivo, sans-serif; */
   --font-serif: Merriweather, serif;
   --font-mono: JetBrains Mono, monospace;
 

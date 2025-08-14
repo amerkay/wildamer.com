@@ -18,28 +18,28 @@ import ChatWindow from "~/components/chat/ChatWindow.vue";
 const participants = [
   {
     id: "amer",
-    label: "Amer",
+    label: "Amer Kawar",
     emoji: "👋",
     avatarImg: "/imgs/avatar-me.jpg",
     // avatarClass: "bg-primary text-primary-foreground shadow-sm",
   },
   {
     id: "owl",
-    label: "Barn Owl Sanctuary",
+    label: "Barn Owl Trust UK",
     emoji: "🦉",
     avatarImg: "/imgs/avatar-barnowl.jpg",
     // avatarClass: "bg-secondary text-secondary-foreground",
   },
   {
     id: "seal",
-    label: "Seal Trust",
+    label: "Seal Rescue Ireland",
     emoji: "🦭",
     avatarImg: "/imgs/avatar-seal.jpg",
     // avatarClass: "bg-accent text-accent-foreground",
   },
   {
     id: "flying-fox",
-    label: "Flying Fox Sanctuary",
+    label: "Bat Society of Cairns",
     emoji: "🦇",
     avatarImg: "/imgs/avatar-flyingfox2.jpg",
     // avatarClass: "bg-accent text-accent-foreground",
