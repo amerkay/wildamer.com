@@ -23,7 +23,11 @@
     <!-- message bubble -->
     <div :class="classes" role="group" :aria-label="ariaLabel">
       <p v-if="showName" class="text-[11px] mb-0.5 opacity-70">{{ label }}</p>
-      <div v-if="typing" class="flex items-center gap-1" aria-label="typing">
+      <div
+        v-if="typing"
+        class="flex items-center gap-1 h-6"
+        aria-label="typing"
+      >
         <span class="sr-only">{{ label }} is typing</span>
         <span class="dot" /><span class="dot" /><span class="dot" />
       </div>
@@ -93,6 +97,8 @@ const { text, typing, showName, label } = toRefs(props);
 </script>
 
 <style scoped>
+@reference "~/assets/css/tailwind.css";
+
 .chat-bubble {
   backdrop-filter: saturate(1.1);
 }
@@ -102,7 +108,8 @@ const { text, typing, showName, label } = toRefs(props);
   width: 0.35rem;
   height: 0.35rem;
   border-radius: 9999px;
-  background: color-mix(in oklab, var(--foreground) 70%, transparent);
+  color: inherit;
+  background: color-mix(in oklab, currentColor 90%, transparent);
   display: inline-block;
   margin-inline: 0.125rem;
   animation: dot-bounce 1.2s infinite ease-in-out;
