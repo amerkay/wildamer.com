@@ -18,7 +18,7 @@
       <div
         class="grid grid-cols-1 gap-y-10 py-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:gap-y-16 lg:py-16"
       >
-        <template v-for="(f, i) in features" :key="i">
+        <template v-for="(f, i) in displayedFeatures" :key="i">
           <div class="group flex flex-col items-center justify-start">
             <div
               class="flex p-4 items-center justify-center rounded-md border border-secondary"
@@ -42,11 +42,19 @@
           </div>
         </template>
       </div>
+
+      <div v-if="!showAllFeatures" class="flex justify-center pb-10">
+        <Button variant="outline" @click="showAllFeatures = true">
+          Show me more ways you can help
+        </Button>
+      </div>
     </Container>
   </section>
 </template>
 
 <script lang="ts" setup>
+const showAllFeatures = ref(false);
+
 const features = [
   {
     icon: "lucide:users",
@@ -55,10 +63,10 @@ const features = [
       "Streamline your team's efforts with properly configured systems.",
   },
   {
-    icon: "lucide:mail",
-    title: "Email automation",
+    icon: "lucide:bar-chart-2",
+    title: "Constituent segmentation & marketing automation",
     description:
-      "Set up automated donation follow-ups, reminders, and other repetitive communications.",
+      "Target your emails and ads more effectively with smart audience grouping.",
   },
   {
     icon: "lucide:map",
@@ -67,10 +75,10 @@ const features = [
       "Visualize your data on ArcGIS, or the free open-source Kepler.GL.",
   },
   {
-    icon: "lucide:bar-chart-2",
-    title: "Constituent segmentation & marketing automation",
+    icon: "lucide:mail",
+    title: "Email automation",
     description:
-      "Target your emails and ads more effectively with smart audience grouping.",
+      "Set up automated donation follow-ups, reminders, and other repetitive communications.",
   },
   {
     icon: "lucide:file-text",
@@ -103,4 +111,8 @@ const features = [
       "If it makes you more efficient at running your conservation non-profit, I can build it.",
   },
 ];
+
+const displayedFeatures = computed(() => {
+  return showAllFeatures.value ? features : features.slice(0, 3);
+});
 </script>
