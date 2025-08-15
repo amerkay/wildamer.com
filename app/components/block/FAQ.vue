@@ -4,11 +4,11 @@
       <div class="lg:grid lg:grid-cols-12 lg:gap-8">
         <div class="lg:col-span-5">
           <h2
-            class="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl"
+            class="text-3xl font-semibold tracking-tight text-pretty sm:text-4xl"
           >
-            Why volunteer and what's my goal?
+            Why volunteer, and what's my goal?
           </h2>
-          <p class="mt-4 text-base/7 text-pretty text-gray-600">
+          <p class="mt-4 text-base/7 text-pretty text-muted-foreground">
             My mission is to create tech solutions to advance wildlife
             conservation.
           </p>
@@ -28,19 +28,19 @@
             >
               <AccordionTrigger
                 :class="[
-                  'text-base/7 font-semibold text-gray-900',
+                  'text-base/7 font-semibold text-foreground',
                   { 'pt-0': idx === 0 },
                 ]"
                 >{{ faq.question }}</AccordionTrigger
               >
-              <AccordionContent class="mt-2 text-base/7 text-gray-600">
+              <AccordionContent class="mt-2 text-base/7">
                 <template v-if="faq.type === 'timeline'">
                   <div
                     v-if="
                       faq.parsedParagraphsBefore &&
                       faq.parsedParagraphsBefore.length
                     "
-                    class="prose prose-gray max-w-none mb-6 [&>p]:mb-3 [&>p:last-child]:mb-0 [&_strong]:font-semibold [&_em]:italic [&_a]:text-blue-600 [&_a:hover]:underline"
+                    class="prose prose-stone dark:!prose-inverse max-w-none mb-6 [&>p]:mb-3 [&>p:last-child]:mb-0 text-muted-foreground"
                   >
                     <div
                       v-for="(paragraph, i) in faq.parsedParagraphsBefore"
@@ -60,7 +60,7 @@
                 </template>
                 <template v-else>
                   <div
-                    class="prose prose-gray max-w-none [&>div]:mb-3 [&>div:last-child]:mb-0 [&_p]:mb-2 [&_p:last-child]:mb-0 [&_strong]:font-semibold [&_em]:italic [&_a]:text-blue-600 [&_a:hover]:underline"
+                    class="prose prose-stone dark:prose-invert max-w-none [&>div]:mb-3 [&>div:last-child]:mb-0 [&_p]:mb-2 [&_p:last-child]:mb-0 text-muted-foreground"
                   >
                     <div
                       v-for="(paragraph, i) in faq.parsedContent"
@@ -129,7 +129,7 @@ const parsedFaqs = computed(() => {
 
 const faqs = [
   {
-    question: "Why offer volunteer for free? What's my ultimate goal?",
+    question: "Why offer volunteer work for free? What's my ultimate goal?",
     type: "timeline",
     paragraphsBefore: [
       "My ultimate goal is to build software that helps wildlife conservation organizations operate more efficiently and effectively, at scale.",
@@ -137,15 +137,15 @@ const faqs = [
     content: [
       {
         title: "Phase 1: Volunteering, Research & Discovery",
-        date: "June 2025 - June 2026",
+        date: "July 2025 - June 2026",
         description:
-          "Reaching out to wildlife conservation orgs to volunteer as their tech consultant. Help them with their technology needs until I identify a common problem that needs a solution.",
+          "Reaching out to wildlife conservation organizations to volunteer as their tech consultant. Helping them with their technology needs until I identify a common problem that needs a solution.",
         icon: "heroicons:magnifying-glass",
         badge: "Current",
         badgeVariant: "secondary",
       },
       {
-        title: "Phase 2: Build minimum viable product that scales",
+        title: "Phase 2: Build a minimum viable product that scales",
         date: "Start: July 2026",
         description:
           "Build a minimum viable software to solve that problem. Build it in-public with regular progress updates posted online to reach more conservationists.",
@@ -160,7 +160,7 @@ const faqs = [
         title: "Phase 3: Scale & Grow",
         date: "Future Phase",
         description:
-          "Grow it. Offer it to 100's or 1000's of conservation efforts.",
+          "Growing it. Offering it to hundreds or thousands of conservation efforts.",
         icon: "heroicons:chart-bar",
         // badge: "Future",
         // badgeVariant: "outline",
@@ -176,22 +176,22 @@ const faqs = [
       "Now, it's time for me to focus on wildlife conservation!",
     ],
   },
+  // {
+  //   question: "What drives my work and shapes my future projects?",
+  //   type: "paragraphs",
+  //   content: [
+  //     "Lowering costs and increasing efficiency for conservation organizations.",
+  //     "Salesforce can get expensive quickly if your organization needs more than 10 team members, and other subscriptions and licenses add up to thousands a year quickly.",
+  //     "Badly designed donation flows can scare donors away. It should be bim-bam-boom quick!",
+  //   ],
+  // },
   {
-    question:
-      "What are the main priorities guiding my work and future projects?",
+    question: "Open-source software and transparency are the way to go",
     type: "paragraphs",
     content: [
-      "My top two priorities when it comes to my volunteering work and future software I build are: Lowering per donation and tech costs and increasing efficiency.",
-      "Salesforce can get expensive quickly if your organization needs more than 10 team members, and other subscriptions and licenses add up to thousands a year quick.",
-      "Badly designed donation flows can scare donors away. It should be bim-bam-boom quick!",
-    ],
-  },
-  {
-    question: "Which values guide my work in tech and conservation?",
-    type: "paragraphs",
-    content: [
-      "1. **Free Open Source Software** (or FOSS): The same way most NGOs use Wordpress for free, but need admins to deploy and manage it. \\n This does not mean I cannot sell the software I build and make income to live off of. It means that use it for free if you have the tech know how and staff.  A bonus side effect is that it will help me other developers in the space.",
-      "2. **Open-book accounting**: I've always admired companies that do that. In this case, it could help other conservationist entrepreneurs learn how they could also make money while helping through tech.",
+      "My future project will be grounded in two guiding principles:",
+      "1. **Free Open Source Software** (FOSS): I'm a strong believer in the power of open source software, especially its potential impact in the conservation space. By making the code freely available, it can give resource-strapped conservation groups the tools they need without adding financial strain. \\n This doesn't rule out making an income from it - I still need to make a living - but it means anyone with the know-how and resources can use it at no cost. Think WordPress: the software (Wordpress.org) is free, but someone still has to set it up and run it (Wordpress.com).",
+      "2. **Open-book accounting**: I've always admired companies that operate with financial transparency. By sharing the numbers, this future project could inspire other conservation entrepreneurs to see that tech can both make an impact and pay the bills.",
     ],
   },
 ];
