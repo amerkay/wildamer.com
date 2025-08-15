@@ -3,6 +3,7 @@
     <Hero />
     <HowICanHelp />
     <FeaturedProjects />
+    <FAQ />
   </section>
 </template>
 

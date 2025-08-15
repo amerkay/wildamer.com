@@ -1,8 +1,12 @@
 <template>
   <section class="bg-background border-t text-foreground">
     <Container>
-      <!-- <p class="text-center font-semibold text-muted-foreground">
-        Currently, accepting non-profits to be your volunteer tech consultant
+      <!-- <p class="font-semibold text-muted-foreground max-w-2xl">
+        15+ years of experience as a full-stack software & product engineer
+        means I can help you with anything tech!
+        <NuxtLink to="https://www.linkedin.com/in/amerkawar" target="_blank"
+          >LinkedIn</NuxtLink
+        >
       </p> -->
 
       <h2
@@ -12,7 +16,11 @@
       </h2>
 
       <p class="max-w-2xl text-lg lg:text-xl text-primary">
-        I can help you modernize your tech stack, saving you time and money
+        15+ years of experience as a full-stack software & product engineer
+        means I can help you with anything tech!
+        <!-- <NuxtLink to="https://www.linkedin.com/in/amerkawar" target="_blank"
+          >CV on LinkedIn</NuxtLink
+        > -->
       </p>
 
       <div

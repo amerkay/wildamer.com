@@ -24,6 +24,7 @@
             save time and money. From CRM integrations to GIS mapping, let's
             chat about how I can help your org thrive.
           </p>
+
           <div class="mt-8 grid grid-cols-1 gap-3 lg:flex lg:mt-12">
             <NuxtLink to="#featured-projects">
               <Button size="lg" variant="outline" class="w-full sm:w-auto"
