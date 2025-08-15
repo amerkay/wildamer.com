@@ -1,5 +1,5 @@
 <template>
-  <section id="featured-projects" class="bg-background border-t">
+  <section id="featured-projects" class="border-t text-foreground">
     <Container>
       <h2
         class="text-base/7 font-semibold text-secondary-foreground dark:text-secondary"

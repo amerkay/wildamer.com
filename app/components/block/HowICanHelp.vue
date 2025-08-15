@@ -18,8 +18,15 @@
       <div
         class="grid grid-cols-1 gap-y-10 py-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:gap-y-16 lg:py-16"
       >
-        <template v-for="(f, i) in displayedFeatures" :key="i">
-          <div class="group flex flex-col items-center justify-start">
+        <template v-for="(f, i) in features" :key="i">
+          <div
+            v-if="i < 3 || showAllFeatures"
+            class="group flex flex-col items-center justify-start transition-all duration-500 ease-in-out"
+            :class="{
+              'animate-slide-up': showAllFeatures && i >= 3,
+            }"
+            :style="`animation-delay: ${(i - 3) * 100}ms`"
+          >
             <div
               class="flex p-4 items-center justify-center rounded-md border border-secondary"
             >
@@ -45,7 +52,9 @@
 
       <div v-if="!showAllFeatures" class="flex justify-center pb-10">
         <Button variant="outline" @click="showAllFeatures = true">
-          Show me more ways you can help
+          I can do a lot more!
+
+          <Icon name="lucide:chevron-down" class="ml-2 h-4 w-4" />
         </Button>
       </div>
     </Container>
@@ -111,8 +120,22 @@ const features = [
       "If it makes you more efficient at running your conservation non-profit, I can build it.",
   },
 ];
-
-const displayedFeatures = computed(() => {
-  return showAllFeatures.value ? features : features.slice(0, 3);
-});
 </script>
+
+<style scoped>
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+  opacity: 0;
+}
+</style>
