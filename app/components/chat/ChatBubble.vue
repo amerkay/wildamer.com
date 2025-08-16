@@ -1,17 +1,4 @@
 <template>
-  <!-- Preload all avatar images passed from parent -->
-  <template v-if="preloadAvatars?.length">
-    <NuxtImg
-      v-for="avatarUrl in preloadAvatars"
-      :key="avatarUrl"
-      :src="avatarUrl"
-      preset="avatar"
-      :preload="{ fetchPriority: 'high' }"
-      style="display: none"
-      aria-hidden="true"
-    />
-  </template>
-
   <div class="flex items-start gap-2" :class="containerClasses">
     <!-- avatar left -->
     <div
@@ -66,7 +53,6 @@
         :alt="avatarAriaLabel"
         class="size-full object-cover rounded-full"
         preset="avatar"
-        loading="lazy"
       />
       <span v-else>{{ avatarEmoji }}</span>
     </div>
@@ -84,9 +70,27 @@ interface Props {
   avatarEmoji?: string;
   avatarImg?: string;
   avatarClass?: string;
-  preloadAvatars?: string[];
 }
 const props = defineProps<Props>();
+
+// Preload avatar images using useHead for better performance
+if (props.avatarImg) {
+  // Use the $img composable directly
+  const { $img } = useImage();
+  if ($img) {
+    const avatarUrl = $img(props.avatarImg, { preset: "avatar" });
+
+    useHead({
+      link: [
+        {
+          rel: "preload",
+          as: "image",
+          href: avatarUrl,
+        },
+      ],
+    });
+  }
+}
 
 const containerClasses = computed(() => {
   return props.isMe ? "justify-end" : "justify-start";
@@ -114,8 +118,6 @@ const { text, typing, showName, label } = toRefs(props);
 </script>
 
 <style scoped>
-@reference "~/assets/css/tailwind.css";
-
 .chat-bubble {
   backdrop-filter: saturate(1.1);
 }
