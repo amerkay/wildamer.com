@@ -15,6 +15,7 @@
         </div>
         <div class="mt-10 lg:col-span-7 lg:mt-0">
           <Accordion
+            v-model="activeItem"
             type="single"
             class="w-full space-y-4"
             collapsible
@@ -89,9 +90,75 @@ import {
 import { markdown } from "very-small-parser/esm";
 import { toText } from "very-small-parser/lib/html/toText";
 import { toHast } from "very-small-parser/lib/markdown/block/toHast";
-import { computed } from "vue";
+import { computed, ref, watch } from "vue";
 
 const defaultValue = "item-0";
+const activeItem = ref(defaultValue);
+
+/**
+ * Extract numeric index from accordion item value
+ * @param {string} value - The accordion item value (e.g., "item-1")
+ * @returns {number} The numeric index
+ */
+const getAccordionItemIndex = (value) => {
+  return parseInt(value.replace("item-", ""));
+};
+
+/**
+ * Find the accordion trigger element for a given index
+ * @param {number} index - The accordion item index
+ * @returns {Element|null} The trigger element or null if not found
+ */
+const findAccordionTrigger = (index) => {
+  const allItems = document.querySelectorAll('[data-slot="accordion-item"]');
+  const accordionItem = allItems[index];
+
+  if (!accordionItem) return null;
+
+  return accordionItem.querySelector('[data-slot="accordion-trigger"]');
+};
+
+/**
+ * Check if an element is fully visible in the viewport
+ * @param {Element} element - The element to check
+ * @returns {boolean} True if element is visible, false otherwise
+ */
+const isElementVisible = (element) => {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.bottom <= window.innerHeight &&
+    rect.left >= 0 &&
+    rect.right <= window.innerWidth
+  );
+};
+
+/**
+ * Scroll to accordion item if its trigger is not visible
+ * @param {string} itemValue - The accordion item value
+ */
+const scrollToElementIfNeeded = (itemValue) => {
+  const index = getAccordionItemIndex(itemValue);
+  const trigger = findAccordionTrigger(index);
+
+  if (!trigger) return;
+
+  if (!isElementVisible(trigger)) {
+    const accordionItem = trigger.closest('[data-slot="accordion-item"]');
+    accordionItem?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  }
+};
+
+// Scroll to accordion item when opened, but only if the trigger is not visible
+watch(activeItem, async (newValue) => {
+  if (newValue) {
+    setTimeout(() => scrollToElementIfNeeded(newValue), 301);
+  }
+});
 
 // Parse markdown content to HTML
 const parsedFaqs = computed(() => {
@@ -176,15 +243,7 @@ const faqs = [
       "Now, it's time for me to focus on wildlife conservation!",
     ],
   },
-  // {
-  //   question: "What drives my work and shapes my future projects?",
-  //   type: "paragraphs",
-  //   content: [
-  //     "Lowering costs and increasing efficiency for conservation organizations.",
-  //     "Salesforce can get expensive quickly if your organization needs more than 10 team members, and other subscriptions and licenses add up to thousands a year quickly.",
-  //     "Badly designed donation flows can scare donors away. It should be bim-bam-boom quick!",
-  //   ],
-  // },
+
   {
     question: "Open-source software and transparency are the way to go",
     type: "paragraphs",
@@ -194,5 +253,14 @@ const faqs = [
       "2. **Open-book accounting**: I've always admired companies that operate with financial transparency. By sharing the numbers, this future project could inspire other conservation entrepreneurs to see that tech can both make an impact and pay the bills.",
     ],
   },
+  // {
+  //   question: "What drives my work and shapes my future projects?",
+  //   type: "paragraphs",
+  //   content: [
+  //     "Lowering costs and increasing efficiency for conservation organizations.",
+  //     "Salesforce can get expensive quickly if your organization needs more than 10 team members, and other subscriptions and licenses add up to thousands a year quickly.",
+  //     "Badly designed donation flows can scare donors away. It should be bim-bam-boom quick!",
+  //   ],
+  // },
 ];
 </script>

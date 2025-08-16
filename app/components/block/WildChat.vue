@@ -51,8 +51,8 @@ const chatScript = [
   {
     from: "owl",
     text: "Hoot, Amer! Our donor CRM is a mouse maze. Can you finish moving us into CiviCRM?",
-    typingMs: 900,
-    afterDelay: 350,
+    typingMs: 1400,
+    afterDelay: 450,
     showName: true,
   },
   {
