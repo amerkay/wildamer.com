@@ -20,7 +20,7 @@
         :media-classes="mediaClasses"
       />
       <div class="p-10 pt-4">
-        <h3 class="text-sm/4 font-semibold text-primary">
+        <h3 class="text-sm/4 font-semibold text-accent-foreground">
           {{ project.cardPreHeading || project.title }}
         </h3>
         <p class="mt-2 text-lg font-medium tracking-tight text-foreground">

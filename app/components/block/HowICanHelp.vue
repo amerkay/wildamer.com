@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-secondary/12 dark:bg-secondary/5 border-t text-foreground">
+  <section class="bg-primary/4 dark:bg-primary/2 border-t text-foreground">
     <Container>
       <!-- <p class="font-semibold text-muted-foreground max-w-2xl">
         15+ years of experience as a full-stack software & product engineer
@@ -10,12 +10,12 @@
       </p> -->
 
       <h2
-        class="mb-4 mt-3 text-4xl font-black lg:mb-5 lg:text-5xl text-foreground max-w-2xl"
+        class="mb-4 mt-3 text-4xl font-heading lg:mb-5 lg:text-5xl text-foreground max-w-2xl"
       >
         I'm offering to be your tech consultant volunteer.
       </h2>
 
-      <p class="max-w-2xl text-lg lg:text-xl text-primary">
+      <p class="max-w-2xl text-lg lg:text-xl text-muted-foreground">
         15+ years of experience as a full-stack software & product engineer
         means I can help you with anything tech!
         <!-- <NuxtLink to="https://www.linkedin.com/in/amerkawar" target="_blank"

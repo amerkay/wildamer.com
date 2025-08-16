@@ -21,7 +21,7 @@ const WildChat = defineAsyncComponent({
             <Icon name="lucide:arrow-right" class="ml-1 h-4 w-4" />
           </Badge>
           <h1
-            class="mb-4 mt-7 text-4xl font-bold md:text-4xl lg:mb-6 lg:mt-5 xl:text-5xl"
+            class="mb-4 mt-7 text-4xl md:text-4xl lg:mb-6 lg:mt-5 xl:text-5xl font-heading"
           >
             I'm on a mission to build tech for wildlife conservation
             <span>👋</span>
@@ -55,7 +55,7 @@ const WildChat = defineAsyncComponent({
       <div
         class="mt-12 lg:mt-0 flex h-full items-center justify-center lg:justify-end lg:w-1/3 xl:w-1/2"
       >
-        <WildChat class="max-w-xs h-[540px] xl:max-w-sm xl:h-[500px]" />
+        <WildChat class="max-w-xs h-[550px] xl:max-w-sm xl:h-[510px]" />
       </div>
     </Container>
   </div>

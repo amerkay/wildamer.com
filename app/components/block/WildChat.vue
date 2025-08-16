@@ -20,7 +20,7 @@ const participants = [
     id: "amer",
     label: "Amer Kawar",
     emoji: "👋",
-    avatarImg: "/imgs/avatar-me.jpg",
+    avatarImg: "/imgs/avatar-me.png",
     avatarClass: "bg-primary text-primary-foreground shadow-sm",
   },
   {

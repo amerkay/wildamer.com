@@ -5,106 +5,106 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: hsl(36 29% 99%);
-  --foreground: hsl(41, 86%, 11%);
-  --card: hsl(39 57% 97%);
-  --card-foreground: hsl(37 77% 22%);
-  --popover: hsl(39 57% 91%);
-  --popover-foreground: hsl(37 77% 22%);
-  --primary: hsl(90 58% 31%);
-  --primary-foreground: hsl(347 100% 98%);
-  --secondary: hsl(300 52% 91%);
-  --secondary-foreground: hsl(300, 12%, 23%);
-  --muted: hsl(39 54% 77%);
-  --muted-foreground: hsl(36 48% 34%);
-  --accent: hsl(40 46% 78%);
-  --accent-foreground: hsl(340 16% 15%);
-  --destructive: hsl(3 95% 55%);
-  --destructive-foreground: hsl(3 95% 45%);
-  --border: hsl(37 33% 63%);
-  --input: hsl(37 33% 63%);
-  --ring: hsl(36 48% 34%);
-  --chart-1: hsl(20 85% 52%);
-  --chart-2: hsl(174 73% 41%);
-  --chart-3: hsl(188 79% 26%);
-  --chart-4: hsl(45 98% 53%);
-  --chart-5: hsl(32 93% 51%);
-  --sidebar: hsl(40 57% 78%);
-  --sidebar-foreground: hsl(40 81% 21%);
-  --sidebar-primary: hsl(340 16% 15%);
-  --sidebar-primary-foreground: hsl(347 100% 98%);
-  --sidebar-accent: hsl(40 46% 73%);
-  --sidebar-accent-foreground: hsl(340 16% 15%);
-  --sidebar-border: hsl(0 0% 88%);
-  --sidebar-ring: hsl(0 0% 63%);
-
-  --font-sans: Bricolage Grotesque, sans-serif;
-  /* --font-sans: Chivo, sans-serif; */
+  --background: hsl(60 20% 99.0196%);
+  --foreground: hsl(41.25 85.7143% 10.9804%);
+  --card: hsl(40 60% 97.0588%);
+  --card-foreground: hsl(36.9767 76.7857% 21.9608%);
+  --popover: hsl(39.2308 56.5217% 90.9804%);
+  --popover-foreground: hsl(36.9767 76.7857% 21.9608%);
+  --primary: hsl(90, 73%, 25%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(300 52.1739% 90.9804%);
+  --secondary-foreground: hsl(300 11.8644% 23.1373%);
+  --muted: hsl(39.2727 56.701% 80.9804%);
+  --muted-foreground: hsl(36 52.4476% 28.0392%);
+  --accent: hsl(74.6667 60.8108% 70.9804%);
+  --accent-foreground: hsl(75 92.8571% 10.9804%);
+  --destructive: hsl(3.0275 94.7826% 54.902%);
+  --destructive-foreground: hsl(3.0275 94.7826% 45.098%);
+  --border: hsl(36.7742 32.9787% 63.1373%);
+  --input: hsl(36.7742 32.9787% 63.1373%);
+  --ring: hsl(36.1446 47.9769% 33.9216%);
+  --chart-1: hsl(19.9038 85.2459% 52.1569%);
+  --chart-2: hsl(174.1176 73.2057% 40.9804%);
+  --chart-3: hsl(188 78.9474% 26.0784%);
+  --chart-4: hsl(44.9362 98.3264% 53.1373%);
+  --chart-5: hsl(32.069 92.8% 50.9804%);
+  --sidebar: hsl(40 63.6364% 87.0588%);
+  --sidebar-foreground: hsl(39.7753 83.1776% 20.9804%);
+  --sidebar-primary: hsl(340 15.7895% 14.902%);
+  --sidebar-primary-foreground: hsl(348 100% 98.0392%);
+  --sidebar-accent: hsl(40.3125 46.3768% 72.9412%);
+  --sidebar-accent-foreground: hsl(340 15.7895% 14.902%);
+  --sidebar-border: hsl(0 0% 87.8431%);
+  --sidebar-ring: hsl(0 0% 63.1373%);
+  --font-sans: "Montserrat", sans-serif;
   --font-serif: Merriweather, serif;
   --font-mono: JetBrains Mono, monospace;
-
   --radius: 0.625rem;
-
-  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-2xs: 1px 2px 5px 1px hsl(0 0% 0% / 0.03);
+  --shadow-xs: 1px 2px 5px 1px hsl(0 0% 0% / 0.03);
   --shadow-sm:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
+  --shadow:
+    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
   --shadow-md:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 2px 4px 0px hsl(0 0% 0% / 0.06);
   --shadow-lg:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 4px 6px 0px hsl(0 0% 0% / 0.06);
   --shadow-xl:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
-  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 8px 10px 0px hsl(0 0% 0% / 0.06);
+  --shadow-2xl: 1px 2px 5px 1px hsl(0 0% 0% / 0.15);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
 }
 
 .dark {
-  --background: hsl(23 18% 9%);
-  --foreground: hsl(37 55% 81%);
-  --card: hsl(20 13% 13%);
-  --card-foreground: hsl(37 55% 81%);
-  --popover: hsl(20 13% 13%);
-  --popover-foreground: hsl(37 55% 81%);
-  --primary: hsl(75 83% 28%);
-  --primary-foreground: hsl(347 100% 98%);
-  --secondary: hsl(300 52% 91%);
-  --secondary-foreground: hsl(21 85% 5%);
-  --muted: hsl(15 10% 15%);
-  --muted-foreground: hsl(37 33% 63%);
-  --accent: hsl(27 17% 20%);
-  --accent-foreground: hsl(40 46% 78%);
-  --destructive: hsl(3 95% 55%);
-  --destructive-foreground: hsl(3 95% 65%);
-  --border: hsl(27 17% 20%);
-  --input: hsl(27 17% 20%);
-  --ring: hsl(69 13% 50%);
-  --chart-1: hsl(20 85% 52%);
-  --chart-2: hsl(174 73% 41%);
-  --chart-3: hsl(188 79% 26%);
-  --chart-4: hsl(45 98% 53%);
-  --chart-5: hsl(32 93% 51%);
-  --sidebar: hsl(27 16% 11%);
-  --sidebar-foreground: hsl(37 55% 81%);
-  --sidebar-primary: hsl(69 13% 50%);
-  --sidebar-primary-foreground: hsl(347 100% 98%);
-  --sidebar-accent: hsl(27 17% 20%);
-  --sidebar-accent-foreground: hsl(40 46% 78%);
-  --sidebar-border: hsl(27 17% 20%);
-  --sidebar-ring: hsl(69 13% 50%);
-
-  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --background: hsl(22.5 17.3913% 9.0196%);
+  --foreground: hsl(37.3585 54.6392% 80.9804%);
+  --card: hsl(22.5 12.1212% 12.9412%);
+  --card-foreground: hsl(37.3585 54.6392% 80.9804%);
+  --popover: hsl(22.5 12.1212% 12.9412%);
+  --popover-foreground: hsl(37.3585 54.6392% 80.9804%);
+  --primary: hsl(90, 76%, 27%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(300 52.1739% 90.9804%);
+  --secondary-foreground: hsl(20.8696 92% 4.902%);
+  --muted: hsl(15 10.5263% 14.902%);
+  --muted-foreground: hsl(36.7742 32.9787% 63.1373%);
+  --accent: hsl(72.5 85.7143% 10.9804%);
+  --accent-foreground: hsl(75 39.2157% 80%);
+  --destructive: hsl(3.0275 94.7826% 54.902%);
+  --destructive-foreground: hsl(2.8235 95.5056% 65.098%);
+  --border: hsl(26.6667 17.6471% 20%);
+  --input: hsl(26.6667 17.6471% 20%);
+  --ring: hsl(69.0909 12.9412% 50%);
+  --chart-1: hsl(19.9038 85.2459% 52.1569%);
+  --chart-2: hsl(174.1176 73.2057% 40.9804%);
+  --chart-3: hsl(188 78.9474% 26.0784%);
+  --chart-4: hsl(44.9362 98.3264% 53.1373%);
+  --chart-5: hsl(32.069 92.8% 50.9804%);
+  --sidebar: hsl(26.6667 15.7895% 11.1765%);
+  --sidebar-foreground: hsl(37.3585 54.6392% 80.9804%);
+  --sidebar-primary: hsl(69.0909 12.9412% 50%);
+  --sidebar-primary-foreground: hsl(348 100% 98.0392%);
+  --sidebar-accent: hsl(26.6667 17.6471% 20%);
+  --sidebar-accent-foreground: hsl(40.3846 46.4286% 78.0392%);
+  --sidebar-border: hsl(26.6667 17.6471% 20%);
+  --sidebar-ring: hsl(69.0909 12.9412% 50%);
+  --radius: 0.5rem;
+  --shadow-2xs: 1px 2px 5px 1px hsl(0 0% 0% / 0.03);
+  --shadow-xs: 1px 2px 5px 1px hsl(0 0% 0% / 0.03);
   --shadow-sm:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
+  --shadow:
+    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
   --shadow-md:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 2px 4px 0px hsl(0 0% 0% / 0.06);
   --shadow-lg:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 4px 6px 0px hsl(0 0% 0% / 0.06);
   --shadow-xl:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
-  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 8px 10px 0px hsl(0 0% 0% / 0.06);
+  --shadow-2xl: 1px 2px 5px 1px hsl(0 0% 0% / 0.15);
 }
 
 @theme inline {
@@ -158,6 +158,9 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
+}
+
+@theme inline {
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
   @keyframes accordion-down {
@@ -176,6 +179,8 @@
       height: 0;
     }
   }
+  /* Mozilla Headline, Anton, Fjalla One, Bricolage Grotesque */
+  --font-heading: "Anton", var(--font-sans);
 }
 
 @layer base {
@@ -200,6 +205,17 @@
     @apply text-primary-foreground;
   }
 }
+
+/* @layer components {
+  .text-2xl,
+  .text-3xl,
+  .text-4xl,
+  .text-5xl,
+  .text-6xl,
+  .text-7xl {
+    @apply font-heading;
+  }
+} */
 
 html {
   scroll-behavior: smooth;

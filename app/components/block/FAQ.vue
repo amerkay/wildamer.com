@@ -4,7 +4,7 @@
       <div class="lg:grid lg:grid-cols-12 lg:gap-8">
         <div class="lg:col-span-5">
           <h2
-            class="text-3xl font-semibold tracking-tight text-pretty sm:text-4xl"
+            class="text-3xl tracking-tight text-pretty sm:text-4xl font-heading"
           >
             Why volunteer, and what's my goal?
           </h2>

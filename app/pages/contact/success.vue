@@ -18,7 +18,7 @@ useHead({
           class="text-primary mx-auto mb-4"
           size="64"
         />
-        <h1 class="text-4xl font-bold tracking-tight mb-4">
+        <h1 class="text-4xl font-heading tracking-tight mb-4">
           Message Sent Successfully!
         </h1>
         <p class="text-xl text-muted-foreground mb-8">

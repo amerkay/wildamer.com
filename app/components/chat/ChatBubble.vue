@@ -3,11 +3,11 @@
     <!-- avatar left -->
     <div
       v-if="!isMe && (avatarEmoji || avatarImg)"
-      class="shrink-0 size-11 rounded-full grid place-items-center border overflow-hidden"
+      class="shrink-0 size-11 rounded-full border grid place-items-center overflow-hidden"
       :class="
         avatarImg
           ? 'bg-transparent p-0'
-          : 'bg-primary text-primary-foreground ' + avatarClass
+          : 'bg-secondary text-secondary-foreground ' + avatarClass
       "
       :aria-label="avatarAriaLabel"
     >
@@ -23,7 +23,9 @@
 
     <!-- message bubble -->
     <div :class="classes" role="group" :aria-label="ariaLabel">
-      <p v-if="showName" class="text-[11px] mb-0.5 opacity-70">{{ label }}</p>
+      <p v-if="showName" class="text-[11px] mb-0.5 opacity-92">
+        {{ label }}
+      </p>
       <div
         v-if="typing"
         class="flex items-center gap-1 h-6"
@@ -43,7 +45,9 @@
       v-if="isMe && (avatarEmoji || avatarImg)"
       class="shrink-0 size-11 rounded-full grid place-items-center border overflow-hidden shadow-sm"
       :class="
-        avatarImg ? 'bg-transparent p-0' : 'bg-primary text-primary-foreground'
+        avatarImg
+          ? 'bg-transparent p-0'
+          : 'bg-secondary text-secondary-foreground'
       "
       :aria-label="avatarAriaLabel"
     >
@@ -81,8 +85,8 @@ const classes = computed(() => {
   const base =
     "chat-bubble max-w-[85%] px-3 py-2 text-sm shadow-xs rounded-2xl";
   const side = props.isMe
-    ? "bg-primary text-primary-foreground ml-auto rounded-tr-none"
-    : "bg-secondary text-secondary-foreground rounded-tl-none";
+    ? "bg-secondary text-secondary-foreground ml-auto rounded-tr-none"
+    : "bg-primary text-primary-foreground rounded-tl-none";
   const typing = props.typing ? "border-dashed" : "";
   return [base, side, typing].join(" ");
 });

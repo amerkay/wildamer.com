@@ -7,7 +7,7 @@
         Featured projects
       </h2>
       <p
-        class="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-foreground sm:text-5xl"
+        class="mt-2 max-w-xl text-4xl font-heading tracking-tight text-foreground sm:text-5xl"
       >
         Time &amp; money saving projects I worked on for non-profits
       </p>

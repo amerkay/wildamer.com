@@ -74,7 +74,7 @@ const onSubmit = form.handleSubmit(async (values) => {
 <template>
   <div class="w-full max-w-2xl mx-auto">
     <div class="mb-8">
-      <h2 class="text-3xl font-bold tracking-tight mb-4">Get in Touch</h2>
+      <h2 class="text-3xl tracking-tight mb-4 font-heading">Get in Touch</h2>
       <p class="text-muted-foreground">
         Have a project in mind or need help with wildlife conservation
         technology? I'd love to hear from you.
