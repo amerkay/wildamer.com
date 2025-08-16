@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex-1 overflow-hidden">
     <!-- Hidden preload images for SSR -->
-    <div class="sr-only" aria-hidden="true">
+    <!-- <div class="sr-only" aria-hidden="true">
       <NuxtImg
         v-for="participant in participantsWithImages"
         :key="`preload-${participant.id}`"
@@ -10,7 +10,7 @@
         preset="avatar"
         preload
       />
-    </div>
+    </div> -->
 
     <!-- fade overlay at top -->
     <Transition
@@ -110,9 +110,9 @@ const participantById = Object.fromEntries(
   props.participants.map((p) => [p.id, p])
 ) as Record<string, Participant>;
 
-const participantsWithImages = computed(() =>
-  props.participants.filter((p) => p.avatarImg)
-);
+// const participantsWithImages = computed(() =>
+//   props.participants.filter((p) => p.avatarImg)
+// );
 
 function senderLabel(from: string): string {
   return participantById[from]?.label || "";
