@@ -54,10 +54,14 @@ const props = defineProps<FooterProps>();
               rel="noopener noreferrer"
               class="inline-flex size-8 items-center justify-center rounded-sm bg-transparent transition-colors hover:opacity-70"
             >
-              <img
+              <NuxtImg
                 :src="`/icons/social/${social.service}.svg`"
                 :alt="`${social.service} icon`"
                 class="size-6 dark:invert accent-high-contrast:invert"
+                width="24"
+                height="24"
+                loading="lazy"
+                sizes="24px"
               />
             </a>
           </div> -->

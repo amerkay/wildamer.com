@@ -38,12 +38,15 @@
             </p>
           </div>
         </div>
-        <img
+        <NuxtImg
           src="/imgs/BAROW-Owlet-on-branch-Richard-Tadman-B-CROPPED-OWLETS-PAGE-scaled-1.jpg"
           alt="Product screenshot"
           class="w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 md:-ml-4 lg:-ml-0 dark:ring-white/10 max-w-xl lg:col-span-2"
           width="2513"
           height="2560"
+          preset="hero"
+          loading="eager"
+          sizes="100vw sm:50vw md:60vw lg:50vw xl:40vw"
         />
       </div>
     </Container>

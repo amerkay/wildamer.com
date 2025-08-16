@@ -59,4 +59,45 @@ export default defineNuxtConfig({
   content: {
     experimental: { sqliteConnector: "native" },
   },
+
+  image: {
+    // Default quality for all images
+    quality: 85,
+    // Predefined screen sizes for responsive images
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+    },
+    // Default format
+    format: ["webp", "png", "jpg"],
+    // Densities for high-DPI screens
+    densities: [1, 2],
+    // Presets for common use cases
+    presets: {
+      avatar: {
+        modifiers: {
+          format: "webp",
+          width: 44,
+          height: 44,
+          quality: 85,
+        },
+      },
+      hero: {
+        modifiers: {
+          format: "webp",
+          quality: 85,
+        },
+      },
+      thumbnail: {
+        modifiers: {
+          format: "webp",
+          quality: 80,
+        },
+      },
+    },
+  },
 });

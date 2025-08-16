@@ -22,15 +22,24 @@
     </template>
     <!-- Handle regular images with light/dark variants -->
     <template v-else>
-      <img
+      <NuxtImg
         :class="cn('w-full', mediaClasses, 'dark:hidden')"
         :src="image"
         :alt="alt"
+        format="webp"
+        quality="85"
+        loading="lazy"
+        sizes="100vw sm:80vw md:70vw lg:50vw xl:40vw"
       />
-      <img
+      <NuxtImg
+        v-if="imageDark"
         :class="cn('w-full', mediaClasses, 'hidden dark:block')"
         :src="imageDark"
         :alt="alt"
+        format="webp"
+        quality="85"
+        loading="lazy"
+        sizes="100vw sm:80vw md:70vw lg:50vw xl:40vw"
       />
     </template>
   </div>

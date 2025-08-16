@@ -7,15 +7,17 @@
       :class="
         avatarImg
           ? 'bg-transparent p-0'
-          : 'bg-muted/40 text-base ' + avatarClass
+          : 'bg-primary text-primary-foreground ' + avatarClass
       "
       :aria-label="avatarAriaLabel"
     >
-      <img
+      <NuxtImg
         v-if="avatarImg"
         :src="avatarImg"
         :alt="avatarAriaLabel"
         class="size-full object-cover rounded-full"
+        preset="avatar"
+        loading="lazy"
       />
       <span v-else>{{ avatarEmoji }}</span>
     </div>
@@ -46,11 +48,13 @@
       "
       :aria-label="avatarAriaLabel"
     >
-      <img
+      <NuxtImg
         v-if="avatarImg"
         :src="avatarImg"
         :alt="avatarAriaLabel"
         class="size-full object-cover rounded-full"
+        preset="avatar"
+        loading="lazy"
       />
       <span v-else>{{ avatarEmoji }}</span>
     </div>
