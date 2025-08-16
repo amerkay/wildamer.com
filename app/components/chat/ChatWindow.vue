@@ -15,6 +15,18 @@
       />
     </Transition>
 
+    <!-- Hidden preload images for SSR -->
+    <div class="sr-only" aria-hidden="true">
+      <NuxtImg
+        v-for="participant in participantsWithImages"
+        :key="`preload-${participant.id}`"
+        :src="participant.avatarImg!"
+        :alt="participant.label"
+        preset="avatar"
+        preload
+      />
+    </div>
+
     <ol
       ref="listEl"
       class="space-y-3 h-full overflow-y-auto"
@@ -59,7 +71,7 @@
 </template>
 
 <script setup lang="ts">
-import { nextTick, onMounted, ref } from "vue";
+import { computed, nextTick, onMounted, ref } from "vue";
 import ChatBubble from "~/components/chat/ChatBubble.vue";
 import Button from "~/components/ui/button/Button.vue";
 
@@ -86,25 +98,6 @@ interface Props {
 }
 const props = defineProps<Props>();
 
-// Preload all participant avatar images for better performance
-const { $img } = useImage();
-if ($img) {
-  const avatarUrls = props.participants
-    .filter((p) => p.avatarImg)
-    .map((p) => ({
-      rel: "preload" as const,
-      as: "image" as const,
-      href: $img(p.avatarImg!, { preset: "avatar" }),
-      fetchpriority: "high" as const,
-    }));
-
-  if (avatarUrls.length > 0) {
-    useHead({
-      link: avatarUrls,
-    });
-  }
-}
-
 // Add IDs to script lines if they don't have them
 const scriptWithIds = computed(() =>
   props.script.map((m, idx) => ({
@@ -116,6 +109,10 @@ const scriptWithIds = computed(() =>
 const participantById = Object.fromEntries(
   props.participants.map((p) => [p.id, p])
 ) as Record<string, Participant>;
+
+const participantsWithImages = computed(() =>
+  props.participants.filter((p) => p.avatarImg)
+);
 
 function senderLabel(from: string): string {
   return participantById[from]?.label || "";

@@ -17,6 +17,7 @@
         :alt="avatarAriaLabel"
         class="size-full object-cover rounded-full"
         preset="avatar"
+        preload
       />
       <span v-else>{{ avatarEmoji }}</span>
     </div>
@@ -53,6 +54,7 @@
         :alt="avatarAriaLabel"
         class="size-full object-cover rounded-full"
         preset="avatar"
+        preload
       />
       <span v-else>{{ avatarEmoji }}</span>
     </div>
@@ -99,6 +101,8 @@ const { text, typing, showName, label } = toRefs(props);
 </script>
 
 <style scoped>
+@reference "~/assets/css/tailwind.css";
+
 .chat-bubble {
   backdrop-filter: saturate(1.1);
 }
