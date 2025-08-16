@@ -86,7 +86,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { markdown } from "very-small-parser";
+import { markdown } from "very-small-parser/esm";
 import { toText } from "very-small-parser/lib/html/toText";
 import { toHast } from "very-small-parser/lib/markdown/block/toHast";
 import { computed } from "vue";
