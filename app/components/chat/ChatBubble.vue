@@ -17,7 +17,6 @@
         :alt="avatarAriaLabel"
         class="size-full object-cover rounded-full"
         preset="avatar"
-        preload
       />
       <span v-else>{{ avatarEmoji }}</span>
     </div>
@@ -54,7 +53,6 @@
         :alt="avatarAriaLabel"
         class="size-full object-cover rounded-full"
         preset="avatar"
-        preload
       />
       <span v-else>{{ avatarEmoji }}</span>
     </div>

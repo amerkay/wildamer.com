@@ -61,6 +61,7 @@ export default defineNuxtConfig({
   },
 
   image: {
+    provider: "ipxStatic",
     // Default quality for all images
     quality: 85,
     // Predefined screen sizes for responsive images
