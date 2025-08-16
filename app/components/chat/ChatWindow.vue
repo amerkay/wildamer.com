@@ -1,5 +1,17 @@
 <template>
   <div class="relative flex-1 overflow-hidden">
+    <!-- Hidden preload images for SSR -->
+    <div class="sr-only" aria-hidden="true">
+      <NuxtImg
+        v-for="participant in participantsWithImages"
+        :key="`preload-${participant.id}`"
+        :src="participant.avatarImg"
+        :alt="participant.label"
+        preset="avatar"
+        preload
+      />
+    </div>
+
     <!-- fade overlay at top -->
     <Transition
       enter-active-class="transition-all duration-500 ease-out"
@@ -14,18 +26,6 @@
         class="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-background to-transparent pointer-events-none z-10"
       />
     </Transition>
-
-    <!-- Hidden preload images for SSR -->
-    <div class="sr-only" aria-hidden="true">
-      <NuxtImg
-        v-for="participant in participantsWithImages"
-        :key="`preload-${participant.id}`"
-        :src="participant.avatarImg!"
-        :alt="participant.label"
-        preset="avatar"
-        preload
-      />
-    </div>
 
     <ol
       ref="listEl"
