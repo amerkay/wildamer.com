@@ -18,6 +18,7 @@
         class="size-full object-cover rounded-full"
         preset="avatar"
         loading="eager"
+        :preload="true"
       />
       <span v-else>{{ avatarEmoji }}</span>
     </div>

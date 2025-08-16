@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-background border-t text-foreground">
+  <section class="bg-secondary/12 dark:bg-secondary/5 border-t text-foreground">
     <Container>
       <!-- <p class="font-semibold text-muted-foreground max-w-2xl">
         15+ years of experience as a full-stack software & product engineer
