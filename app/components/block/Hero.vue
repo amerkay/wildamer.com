@@ -1,4 +1,4 @@
-<script lang="ts" setup></script>
+Containerx-w-mdx-w-mdcript lang="ts" setup></script>
 
 <template>
   <div class="relative w-full">
@@ -48,7 +48,7 @@
       <div
         class="mt-12 lg:mt-0 flex h-full items-center justify-center lg:justify-end lg:w-1/3 xl:w-1/2"
       >
-        <WildChat class="max-w-md h-[500px]" />
+        <WildChat class="max-w-md h-[560px] md:h-[500px]" />
       </div>
     </Container>
   </div>
