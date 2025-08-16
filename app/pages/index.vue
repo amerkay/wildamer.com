@@ -4,6 +4,7 @@
     <HowICanHelp />
     <FeaturedProjects />
     <FAQ />
+    <CTA />
   </section>
 </template>
 

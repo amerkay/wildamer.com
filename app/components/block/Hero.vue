@@ -10,7 +10,7 @@
             variant="outline"
             class="px-3 py-1.5 text-xs font-normal lg:text-sm lg:py-2 flex-wrap"
             >Currently volunteering at no charge.
-            <NuxtLink to="#" class="font-bold">Contact me</NuxtLink>
+            <NuxtLink to="/contact" class="font-bold">Contact me</NuxtLink>
             <Icon name="lucide:arrow-right" class="ml-1 h-4 w-4" />
           </Badge>
           <h1
@@ -31,7 +31,7 @@
                 >My recent projects</Button
               >
             </NuxtLink>
-            <NuxtLink to="#">
+            <NuxtLink to="/contact">
               <Button size="lg" class="min-w-56 w-full sm:w-auto"
                 >Let's talk
                 <small>(free for non-profits)</small>
