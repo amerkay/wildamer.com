@@ -16,7 +16,7 @@ const WildChat = defineAsyncComponent({
             to="#"
             variant="outline"
             class="px-3 py-1.5 text-xs font-normal lg:text-sm lg:py-2 flex-wrap tracking-tight"
-            >Currently volunteering at no charge.
+            >Actively volunteering (no charge) &ndash;
             <NuxtLink to="/contact" class="font-bold">Contact me</NuxtLink>
             <Icon name="lucide:arrow-right" class="ml-0.5 h-4 w-4" />
           </Badge>
