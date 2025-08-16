@@ -27,14 +27,15 @@
       />
     </Transition>
 
-    <ol
+    <div
       ref="listEl"
       class="space-y-3 h-full overflow-y-auto"
       role="log"
       aria-live="polite"
       aria-relevant="additions"
+      aria-label="Chat conversation"
     >
-      <li
+      <div
         v-for="(m, i) in visible"
         :key="m.id"
         v-motion
@@ -62,11 +63,11 @@
           :avatar-img="participantAvatarImg(m.from)"
           :avatar-class="avatarClass(m.from)"
         />
-      </li>
-      <li v-if="isScriptComplete" class="flex justify-end">
+      </div>
+      <div v-if="isScriptComplete" class="flex justify-end">
         <Button variant="outline" size="xs" @click="replay"> ↻ Replay </Button>
-      </li>
-    </ol>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -127,7 +128,7 @@ function participantAvatarImg(from: string): string | undefined {
   return participantById[from]?.avatarImg;
 }
 
-const listEl = ref<HTMLOListElement | null>(null);
+const listEl = ref<HTMLDivElement | null>(null);
 const visible = ref<
   Array<{
     id: string;
@@ -198,12 +199,12 @@ async function playOnce(run: number) {
 }
 
 function scrollToBottom() {
-  const ol = listEl.value;
-  if (!ol) return;
+  const div = listEl.value;
+  if (!div) return;
   requestAnimationFrame(() => {
-    const { scrollHeight, clientHeight } = ol;
+    const { scrollHeight, clientHeight } = div;
     isScrollable.value = scrollHeight > clientHeight;
-    ol.scrollTo({ top: scrollHeight, behavior: "smooth" });
+    div.scrollTo({ top: scrollHeight, behavior: "smooth" });
   });
 }
 
