@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useHead } from "#app";
+import { Toaster } from "@/components/ui/sonner";
 import { computed } from "vue";
 
 const siteData = {
@@ -10,6 +11,11 @@ const siteData = {
         title: "Home",
         url: "/",
       },
+      {
+        id: "contact",
+        title: "Contact Me",
+        url: "/contact",
+      },
     ],
   },
   footerNavigation: {
@@ -18,6 +24,11 @@ const siteData = {
         id: "home",
         title: "Home",
         url: "/",
+      },
+      {
+        id: "contact",
+        title: "Contact Me",
+        url: "/contact",
       },
     ],
   },
@@ -70,5 +81,6 @@ useHead({
     <NavigationBar :navigation="headerNavigation" :globals="globals" />
     <NuxtPage class="min-h-[65vh]" />
     <Footer :navigation="footerNavigation" :globals="globals" />
+    <Toaster />
   </div>
 </template>

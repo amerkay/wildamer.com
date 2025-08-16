@@ -139,7 +139,7 @@ const faqs = [
         title: "Phase 1: Volunteering, Research & Discovery",
         date: "July 2025 - June 2026",
         description:
-          "Reaching out to wildlife conservation organizations to volunteer as their tech consultant. Helping them with their technology needs until I identify a common problem that needs a solution.",
+          "The most common mistake entrepreneurs make is not understanding the needs of their users. This is why I'm dedicating an entire year to reaching out to wildlife conservation organizations to volunteer as their tech consultant. Helping them with their technology needs until I identify a common problem that needs a solution.",
         icon: "heroicons:magnifying-glass",
         badge: "Current",
         badgeVariant: "secondary",
