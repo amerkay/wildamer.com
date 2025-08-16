@@ -55,6 +55,11 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  nitro: {
+    prerender: {
+      ignore: [/^\/\.netlify\/images/], // skip Netlify Image CDN endpoints
+    },
+  },
 
   content: {
     experimental: { sqliteConnector: "native" },
