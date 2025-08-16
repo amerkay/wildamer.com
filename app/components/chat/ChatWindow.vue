@@ -86,6 +86,25 @@ interface Props {
 }
 const props = defineProps<Props>();
 
+// Preload all participant avatar images for better performance
+const { $img } = useImage();
+if ($img) {
+  const avatarUrls = props.participants
+    .filter((p) => p.avatarImg)
+    .map((p) => ({
+      rel: "preload" as const,
+      as: "image" as const,
+      href: $img(p.avatarImg!, { preset: "avatar" }),
+      fetchpriority: "high" as const,
+    }));
+
+  if (avatarUrls.length > 0) {
+    useHead({
+      link: avatarUrls,
+    });
+  }
+}
+
 // Add IDs to script lines if they don't have them
 const scriptWithIds = computed(() =>
   props.script.map((m, idx) => ({

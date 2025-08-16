@@ -73,25 +73,6 @@ interface Props {
 }
 const props = defineProps<Props>();
 
-// Preload avatar images using useHead for better performance
-if (props.avatarImg) {
-  // Use the $img composable directly
-  const { $img } = useImage();
-  if ($img) {
-    const avatarUrl = $img(props.avatarImg, { preset: "avatar" });
-
-    useHead({
-      link: [
-        {
-          rel: "preload",
-          as: "image",
-          href: avatarUrl,
-        },
-      ],
-    });
-  }
-}
-
 const containerClasses = computed(() => {
   return props.isMe ? "justify-end" : "justify-start";
 });
