@@ -29,7 +29,7 @@
             >
               <AccordionTrigger
                 :class="[
-                  'text-base/7 font-semibold text-foreground',
+                  'text-base/7 font-bold text-foreground',
                   { 'pt-0': idx === 0 },
                 ]"
                 >{{ faq.question }}</AccordionTrigger
