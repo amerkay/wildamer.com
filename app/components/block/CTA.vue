@@ -1,5 +1,5 @@
 <template>
-  <div class="dark bg-background text-foreground border-t">
+  <div class="dark bg-background/96 text-foreground border-t">
     <Container class="py flex flex-col items-center py-16 text-center lg:py-24">
       <h3 class="mb-4 text-3xl md:mb-5 md:text-4xl font-heading">
         I'd love to hear from you!
