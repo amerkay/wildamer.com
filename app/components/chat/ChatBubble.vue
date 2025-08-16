@@ -17,7 +17,7 @@
         :alt="avatarAriaLabel"
         class="size-full object-cover rounded-full"
         preset="avatar"
-        loading="lazy"
+        loading="eager"
       />
       <span v-else>{{ avatarEmoji }}</span>
     </div>
