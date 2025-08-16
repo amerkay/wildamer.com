@@ -72,6 +72,7 @@
 </template>
 
 <script setup lang="ts">
+import { useScroll } from "@vueuse/core";
 import { computed, nextTick, onMounted, ref } from "vue";
 import ChatBubble from "~/components/chat/ChatBubble.vue";
 import Button from "~/components/ui/button/Button.vue";
@@ -129,6 +130,8 @@ function participantAvatarImg(from: string): string | undefined {
 }
 
 const listEl = ref<HTMLDivElement | null>(null);
+const { y: scrollY } = useScroll(listEl);
+const isScrollable = computed(() => scrollY.value > 0);
 const visible = ref<
   Array<{
     id: string;
@@ -139,7 +142,6 @@ const visible = ref<
   }>
 >([]);
 const isScriptComplete = ref(false);
-const isScrollable = ref(false);
 
 let currentRun = 0;
 let activeTimers: number[] = [];
@@ -202,9 +204,7 @@ function scrollToBottom() {
   const div = listEl.value;
   if (!div) return;
   requestAnimationFrame(() => {
-    const { scrollHeight, clientHeight } = div;
-    isScrollable.value = scrollHeight > clientHeight;
-    div.scrollTo({ top: scrollHeight, behavior: "smooth" });
+    div.scrollTo({ top: div.scrollHeight, behavior: "smooth" });
   });
 }
 
