@@ -1,4 +1,17 @@
 <template>
+  <!-- Preload all avatar images passed from parent -->
+  <template v-if="preloadAvatars?.length">
+    <NuxtImg
+      v-for="avatarUrl in preloadAvatars"
+      :key="avatarUrl"
+      :src="avatarUrl"
+      preset="avatar"
+      :preload="{ fetchPriority: 'high' }"
+      style="display: none"
+      aria-hidden="true"
+    />
+  </template>
+
   <div class="flex items-start gap-2" :class="containerClasses">
     <!-- avatar left -->
     <div
@@ -17,8 +30,6 @@
         :alt="avatarAriaLabel"
         class="size-full object-cover rounded-full"
         preset="avatar"
-        loading="eager"
-        :preload="true"
       />
       <span v-else>{{ avatarEmoji }}</span>
     </div>
@@ -73,6 +84,7 @@ interface Props {
   avatarEmoji?: string;
   avatarImg?: string;
   avatarClass?: string;
+  preloadAvatars?: string[];
 }
 const props = defineProps<Props>();
 
