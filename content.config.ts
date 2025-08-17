@@ -5,7 +5,6 @@ export default defineContentConfig({
     projects: defineCollection({
       type: "page",
       source: "projects/*.md",
-      // Define custom schema for docs collection
       schema: z.object({
         title: z.string(),
         description: z.string(),
@@ -13,8 +12,10 @@ export default defineContentConfig({
         isComingSoon: z.boolean().optional(),
         featuredOrder: z.number().optional(),
         tags: z.array(z.string()),
-        image: z.string(),
+        image: z.string().optional(),
         imageDark: z.string().optional(),
+        video: z.string().optional(),
+        videoDark: z.string().optional(),
         date: z.date(),
         cardPreHeading: z.string().optional(),
         cardHeading: z.string().optional(),

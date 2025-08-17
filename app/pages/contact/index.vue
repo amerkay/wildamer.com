@@ -14,6 +14,11 @@ useHead({
     },
   ],
 });
+
+defineOgImageComponent("OGWildAmer", {
+  title: "I'm on a mission to build tech for wildlife conservation!",
+  cta: "Message me about your tech needs",
+});
 </script>
 
 <template>

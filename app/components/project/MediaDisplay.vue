@@ -1,28 +1,30 @@
 <template>
   <div>
-    <!-- Handle .webm video files -->
-    <template v-if="image?.endsWith('.webm')">
+    <!-- If explicit video props provided, render them with light/dark variants -->
+    <template v-if="video">
       <video
         :class="cn(['w-full', mediaClasses, 'dark:hidden'])"
-        :src="image"
+        :src="video"
         autoplay
         loop
         muted
         playsinline
       />
       <video
-        v-if="imageDark"
+        v-if="videoDark"
         :class="cn(['w-full', mediaClasses, 'hidden dark:block'])"
-        :src="imageDark"
+        :src="videoDark"
         autoplay
         loop
         muted
         playsinline
       />
     </template>
+
     <!-- Handle regular images with light/dark variants -->
     <template v-else>
       <NuxtImg
+        v-if="image"
         :class="cn('w-full', mediaClasses, 'dark:hidden')"
         :src="image"
         :alt="alt"
@@ -49,14 +51,20 @@
 import { cn } from "~/lib/utils";
 
 interface Props {
-  image: string;
+  image?: string;
   imageDark?: string;
-  alt: string;
+  video?: string;
+  videoDark?: string;
+  alt?: string;
   mediaClasses?: string;
 }
 
 withDefaults(defineProps<Props>(), {
+  image: undefined,
   imageDark: undefined,
+  video: undefined,
+  videoDark: undefined,
+  alt: undefined,
   mediaClasses: "h-80 object-cover",
 });
 </script>

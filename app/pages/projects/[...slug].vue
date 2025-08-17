@@ -9,10 +9,16 @@ if (route.path === "/projects/") {
 const { data: project } = await useAsyncData(route.path, () => {
   return queryCollection("projects").path(route.path).first();
 });
+
+defineOgImageComponent("OGWildAmer", {
+  title: project.value?.title,
+  image: project.value?.image,
+});
 </script>
 
 <template>
   <Container>
+    <!-- <pre>{{ project }}</pre> -->
     <ContentRenderer v-if="project" :value="project" />
   </Container>
 </template>

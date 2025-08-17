@@ -74,6 +74,13 @@ export default defineNuxtConfig({
   ogImage: {
     fonts: ["Anton:400", "Montserrat:400", "Montserrat:700"],
     // debug: true,
+    zeroRuntime: true,
+
+    defaults: {
+      cacheMaxAgeSeconds: 60,
+      component: "OGWildAmer",
+    },
+    // strictNuxtContentPaths: true,
   },
 
   image: {

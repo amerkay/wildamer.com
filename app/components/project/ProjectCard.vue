@@ -16,7 +16,9 @@
       <MediaDisplay
         :image="project.image"
         :image-dark="project.imageDark"
-        :alt="project.title"
+        :video="project.video"
+        :video-dark="project.videoDark"
+        :alt="project.title ?? ''"
         :media-classes="mediaClasses"
       />
       <div class="p-10 pt-4">
@@ -55,12 +57,13 @@ interface Props {
   backgroundModifiers?: string;
   contentModifiers?: string;
   borderModifiers?: string;
-  mediaClasses: string;
+  mediaClasses?: string;
 }
 
 withDefaults(defineProps<Props>(), {
   backgroundModifiers: "",
   contentModifiers: "",
   borderModifiers: "",
+  mediaClasses: "h-80 object-cover",
 });
 </script>
