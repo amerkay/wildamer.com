@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     // docs @ https://motion.vueuse.org/getting-started/nuxt
     "@vueuse/motion/nuxt",
     "nuxt-og-image",
+    "@nuxtjs/seo",
   ],
 
   components: [

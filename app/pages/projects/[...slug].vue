@@ -14,6 +14,12 @@ defineOgImageComponent("OGWildAmer", {
   title: project.value?.title,
   image: project.value?.image,
 });
+
+useSeoMeta({
+  title: project.value?.title,
+  description: project.value?.description,
+  ogType: "article",
+});
 </script>
 
 <template>
