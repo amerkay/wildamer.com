@@ -3,6 +3,8 @@ import { useHead } from "#app";
 import { Toaster } from "@/components/ui/sonner";
 import { computed } from "vue";
 
+const siteDataConfig = useSiteConfig();
+
 const siteData = {
   headerNavigation: {
     items: [
@@ -33,12 +35,11 @@ const siteData = {
     ],
   },
   globals: {
-    title: "Amer Kawar - Wildlife Conservation Tech Consultant",
+    title: siteDataConfig.name,
     description:
       "Explore my work in wildlife conservation technology, including projects on data analysis, and all things tech.",
-    logo: {},
-    logo_dark_mode: {},
-    favicon: "",
+    linkedin: "https://www.linkedin.com/in/amerkawar/",
+    github: "https://github.com/amerkay",
   },
 };
 
@@ -56,12 +57,6 @@ const globals = computed(
 
 const siteTitle = computed(() => globals.value?.title || "Unknown");
 const siteDescription = computed(() => globals.value?.description || "");
-const faviconURL = computed(
-  () => "/favicon.ico"
-  //   globals.value?.favicon
-  //     ? `${directusUrl}/assets/${globals.value.favicon}?height=100`
-  //     : "/favicon.ico"
-);
 
 useHead({
   titleTemplate: (pageTitle) =>
@@ -72,7 +67,6 @@ useHead({
     { property: "og:description", content: siteDescription },
     { property: "og:type", content: "website" },
   ],
-  link: [{ rel: "icon", type: "image/x-icon", href: faviconURL }],
 });
 </script>
 

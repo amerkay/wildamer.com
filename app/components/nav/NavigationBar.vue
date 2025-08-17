@@ -25,9 +25,8 @@ interface Navigation {
 export interface Globals {
   title: string;
   description: string;
-  logo: object;
-  logo_dark_mode: object;
-  favicon: string;
+  linkedin?: string;
+  github?: string;
 }
 
 const _props = defineProps<{
@@ -179,6 +178,13 @@ const getDropdownClasses = (active: boolean) => [
             </div>
           </div>
 
+          <!-- Social icons (desktop) -->
+          <SocialLinks
+            class="hidden sm:flex sm:items-center sm:space-x-2 ml-4"
+            :linkedin="globals?.linkedin"
+            :github="globals?.github"
+          />
+
           <ThemeToggle class="ml-3" />
         </div>
       </div>
@@ -245,6 +251,11 @@ const getDropdownClasses = (active: boolean) => [
             </NuxtLink>
           </template>
         </template>
+      </div>
+
+      <!-- Social icons (mobile) -->
+      <div class="px-3 pb-3">
+        <SocialLinks :linkedin="globals?.linkedin" :github="globals?.github" />
       </div>
     </DisclosurePanel>
   </Disclosure>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Globals } from "./NavigationBar.vue";
+import SocialLinks from "./SocialLinks.vue";
 
 export interface SocialLink {
   service: string;
@@ -42,29 +43,12 @@ const props = defineProps<FooterProps>();
           </p>
 
           <!-- Social Links -->
-          <!-- <div
-            v-if="props.globals.social_links?.length"
-            class="mt-4 flex space-x-4"
-          >
-            <a
-              v-for="social in props.globals.social_links"
-              :key="social.service"
-              :href="social.url"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex size-8 items-center justify-center rounded-sm bg-transparent transition-colors hover:opacity-70"
-            >
-              <NuxtImg
-                :src="`/icons/social/${social.service}.svg`"
-                :alt="`${social.service} icon`"
-                class="size-6 dark:invert accent-high-contrast:invert"
-                width="24"
-                height="24"
-                loading="lazy"
-                sizes="24px"
-              />
-            </a>
-          </div> -->
+          <SocialLinks
+            v-if="props.globals.linkedin || props.globals.github"
+            :linkedin="props.globals.linkedin"
+            :github="props.globals.github"
+            class="mt-4"
+          />
         </div>
 
         <div class="flex flex-1 flex-col items-start md:items-end">

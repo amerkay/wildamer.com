@@ -24,10 +24,7 @@ onMounted(() => {
     id="theme-toggle"
     variant="outline"
     aria-label="Toggle Dark Mode"
-    :class="[
-      'h-8 w-8 rounded-full hover:!bg-secondary hover:text-secondary-foreground',
-      className,
-    ]"
+    :class="['h-8 w-8 rounded-full', className]"
     @click="toggleTheme"
   >
     <!-- Show consistent icon during SSR, then switch to dynamic on client -->
