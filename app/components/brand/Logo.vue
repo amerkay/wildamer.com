@@ -21,13 +21,11 @@
 
       <div class="text-block text-left">
         <div
-          class="font-heading text-[1.8rem] sm:text-[2.25rem] text-gray-800 dark:text-gray-100 -mt-1 -mb-1 sm:-mb-2"
+          class="font-heading text-[1.8rem] sm:text-[2.25rem] text-foreground -mt-1 -mb-1 sm:-mb-2"
         >
           Amer Kawar
         </div>
-        <div
-          class="text-[0.72rem] sm:text-[0.9rem] text-gray-600 dark:text-gray-300"
-        >
+        <div class="text-[0.72rem] sm:text-[0.9rem] text-foreground">
           Wildlife Tech Consultant
         </div>
       </div>

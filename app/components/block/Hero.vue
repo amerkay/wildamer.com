@@ -34,12 +34,15 @@ const WildChat = defineAsyncComponent({
 
           <div class="mt-8 grid grid-cols-1 gap-3 lg:flex lg:mt-12">
             <NuxtLink to="#featured-projects">
-              <Button size="lg" variant="outline" class="w-full sm:w-auto"
+              <Button
+                size="lg"
+                variant="outline"
+                class="min-w-72 w-full sm:w-auto lg:min-w-auto"
                 >My recent projects</Button
               >
             </NuxtLink>
             <NuxtLink to="/contact">
-              <Button size="lg" class="min-w-56 w-full sm:w-auto"
+              <Button size="lg" class="min-w-72 w-full sm:w-auto"
                 >Let's talk
                 <small>(free for non-profits)</small>
               </Button>

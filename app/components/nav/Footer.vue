@@ -35,7 +35,7 @@ const props = defineProps<FooterProps>();
           <p
             v-if="props.globals.description"
             ref="description"
-            class="text-description mt-2"
+            class="text-muted-foreground mt-2"
           >
             <span>
               {{ props.globals.description }}
@@ -60,7 +60,7 @@ const props = defineProps<FooterProps>();
               <li v-for="item in props.navigation.items" :key="item.id">
                 <NuxtLink
                   :to="item.url || '#'"
-                  class="font-medium hover:underline"
+                  class="font-medium hover:underline text-foreground hover:text-primary-foreground"
                 >
                   {{ item.title }}
                 </NuxtLink>
