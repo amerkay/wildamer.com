@@ -13,13 +13,64 @@ withDefaults(
 
 <template>
   <div
-    class="w-full h-full flex flex-row p-10"
+    class="w-full h-full flex flex-row p-10 relative overflow-hidden"
     :style="{
       backgroundColor: '#17130f',
       color: 'hsl(60 20% 99.0196%)',
       fontFamily: 'Montserrat, sans-serif',
     }"
   >
+    <!-- Floating animal avatars (curved wind path, spaced out) -->
+    <img
+      src="/imgs/avatar-barnowl.jpg"
+      alt="Barn Owl"
+      class="absolute -top-2 right-4 w-28 h-28 rounded-full object-cover border-4 shadow-lg opacity-80"
+      :style="{ borderColor: 'hsl(26 17% 20%)' }"
+      width="112"
+      height="112"
+    />
+    <img
+      src="/imgs/avatar-flyingfox.jpg"
+      alt="Flying Fox"
+      class="absolute top-28 -right-4 w-26 h-26 rounded-full object-cover border-4 shadow-lg opacity-70"
+      :style="{ borderColor: 'hsl(26 17% 20%)' }"
+      width="128"
+      height="128"
+    />
+    <img
+      src="/imgs/avatar-flyingfox2.jpg"
+      alt="Flying Fox Gliding"
+      class="absolute top-76 -right-2 w-24 h-24 rounded-full object-cover border-4 shadow-lg opacity-60"
+      :style="{ borderColor: 'hsl(26 17% 20%)' }"
+      width="96"
+      height="96"
+    />
+    <img
+      src="/imgs/avatar-hedgehog.jpg"
+      alt="Hedgehog"
+      class="absolute top-54 right-8 w-24 h-24 rounded-full object-cover border-4 shadow-lg opacity-65"
+      :style="{ borderColor: 'hsl(26 17% 20%)' }"
+      width="100"
+      height="100"
+    />
+    <img
+      src="/imgs/avatar-seal.jpg"
+      alt="Seal"
+      class="absolute -bottom-3 -right-3 w-28 h-28 rounded-full object-cover border-4 shadow-lg opacity-75"
+      :style="{ borderColor: 'hsl(26 17% 20%)' }"
+      width="112"
+      height="112"
+    />
+    <img
+      src="/imgs/avatar-elephant.png"
+      alt="Elephant"
+      class="absolute bottom-22 right-4 w-28 h-28 rounded-full object-cover border-4 shadow-lg opacity-75"
+      :style="{ borderColor: 'hsl(26 17% 20%)' }"
+      width="125"
+      height="125"
+    />
+
+    <!-- Main content wrapper -->
     <div
       class="flex flex-col h-full w-full"
       :class="centered ? 'justify-center items-center' : 'justify-center'"
@@ -82,8 +133,12 @@ withDefaults(
             Amer Kawar
           </div>
 
-          <p class="my-0">Wildlife Tech Consultant &ndash; WildAmer.com</p>
-          <p class="-my-2">15+ YoE software & product engineer</p>
+          <p class="my-0" :class="centered ? 'text-center' : ''">
+            Wildlife Tech Consultant &ndash; WildAmer.com
+          </p>
+          <p class="-my-2" :class="centered ? 'text-center' : ''">
+            15+ YoE software & product engineer
+          </p>
         </div>
       </div>
     </div>
