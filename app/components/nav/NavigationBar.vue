@@ -180,12 +180,12 @@ const getDropdownClasses = (active: boolean) => [
 
           <!-- Social icons (desktop) -->
           <SocialLinks
-            class="hidden sm:flex sm:items-center sm:space-x-2 ml-4"
+            class="hidden sm:block mx-6"
             :linkedin="globals?.linkedin"
             :github="globals?.github"
           />
 
-          <ThemeToggle class="ml-3" />
+          <ThemeToggle />
         </div>
       </div>
     </Container>
@@ -254,7 +254,7 @@ const getDropdownClasses = (active: boolean) => [
       </div>
 
       <!-- Social icons (mobile) -->
-      <div class="px-3 pb-3">
+      <div class="px-4 pt-2 pb-4">
         <SocialLinks :linkedin="globals?.linkedin" :github="globals?.github" />
       </div>
     </DisclosurePanel>

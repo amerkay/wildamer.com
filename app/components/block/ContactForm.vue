@@ -98,7 +98,7 @@ const onSubmit = form.handleSubmit(async (values) => {
           <FormControl>
             <Input
               type="text"
-              placeholder="Your full name"
+              placeholder="Your name"
               v-bind="componentField"
             />
           </FormControl>
@@ -112,7 +112,7 @@ const onSubmit = form.handleSubmit(async (values) => {
           <FormControl>
             <Input
               type="email"
-              placeholder="your.email@example.com"
+              placeholder="your.email@awesome.org"
               v-bind="componentField"
             />
           </FormControl>

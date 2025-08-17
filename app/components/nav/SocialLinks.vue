@@ -13,28 +13,30 @@ const props = defineProps<{
       v-if="props.linkedin"
       as="a"
       variant="outline"
+      size="lg"
       :href="props.linkedin"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="LinkedIn"
       title="LinkedIn"
-      class="h-8 w-8 p-0"
+      class="size-10 p-0"
     >
-      <Icon name="lucide:linkedin" class="size-5" size="18" />
+      <Icon name="lucide:linkedin" class="size-6 text-current" size="20" />
     </Button>
 
     <Button
       v-if="props.github"
       as="a"
       variant="outline"
+      size="lg"
       :href="props.github"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="GitHub"
       title="GitHub"
-      class="h-8 w-8 p-0"
+      class="size-10 p-0"
     >
-      <Icon name="lucide:github" class="size-5" size="18" />
+      <Icon name="lucide:github" class="size-6" size="20" />
     </Button>
   </div>
 </template>

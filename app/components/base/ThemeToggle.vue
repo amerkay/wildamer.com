@@ -24,7 +24,7 @@ onMounted(() => {
     id="theme-toggle"
     variant="outline"
     aria-label="Toggle Dark Mode"
-    :class="['h-8 w-8 rounded-full', className]"
+    :class="['size-10 ', className]"
     @click="toggleTheme"
   >
     <!-- Show consistent icon during SSR, then switch to dynamic on client -->
@@ -32,10 +32,10 @@ onMounted(() => {
       <Icon
         v-if="!isClient || !isDark"
         name="lucide:sun"
-        class="h-6 w-6"
+        class="h-7 w-7"
         size="20"
       />
-      <Icon v-else name="lucide:moon" class="h-5 w-5 text-current" size="20" />
+      <Icon v-else name="lucide:moon" class="h-7 w-7" size="20" />
     </div>
   </Button>
 </template>
