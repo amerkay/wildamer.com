@@ -5,7 +5,7 @@ definePageMeta({
 });
 
 useHead({
-  title: "Message Sent Successfully - Amer Kawar",
+  title: "Message Sent Successfully",
 });
 </script>
 
