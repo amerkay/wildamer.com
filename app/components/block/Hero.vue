@@ -3,7 +3,7 @@ import { defineAsyncComponent, hydrateOnVisible } from "vue";
 
 const WildChat = defineAsyncComponent({
   loader: () => import("~/components/block/WildChat.vue"),
-  hydrate: hydrateOnVisible({ rootMargin: "100px" }),
+  hydrate: hydrateOnVisible({ threshold: 0.2 }),
 });
 </script>
 

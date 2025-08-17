@@ -32,7 +32,11 @@
           {{ project.description }}
         </p>
         <Badge v-if="project.isComingSoon" variant="secondary" class="mt-4">
-          Write up coming soon&hellip;
+          Write up<NuxtLink
+            :to="project.path"
+            class="!text-secondary-foreground"
+            >coming soon&hellip;</NuxtLink
+          >
         </Badge>
       </div>
     </div>

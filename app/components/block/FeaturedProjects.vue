@@ -54,7 +54,7 @@ const cardLayouts = [
     contentModifiers:
       "max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]",
     borderModifiers: "max-lg:rounded-t-4xl lg:rounded-tl-4xl",
-    mediaClasses: "h-80 object-cover object-bottom",
+    mediaClasses: "h-80 object-cover object-top-left",
   },
   // Second card (top-right, large)
   {
@@ -62,7 +62,7 @@ const cardLayouts = [
     backgroundModifiers: "lg:rounded-tr-4xl",
     contentModifiers: "lg:rounded-tr-[calc(2rem+1px)]",
     borderModifiers: "lg:rounded-tr-4xl",
-    mediaClasses: "h-80 object-cover object-bottom",
+    mediaClasses: "h-80 object-cover object-top-left",
   },
   // Third card (bottom-left, small)
   {
@@ -70,7 +70,7 @@ const cardLayouts = [
     backgroundModifiers: "lg:rounded-bl-4xl",
     contentModifiers: "lg:rounded-bl-[calc(2rem+1px)]",
     borderModifiers: "lg:rounded-bl-4xl",
-    mediaClasses: "h-80 object-cover object-bottom",
+    mediaClasses: "h-80 object-cover object-top-left",
   },
   // Fourth card (bottom-center, small)
   {
@@ -78,7 +78,7 @@ const cardLayouts = [
     backgroundModifiers: "",
     contentModifiers: "",
     borderModifiers: "",
-    mediaClasses: "h-80 object-cover object-bottom",
+    mediaClasses: "h-80 object-cover object-top-left",
   },
   // Fifth card (bottom-right, small)
   {
@@ -87,7 +87,7 @@ const cardLayouts = [
     contentModifiers:
       "max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]",
     borderModifiers: "max-lg:rounded-b-4xl lg:rounded-br-4xl",
-    mediaClasses: "h-80 object-cover object-bottom",
+    mediaClasses: "h-80 object-cover object-top-left",
   },
 ];
 </script>
