@@ -55,7 +55,7 @@ const WildChat = defineAsyncComponent({
       <div
         class="mt-12 lg:mt-0 flex h-full items-center justify-center lg:justify-end lg:w-1/3 xl:w-1/2"
       >
-        <WildChat class="max-w-xs h-[550px] xl:max-w-sm xl:h-[510px]" />
+        <WildChat class="max-w-xs h-[600px] xl:max-w-sm xl:h-[550px]" />
       </div>
     </Container>
   </div>

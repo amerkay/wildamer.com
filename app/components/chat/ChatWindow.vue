@@ -82,7 +82,7 @@ interface Participant {
   label: string;
   emoji: string;
   avatarImg?: string;
-  avatarClass: string;
+  avatarClass?: string;
 }
 
 type ScriptLine = {

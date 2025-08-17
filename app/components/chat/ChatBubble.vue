@@ -18,7 +18,7 @@
         class="size-full object-cover rounded-full"
         preset="avatar"
       />
-      <span v-else>{{ avatarEmoji }}</span>
+      <span v-else class="text-2xl">{{ avatarEmoji }}</span>
     </div>
 
     <!-- message bubble -->
@@ -58,7 +58,7 @@
         class="size-full object-cover rounded-full"
         preset="avatar"
       />
-      <span v-else>{{ avatarEmoji }}</span>
+      <span v-else class="text-2xl">{{ avatarEmoji }}</span>
     </div>
   </div>
 </template>
