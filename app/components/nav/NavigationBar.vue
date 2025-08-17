@@ -61,14 +61,14 @@ const getItemClasses = (
 
   return [
     isActive
-      ? "bg-accent text-accent-foreground"
-      : "text-foreground hover:bg-accent hover:text-accent-foreground",
+      ? "bg-secondary text-secondary-foreground"
+      : "text-foreground hover:bg-secondary hover:text-secondary-foreground",
     base,
   ];
 };
 
 const getDropdownClasses = (active: boolean) => [
-  active ? "bg-accent text-accent-foreground" : "text-card-foreground",
+  active ? "bg-secondary text-secondary-foreground" : "text-card-foreground",
   "block px-4 py-2 text-base",
 ];
 </script>
@@ -84,7 +84,7 @@ const getDropdownClasses = (active: boolean) => [
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
           <DisclosureButton
-            class="relative inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-accent hover:text-accent-foreground focus:ring-2 focus:ring-primary focus:outline-none focus:ring-inset"
+            class="relative inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-secondary hover:text-secondary-foreground focus:ring-2 focus:ring-primary focus:outline-none focus:ring-inset"
           >
             <span class="absolute -inset-0.5" />
             <span class="sr-only">Open main menu</span>
@@ -113,7 +113,7 @@ const getDropdownClasses = (active: boolean) => [
                 >
                   <div>
                     <MenuButton
-                      class="inline-flex items-center justify-center rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground focus:outline-none"
+                      class="inline-flex items-center justify-center rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-secondary hover:text-secondary-foreground focus:outline-none"
                     >
                       <span>{{ item.title }}</span>
                       <ChevronDownIcon
@@ -182,7 +182,7 @@ const getDropdownClasses = (active: boolean) => [
           <div v-if="item.children?.length" class="space-y-1">
             <Disclosure v-slot="{ open: childOpen }">
               <DisclosureButton
-                class="flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
+                class="flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-secondary hover:text-secondary-foreground"
               >
                 <span>{{ item.title }}</span>
                 <ChevronDownIcon

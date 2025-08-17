@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     // docs @ https://motion.vueuse.org/getting-started/nuxt
     "@vueuse/motion/nuxt",
+    "nuxt-og-image",
   ],
 
   components: [
@@ -63,6 +64,16 @@ export default defineNuxtConfig({
 
   content: {
     experimental: { sqliteConnector: "native" },
+  },
+
+  site: {
+    url: "https://wildamer.com",
+    name: "Amer Kawar - Wildlife Conservation Tech Consultant",
+  },
+
+  ogImage: {
+    fonts: ["Anton:400", "Montserrat:400", "Montserrat:700"],
+    debug: true,
   },
 
   image: {
