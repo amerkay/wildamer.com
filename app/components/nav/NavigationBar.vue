@@ -8,11 +8,6 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
-import {
-  Bars3Icon,
-  ChevronDownIcon,
-  XMarkIcon,
-} from "@heroicons/vue/24/outline";
 
 interface NavigationItem {
   id: string;
@@ -88,8 +83,20 @@ const getDropdownClasses = (active: boolean) => [
           >
             <span class="absolute -inset-0.5" />
             <span class="sr-only">Open main menu</span>
-            <Bars3Icon v-if="!open" class="block size-6" aria-hidden="true" />
-            <XMarkIcon v-else class="block size-6" aria-hidden="true" />
+            <Icon
+              v-if="!open"
+              name="lucide:menu"
+              class="block"
+              size="24"
+              aria-hidden="true"
+            />
+            <Icon
+              v-else
+              name="lucide:x"
+              class="block"
+              aria-hidden="true"
+              size="24"
+            />
           </DisclosureButton>
         </div>
         <div
@@ -116,9 +123,11 @@ const getDropdownClasses = (active: boolean) => [
                       class="inline-flex items-center justify-center rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-secondary hover:text-secondary-foreground focus:outline-none"
                     >
                       <span>{{ item.title }}</span>
-                      <ChevronDownIcon
+                      <Icon
+                        name="lucide:chevron-down"
                         class="-mr-1 ml-1 size-4 text-current/70"
                         aria-hidden="true"
+                        size="18"
                       />
                     </MenuButton>
                   </div>
@@ -185,11 +194,13 @@ const getDropdownClasses = (active: boolean) => [
                 class="flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-secondary hover:text-secondary-foreground"
               >
                 <span>{{ item.title }}</span>
-                <ChevronDownIcon
+                <Icon
+                  :name="`lucide:chevron-down`"
                   :class="[
                     childOpen ? 'rotate-180 transform' : '',
                     'size-5 text-foreground/70',
                   ]"
+                  size="18"
                 />
               </DisclosureButton>
               <DisclosurePanel class="ml-4 space-y-1 pt-1 pb-2">

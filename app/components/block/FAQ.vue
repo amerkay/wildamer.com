@@ -207,7 +207,7 @@ const faqs = [
         date: "July 2025 - June 2026",
         description:
           "The most common mistake entrepreneurs make is not understanding the needs of their users. This is why I'm dedicating an entire year to reaching out to wildlife conservation organizations to volunteer as their tech consultant. Helping them with their technology needs until I identify a common problem that needs a solution.",
-        icon: "heroicons:magnifying-glass",
+        icon: "lucide:search",
         badge: "Current",
         badgeVariant: "secondary",
       },
@@ -216,7 +216,7 @@ const faqs = [
         date: "Start: July 2026",
         description:
           "Build a minimum viable software to solve that problem. Build it in-public with regular progress updates posted online to reach more conservationists.",
-        icon: "heroicons:wrench-screwdriver",
+        icon: "lucide:wrench",
         // action: {
         //   text: "Follow Progress",
         //   href: "#",
@@ -228,7 +228,7 @@ const faqs = [
         date: "Future Phase",
         description:
           "Growing it. Offering it to hundreds or thousands of conservation efforts.",
-        icon: "heroicons:chart-bar",
+        icon: "lucide:bar-chart",
         // badge: "Future",
         // badgeVariant: "outline",
       },

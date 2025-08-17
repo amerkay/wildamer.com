@@ -41,7 +41,7 @@
               <Icon
                 :name="f.icon"
                 size="24"
-                class="h-52 w-52 transition-transform duration-300 text-secondary-foreground dark:text-white/90 transform group-hover:scale-110"
+                class="h-52 w-52 transition-transform duration-300 text-secondary-foreground/90 dark:text-white/90 transform group-hover:scale-110"
               />
             </div>
             <h3
@@ -62,7 +62,7 @@
         <Button variant="outline" @click="showAllFeatures = true">
           I can do a lot more!
 
-          <Icon name="lucide:chevron-down" class="ml-2 h-4 w-4" />
+          <Icon name="lucide:chevron-down" class="ml-2 h-4 w-4" size="20" />
         </Button>
       </div>
     </Container>

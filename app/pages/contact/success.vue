@@ -14,7 +14,7 @@ useHead({
     <div class="max-w-2xl mx-auto text-center py-16">
       <div class="mb-8">
         <Icon
-          name="heroicons:check-circle"
+          name="lucide:circle-check"
           class="text-primary mx-auto mb-4"
           size="64"
         />

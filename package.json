@@ -44,6 +44,7 @@
     "zod": "^4.0.17"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.62",
     "@tailwindcss/typography": "^0.5.16",
     "@typescript-eslint/eslint-plugin": "^8.39.1",
     "@typescript-eslint/parser": "^8.39.1",
