@@ -1,79 +1,6 @@
-<template>
-  <div class="relative flex-1 overflow-hidden">
-    <!-- Hidden preload images for SSR -->
-    <div class="sr-only" aria-hidden="true">
-      <NuxtImg
-        v-for="participant in participantsWithImages"
-        :key="`preload-${participant.id}`"
-        :src="participant.avatarImg"
-        :alt="participant.label"
-        preset="avatar"
-        preload
-      />
-    </div>
-
-    <!-- fade overlay at top -->
-    <Transition
-      enter-active-class="transition-all duration-500 ease-out"
-      enter-from-class="opacity-0 -translate-y-8"
-      enter-to-class="opacity-100 translate-y-0"
-      leave-active-class="transition-all duration-300 ease-in"
-      leave-from-class="opacity-100 translate-y-0"
-      leave-to-class="opacity-0 -translate-y-8"
-    >
-      <div
-        v-if="isScrollable"
-        class="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-background to-transparent pointer-events-none z-10"
-      />
-    </Transition>
-
-    <div
-      ref="listEl"
-      class="space-y-3 h-full overflow-y-auto"
-      role="log"
-      aria-live="polite"
-      aria-relevant="additions"
-      aria-label="Chat conversation"
-    >
-      <div
-        v-for="(m, i) in visible"
-        :key="m.id"
-        v-motion
-        class="flex items-start gap-2"
-        :class="m.from === 'amer' ? 'justify-end' : 'justify-start'"
-        :initial="{ opacity: 0, y: 12 }"
-        :enter="{
-          opacity: 1,
-          y: 0,
-          transition: {
-            type: 'spring',
-            stiffness: 180,
-            damping: 18,
-            delay: i * 0.04,
-          },
-        }"
-      >
-        <ChatBubble
-          :is-me="m.from === 'amer'"
-          :text="m.text"
-          :typing="m.typing"
-          :show-name="m.showName"
-          :label="senderLabel(m.from)"
-          :avatar-emoji="participantEmoji(m.from)"
-          :avatar-img="participantAvatarImg(m.from)"
-          :avatar-class="avatarClass(m.from)"
-        />
-      </div>
-      <div v-if="isScriptComplete" class="flex justify-end">
-        <Button variant="outline" size="xs" @click="replay"> ↻ Replay </Button>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { useScroll } from "@vueuse/core";
-import { computed, nextTick, onMounted, ref } from "vue";
+import { useIntersectionObserver, useScroll } from "@vueuse/core";
+import { computed, nextTick, ref, withDefaults } from "vue";
 import ChatBubble from "~/components/chat/ChatBubble.vue";
 import Button from "~/components/ui/button/Button.vue";
 
@@ -97,8 +24,11 @@ type ScriptLine = {
 interface Props {
   participants: Participant[];
   script: ScriptLine[];
+  startThreshold?: number;
 }
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+  startThreshold: 0.3,
+});
 
 // Add IDs to script lines if they don't have them
 const scriptWithIds = computed(() =>
@@ -130,6 +60,7 @@ function participantAvatarImg(from: string): string | undefined {
 }
 
 const listEl = ref<HTMLDivElement | null>(null);
+const containerEl = ref<HTMLDivElement | null>(null);
 const { y: scrollY } = useScroll(listEl);
 const isScrollable = computed(() => scrollY.value > 0);
 const visible = ref<
@@ -142,6 +73,26 @@ const visible = ref<
   }>
 >([]);
 const isScriptComplete = ref(false);
+const hasStarted = ref(false);
+
+// Set up intersection observer
+useIntersectionObserver(
+  containerEl,
+  ([entry]) => {
+    if (
+      entry &&
+      entry.isIntersecting &&
+      entry.intersectionRatio >= props.startThreshold &&
+      !hasStarted.value
+    ) {
+      hasStarted.value = true;
+      replay();
+    }
+  },
+  {
+    threshold: props.startThreshold,
+  }
+);
 
 let currentRun = 0;
 let activeTimers: number[] = [];
@@ -213,8 +164,77 @@ async function replay() {
   clearTimers();
   await playOnce(currentRun);
 }
-
-onMounted(() => {
-  replay();
-});
 </script>
+
+<template>
+  <div ref="containerEl" class="relative flex-1 overflow-hidden">
+    <!-- Hidden preload images for SSR -->
+    <div class="sr-only" aria-hidden="true">
+      <NuxtImg
+        v-for="participant in participantsWithImages"
+        :key="`preload-${participant.id}`"
+        :src="participant.avatarImg"
+        :alt="participant.label"
+        preset="avatar"
+        preload
+      />
+    </div>
+
+    <!-- fade overlay at top -->
+    <Transition
+      enter-active-class="transition-all duration-500 ease-out"
+      enter-from-class="opacity-0 -translate-y-8"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition-all duration-300 ease-in"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 -translate-y-8"
+    >
+      <div
+        v-if="isScrollable"
+        class="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-background to-transparent pointer-events-none z-10"
+      />
+    </Transition>
+
+    <div
+      ref="listEl"
+      class="space-y-3 h-full overflow-y-auto"
+      role="log"
+      aria-live="polite"
+      aria-relevant="additions"
+      aria-label="Chat conversation"
+    >
+      <div
+        v-for="(m, i) in visible"
+        :key="m.id"
+        v-motion
+        class="flex items-start gap-2"
+        :class="m.from === 'amer' ? 'justify-end' : 'justify-start'"
+        :initial="{ opacity: 0, y: 12 }"
+        :enter="{
+          opacity: 1,
+          y: 0,
+          transition: {
+            type: 'spring',
+            stiffness: 180,
+            damping: 18,
+            delay: i * 0.04,
+          },
+        }"
+      >
+        <ChatBubble
+          :is-me="m.from === 'amer'"
+          :text="m.text"
+          :typing="m.typing"
+          :show-name="m.showName"
+          :label="senderLabel(m.from)"
+          :avatar-emoji="participantEmoji(m.from)"
+          :avatar-img="participantAvatarImg(m.from)"
+          :avatar-class="avatarClass(m.from)"
+        />
+      </div>
+      <div v-if="isScriptComplete" class="flex justify-end">
+        <Button variant="outline" size="xs" @click="replay"> ↻ Replay </Button>
+      </div>
+    </div>
+  </div>
+</template>

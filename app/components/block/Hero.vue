@@ -1,11 +1,4 @@
-<script lang="ts" setup>
-import { defineAsyncComponent, hydrateOnVisible } from "vue";
-
-const WildChat = defineAsyncComponent({
-  loader: () => import("~/components/block/WildChat.vue"),
-  hydrate: hydrateOnVisible({ threshold: 0.2 }),
-});
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div class="relative w-full">

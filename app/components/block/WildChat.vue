@@ -1,16 +1,3 @@
-<template>
-  <div class="flex flex-col items-end w-full">
-    <!-- for card: border bg-card text-card-foreground shadow-md -->
-    <aside
-      class="max-w-sm w-full md:max-w-sm lg:max-w-lg rounded-xl flex flex-col h-full"
-      role="complementary"
-      aria-label="Story chat preview"
-    >
-      <ChatWindow :participants="participants" :script="chatScript" />
-    </aside>
-  </div>
-</template>
-
 <script setup lang="ts">
 import ChatWindow from "~/components/chat/ChatWindow.vue";
 
@@ -92,3 +79,20 @@ const chatScript = [
   },
 ];
 </script>
+
+<template>
+  <div class="flex flex-col items-end w-full">
+    <!-- for card: border bg-card text-card-foreground shadow-md -->
+    <aside
+      class="max-w-sm w-full md:max-w-sm lg:max-w-lg rounded-xl flex flex-col h-full"
+      role="complementary"
+      aria-label="Story chat preview"
+    >
+      <ChatWindow
+        :participants="participants"
+        :script="chatScript"
+        :start-threshold="0.3"
+      />
+    </aside>
+  </div>
+</template>
