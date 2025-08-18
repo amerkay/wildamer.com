@@ -1,3 +1,5 @@
+![WildAmer.com Amer Kawar portfolio](public/repository-open-graph-template.png)
+
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
