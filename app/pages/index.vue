@@ -11,6 +11,6 @@
 <script setup lang="ts">
 defineOgImageComponent("OGWildAmer", {
   title: "I'm on a mission to build tech for wildlife conservation!",
-  cta: "Hire me as your tech consultant volunteer",
+  cta: "I can be your tech consultant volunteer",
 });
 </script>
