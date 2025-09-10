@@ -2,10 +2,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2025-07-15",
-  devtools: { enabled: true },
-  ssr: true,
-
   modules: [
     "@nuxt/content",
     "@nuxt/eslint",
@@ -20,6 +16,7 @@ export default defineNuxtConfig({
     "nuxt-og-image",
     "@nuxtjs/seo",
   ],
+  ssr: true,
 
   components: [
     { path: "~/components", pathPrefix: false },
@@ -34,17 +31,13 @@ export default defineNuxtConfig({
       priority: 1,
     },
   ],
+  devtools: { enabled: true },
 
-  shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
-    prefix: "",
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
-    componentDir: "./app/components/ui",
+  css: ["~/assets/css/tailwind.css"],
+
+  site: {
+    url: "https://wildamer.com",
+    name: "Amer Kawar - Wildlife Conservation Tech Consultant",
   },
 
   colorMode: {
@@ -53,33 +46,17 @@ export default defineNuxtConfig({
     classSuffix: "",
   },
 
-  css: ["~/assets/css/tailwind.css"],
-  vite: {
-    plugins: [tailwindcss()],
+  content: {
+    experimental: { sqliteConnector: "native" },
   },
+  compatibilityDate: "2025-07-15",
   nitro: {
     prerender: {
       ignore: [/^\/\.netlify\/images/], // skip Netlify Image CDN endpoints
     },
   },
-
-  content: {
-    experimental: { sqliteConnector: "native" },
-  },
-
-  site: {
-    url: "https://wildamer.com",
-    name: "Amer Kawar - Wildlife Conservation Tech Consultant",
-  },
-
-  ogImage: {
-    fonts: ["Anton:400", "Montserrat:400", "Montserrat:700"],
-    zeroRuntime: true,
-
-    defaults: {
-      cacheMaxAgeSeconds: 60,
-      component: "OGWildAmer",
-    },
+  vite: {
+    plugins: [tailwindcss()],
   },
 
   image: {
@@ -122,5 +99,27 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+
+  ogImage: {
+    fonts: ["Anton:400", "Montserrat:400", "Montserrat:700"],
+    zeroRuntime: true,
+
+    defaults: {
+      cacheMaxAgeSeconds: 60,
+      component: "OGWildAmer",
+    },
+  },
+
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: "",
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: "./app/components/ui",
   },
 });

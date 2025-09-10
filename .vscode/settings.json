@@ -1,34 +1,25 @@
 {
-    "editor.formatOnSave": true,
-    // ✅ Run ESLint auto-fixes (same as --fix) on explicit saves
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit",
-        "source.organizeImports": "explicit"
-    },
-    // ✅ (Optional) raise time budget if fixes are slow on big files
-    "editor.codeActionsOnSaveTimeout": 2000,
-    // ✅ Keep Prettier as the default formatter if you use it
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    // ✅ Make sure ESLint validates Vue/TS/JS files in this workspace
-    "eslint.validate": [
-        "vue",
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact"
-    ],
-    "eslint.workingDirectories": [
-        {
-            "mode": "auto"
-        }
-    ],
-    "files.exclude": {
-        "**/node_modules": true,
-        "**/.nuxt": true
-    },
-    "search.exclude": {
-        "**/node_modules": true,
-        "**/pnpm-lock.yaml": true,
-        "**/.nuxt": true
-    }
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": [
+    "vue",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.useFlatConfig": true,
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.nuxt": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/pnpm-lock.yaml": true,
+    "**/.nuxt": true
+  }
 }

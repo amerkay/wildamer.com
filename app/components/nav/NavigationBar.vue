@@ -76,7 +76,7 @@ const getDropdownClasses = (active: boolean) => [
     <Container class="!py-0">
       <div class="relative flex h-24 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-          <!-- Mobile menu button-->
+          <!-- Mobile menu button -->
           <DisclosureButton
             class="relative inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-secondary hover:text-secondary-foreground focus:ring-2 focus:ring-primary focus:outline-none focus:ring-inset"
           >

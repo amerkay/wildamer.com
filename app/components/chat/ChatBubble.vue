@@ -65,6 +65,7 @@
 
 <script setup lang="ts">
 import { computed, toRefs } from "vue";
+
 interface Props {
   isMe: boolean;
   text?: string;
