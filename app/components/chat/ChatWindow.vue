@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useIntersectionObserver, useScroll } from '@vueuse/core'
-import { computed, nextTick, ref, withDefaults } from 'vue'
 import ChatBubble from '~/components/chat/ChatBubble.vue'
 import Button from '~/components/ui/button/Button.vue'
 

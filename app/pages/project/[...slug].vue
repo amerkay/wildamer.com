@@ -1,9 +1,3 @@
 <template>
-  <PostFullPage
-    collection="project"
-    container-class="py-16"
-    show-title
-    show-description
-    show-media
-  />
+  <PostFullPage collection="project" container-class="py-16" show-title show-description />
 </template>

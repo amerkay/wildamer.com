@@ -175,7 +175,8 @@
   }
 
   /* Mozilla Headline, Anton, Fjalla One, Bricolage Grotesque */
-  --font-heading: 'Anton', var(--font-sans);
+  --font-heading: 'Anton',
+  var(--font-sans);
 }
 
 @layer base {
@@ -205,6 +206,7 @@
 }
 
 @layer utilities {
+
   .prose h1,
   .prose h2,
   .prose h3,
@@ -212,13 +214,27 @@
     @apply font-normal font-heading text-muted-foreground;
   }
 
-  .prose a {
+  .prose h1 a,
+  .prose h2 a,
+  .prose h3 a,
+  .prose h4 a {
     @apply text-muted-foreground no-underline;
   }
 
-  .prose a:hover {
-    @apply underline;
+  .prose h1 a:hover,
+  .prose h2 a:hover,
+  .prose h3 a:hover,
+  .prose h4 a:hover {
     color: color-mix(in srgb, var(--muted-foreground) 85%, white);
+  }
+
+  .prose a {
+    @apply text-primary no-underline;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+    color: color-mix(in srgb, var(--primary) 85%, white);
   }
 
   .prose ul,
@@ -227,7 +243,7 @@
   }
 
   .prose img {
-    @apply border-2 !rounded;
+    @apply border-2 rounded;
   }
 
   .dark .prose img {
@@ -250,6 +266,7 @@ select {
 }
 
 .dark {
+
   input,
   textarea,
   select {

@@ -1,19 +1,22 @@
 ---
 title: UK fundraising platforms with no fees don't exist, but this is how to make 15% more!
-description: UK fundraising platforms with no fees don't exist, but this is how to make 15% more! TODO
-date: 2025-11-28
+description: I built a calculator for the most popular UK fundraising platforms comparing fees against owning your own form using GiveWP or BeaconCRM, where you can keep the "fees covered" paid by donors and increase your charity's income.
+publishedAt: 2025-11-28
 navigation: false
 isFeatured: true
 featuredOrder: 1
-isComingSoon: true
+isComingSoon: false
+image: imgs/uk-fundraising-platform-fees/uk-fundraising-platform-fee-calculator.png
+imageDark: imgs/uk-fundraising-platform-fees/uk-fundraising-platform-fee-calculator-dark.png
+isHideFeaturedImageOnPage: true
 ---
+
+::cost-of-donation-platforms
+::
 
 **No web form should ever cost more than $25/month. After all, it's a form!** JustGiving, Donorbox, Raisely, FundraiserUp and a dozen other services exist. All of them take a cut from your donation income, recurring, forever!
 
 They all say their services are "free", but are they really? **NOT at all and it's infuriating!** Let's talk about that.
-
-::cost-of-donation-platforms
-::
 
 Donation platforms are exploiting charities in the UK and globally. I am writing this article to raise awareness and offer a better choice.
 

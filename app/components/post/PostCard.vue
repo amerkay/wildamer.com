@@ -19,15 +19,35 @@
         :media-classes="mediaClasses"
       />
       <div class="p-10 pt-4">
-        <h3 v-if="post.cardPreHeading" class="text-sm/4 font-semibold text-accent-foreground">
-          {{ post.cardPreHeading }}
-        </h3>
-        <NuxtLink v-if="!post?.isComingSoon" :to="post.path">
-          <p
-            class="mt-2 text-lg font-medium tracking-tight text-foreground hover:text-primary transition-colors"
+        <div class="mb-2 md:flex md:items-center md:justify-between md:gap-x-4">
+          <time
+            v-if="post.publishedAt"
+            :datetime="new Date(post.publishedAt).toISOString()"
+            class="mb-2 block md:mb-0 text-muted-foreground text-sm"
           >
-            {{ post?.cardHeading || post.title }}
-          </p>
+            {{
+              new Date(post.publishedAt).toLocaleDateString('en-GB', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+              })
+            }}
+          </time>
+          <div class="flex items-center gap-x-4 text-xs">
+            <template v-if="post.tags && post.tags.length > 0">
+              <Badge v-for="tag in post.tags.slice(0, 3)" :key="tag" variant="outline">
+                {{ tag }}
+              </Badge>
+            </template>
+          </div>
+        </div>
+
+        <NuxtLink
+          v-if="!post?.isComingSoon"
+          :to="post.path"
+          class="mt-2 text-lg font-medium tracking-tight text-foreground hover:text-foreground/90"
+        >
+          {{ post?.cardHeading || post.title }}
         </NuxtLink>
         <p v-else class="mt-2 text-lg font-medium tracking-tight text-foreground">
           {{ post?.cardHeading || post.title }}
@@ -71,6 +91,6 @@ withDefaults(defineProps<Props>(), {
   backgroundModifiers: '',
   contentModifiers: '',
   borderModifiers: '',
-  mediaClasses: 'h-80 object-cover'
+  mediaClasses: 'max-h-80 object-cover'
 })
 </script>

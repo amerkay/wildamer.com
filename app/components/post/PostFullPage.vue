@@ -5,15 +5,13 @@ interface Props {
   containerClass?: string
   showTitle?: boolean
   showDescription?: boolean
-  showMedia?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   containerWidth: 'md',
   containerClass: '',
   showTitle: false,
-  showDescription: false,
-  showMedia: false
+  showDescription: false
 })
 
 const route = useRoute()
@@ -40,16 +38,22 @@ useSeoMeta({
 </script>
 
 <template>
-  <Container :width="containerWidth" :class="containerClass">
-    <div
-      v-if="content"
-      class="prose md:prose-lg lg:prose-xl prose-stone dark:prose-invert max-w-none mb-6"
-    >
-      <h1 v-if="showTitle">{{ content.title }}</h1>
+  <Container v-if="content" :width="containerWidth" :class="containerClass">
+    <h1 v-if="showTitle" class="text-2xl md:text-4xl lg:text-5xl font-heading">
+      {{ content.title }}
+    </h1>
+
+    <PostByLine
+      :published-at="content.publishedAt"
+      :updated-at="content.updatedAt"
+      :tags="content.tags"
+    />
+
+    <div class="prose md:prose-lg lg:prose-xl prose-stone dark:prose-invert max-w-none mb-6">
       <p v-if="showDescription" class="opacity-90">{{ content.description }}</p>
 
       <MediaDisplay
-        v-if="showMedia"
+        v-if="!content.isHideFeaturedImageOnPage"
         :image="content.image"
         :image-dark="content.imageDark"
         :video="content.video"

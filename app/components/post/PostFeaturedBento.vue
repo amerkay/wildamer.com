@@ -19,7 +19,9 @@
           :background-modifiers="cardLayouts[index]?.backgroundModifiers"
           :content-modifiers="cardLayouts[index]?.contentModifiers"
           :border-modifiers="cardLayouts[index]?.borderModifiers"
-          :media-classes="cardLayouts[index]?.mediaClasses || 'h-80 object-cover'"
+          :media-classes="
+            cn(['max-h-80 object-cover object-bottom', cardLayouts[index]?.mediaClasses])
+          "
         />
       </div>
     </Container>
@@ -27,6 +29,8 @@
 </template>
 
 <script setup lang="ts">
+import { cn } from '~/lib/utils'
+
 interface Props {
   collectionType: 'project' | 'article'
   preHeading: string
@@ -39,7 +43,6 @@ const { data: featuredPosts } = await useAsyncData(`featured-${props.collectionT
   return queryCollection(props.collectionType)
     .where('isFeatured', '=', true)
     .order('featuredOrder', 'ASC')
-    .order('date', 'DESC')
     .limit(5)
     .all()
 })
@@ -52,7 +55,7 @@ const cardLayouts = [
     backgroundModifiers: 'max-lg:rounded-t-4xl lg:rounded-tl-4xl',
     contentModifiers: 'max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]',
     borderModifiers: 'max-lg:rounded-t-4xl lg:rounded-tl-4xl',
-    mediaClasses: 'h-80 object-cover object-top-left'
+    mediaClasses: ''
   },
   // Second card (top-right, large)
   {
@@ -60,7 +63,7 @@ const cardLayouts = [
     backgroundModifiers: 'lg:rounded-tr-4xl',
     contentModifiers: 'lg:rounded-tr-[calc(2rem+1px)]',
     borderModifiers: 'lg:rounded-tr-4xl',
-    mediaClasses: 'h-80 object-cover object-top-left'
+    mediaClasses: ''
   },
   // Third card (bottom-left, small)
   {
@@ -68,7 +71,7 @@ const cardLayouts = [
     backgroundModifiers: 'lg:rounded-bl-4xl',
     contentModifiers: 'lg:rounded-bl-[calc(2rem+1px)]',
     borderModifiers: 'lg:rounded-bl-4xl',
-    mediaClasses: 'h-80 object-cover object-top-left'
+    mediaClasses: ''
   },
   // Fourth card (bottom-center, small)
   {
@@ -76,7 +79,7 @@ const cardLayouts = [
     backgroundModifiers: '',
     contentModifiers: '',
     borderModifiers: '',
-    mediaClasses: 'h-80 object-cover object-top-left'
+    mediaClasses: ''
   },
   // Fifth card (bottom-right, small)
   {
@@ -84,7 +87,7 @@ const cardLayouts = [
     backgroundModifiers: 'max-lg:rounded-b-4xl lg:rounded-br-4xl',
     contentModifiers: 'max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]',
     borderModifiers: 'max-lg:rounded-b-4xl lg:rounded-br-4xl',
-    mediaClasses: 'h-80 object-cover object-top-left'
+    mediaClasses: ''
   }
 ]
 </script>

@@ -3,15 +3,17 @@
     <Hero />
     <!-- <HowICanHelp /> -->
     <PostFeaturedBento
-      collection-type="project"
-      pre-heading="Featured projects"
-      heading="Time &amp; money saving projects I worked on for non-profits"
-    />
-    <PostFeaturedBento
       collection-type="article"
       pre-heading="Featured articles"
       heading="Insights and guides for non-profit organizations"
     />
+
+    <PostFeaturedBento
+      collection-type="project"
+      pre-heading="Featured projects"
+      heading="Time &amp; money saving projects I worked on for non-profits"
+    />
+
     <FAQ />
     <CTA />
   </section>
