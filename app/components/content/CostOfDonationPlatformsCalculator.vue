@@ -43,6 +43,7 @@ interface Platform {
   includesStripe: boolean
   description: string
   feeCap?: number
+  passesCoveredFeesOverPercent?: number
 }
 
 const PLATFORMS: Platform[] = [
@@ -50,19 +51,19 @@ const PLATFORMS: Platform[] = [
     name: 'Crowdfunder',
     feeRate: () => 0.2,
     includesStripe: false,
-    description: '20% on all donations'
+    description: '20% covered fees + 1.9% + 20p per pledge'
   },
   {
     name: 'GoFundMe',
     feeRate: () => 0.165,
     includesStripe: false,
-    description: '16.5% on all donations'
+    description: '16.5% covered fees + charity pays 2.9% + 25p'
   },
   {
     name: 'JustGiving',
     feeRate: (amt) => (amt <= 3 ? 0.333 : amt <= 5 ? 0.2 : 0.17),
     includesStripe: false,
-    description: '33.3% to 17%'
+    description: '33.3% to 17% + 5% Gift Aid fee'
   },
   {
     name: 'whydonate',
@@ -91,7 +92,8 @@ const PLATFORMS: Platform[] = [
       return 0.07
     },
     includesStripe: false,
-    description: '16.7% to 7%'
+    description: '16.7% to 7% (charity pays 4% if uncovered)',
+    passesCoveredFeesOverPercent: 0.04
   },
   {
     name: 'Funraisin',
@@ -107,7 +109,7 @@ const PLATFORMS: Platform[] = [
       return 0.02
     },
     includesStripe: false,
-    description: '34.3% to 2%',
+    description: '34.3% to 2% (£20 cap) + 4.75% Gift Aid fee',
     feeCap: 20
   },
   {
@@ -122,7 +124,8 @@ const PLATFORMS: Platform[] = [
       return 0.044
     },
     includesStripe: false,
-    description: '9.2% to 4.4%'
+    description: '9.2% to 4.4%',
+    passesCoveredFeesOverPercent: 0.0295
   },
   {
     name: 'Raisely',
@@ -153,7 +156,7 @@ const PLATFORMS: Platform[] = [
       return 0.0693
     },
     includesStripe: false,
-    description: '17% to 6.9%'
+    description: '17% to 6.9% + £40/mo + 5% Gift Aid fee'
   }
 ]
 
@@ -211,6 +214,7 @@ function calculatePlatformCost(platform: Platform, goal: number) {
   let platformFees = 0
   let stripeFees = 0
   let totalRaised = 0
+  let passedBackFees = 0
 
   const breakdown = donations.map(({ amount, count }) => {
     const donationTotal = amount * count
@@ -232,6 +236,17 @@ function calculatePlatformCost(platform: Platform, goal: number) {
     const stripeFeePerDonation = platform.includesStripe ? 0 : totalPayment * 0.015 + 0.2
     const stripeFeeBucket = stripeFeePerDonation * count
 
+    // Handle platforms that pass back covered fees above a threshold
+    // The threshold is calculated on the total payment (base + tip)
+    let passedBackPerDonation = 0
+    if (platform.passesCoveredFeesOverPercent !== undefined) {
+      const thresholdFee = totalPayment * platform.passesCoveredFeesOverPercent
+      if (platformFeePerDonation > thresholdFee) {
+        passedBackPerDonation = platformFeePerDonation - thresholdFee
+        passedBackFees += passedBackPerDonation * count
+      }
+    }
+
     platformFees += platformFeeBucket
     stripeFees += stripeFeeBucket
 
@@ -243,12 +258,14 @@ function calculatePlatformCost(platform: Platform, goal: number) {
       stripeFeeAmount: stripeFeePerDonation,
       platformFeeBucket: platformFeeBucket,
       stripeFeesBucket: stripeFeeBucket,
+      passedBackPerDonation,
+      passedBackBucket: passedBackPerDonation * count,
       totalFees: (platformFeePerDonation + stripeFeePerDonation) * count
     }
   })
 
   const totalDonorPayment = totalRaised + platformFees
-  const charityReceives = totalDonorPayment - platformFees - stripeFees
+  const charityReceives = totalDonorPayment - platformFees - stripeFees + passedBackFees
 
   return {
     platform: platform.name,
@@ -257,6 +274,7 @@ function calculatePlatformCost(platform: Platform, goal: number) {
     totalRaised,
     platformFees,
     stripeFees,
+    passedBackFees,
     totalFees: platformFees + stripeFees,
     totalDonorPayment,
     charityReceives,
@@ -319,11 +337,13 @@ const baseline = computed(() => {
 const platformResults = computed(() => {
   const goal = fundraisingGoal.value ?? 10000
   return PLATFORMS.map((p) => calculatePlatformCost(p, goal)).sort(
-    (a, b) => b.totalFees - a.totalFees
+    (a, b) => b.charityReceives - a.charityReceives
   )
 })
 
-const worstPlatform = computed(() => platformResults.value[0])
+const worstPlatform = computed(() =>
+  platformResults.value.reduce((worst, p) => (p.totalFees > worst.totalFees ? p : worst))
+)
 const incomeIncrease = computed(() => {
   const baselineReceives = baseline.value.charityReceives
   const worstReceives = worstPlatform.value?.charityReceives ?? 0
@@ -361,7 +381,7 @@ const getTooltipText = (totalDonations: number) => {
       <h2 class="text-3xl font-bold text-foreground">UK Fundraising Platform Fee Calculator</h2>
       <p class="text-muted-foreground">
         Compare "donor cover fees" lost revenue. Most platforms also charge monthly subscription
-        fees, and some charge you ~5% of your Gift Aid's 25%.
+        fees, and some charge you ~5% of your Gift Aid's 25% on top of the covered fees below.
       </p>
     </div>
 
