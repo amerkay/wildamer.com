@@ -115,6 +115,7 @@ const PLATFORMS: Platform[] = [
   {
     name: 'Donorbox',
     feeRate: (amt) => {
+      if (amt <= 3) return 0.113
       if (amt <= 5) return 0.092
       if (amt <= 10) return 0.068
       if (amt <= 20) return 0.056

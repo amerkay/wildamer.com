@@ -20,7 +20,7 @@ They all say their services are "free", but are they really? **NOT at all and it
 
 In this article, I am going to focus on the UK, as that's where the 10 charities I worked with operate.
 
-_TLDR; You need to own your donation form and have your own "cover our fees" upsell that your org keeps. The "donor covers fees" offered by platforms will cost you thousands!_
+_TL;DR: You need to own your donation form and have your own "cover our fees" upsell that your org keeps. The "donor covers fees" offered by platforms will cost you thousands!_
 
 ## How does the calculator above work?
 
@@ -50,7 +50,7 @@ You pay $350/year (~£22/month), and that's it.
 
 ![GiveWP's Pricing](/imgs/uk-fundraising-platform-fees/givewp-pricing.png)
 
-> I **do not** have any affiliation with GiveWP. I recommend GiveWP because they excel at what they do and their pricing model is an extremely reasonable flat rate of ~$350/year. Plus, most charities already use Wordpress.
+> I **do not** have any affiliation with GiveWP. I recommend GiveWP because they excel at what they do and their pricing model is an extremely reasonable flat rate of ~$350/year. Plus, most charities already use WordPress.
 
 #### When does it make sense to use these platforms?
 
@@ -60,7 +60,7 @@ It only really makes sense for a charity to use a %-cut fundraising platform if 
 
 As if the above numbers aren't enough, you also end up with a vendor lock-in.
 
-1. Your subscription and customer data are now held hostage by these platforms. Instead of the subscriptions and customer records living in your Stripe account, they now live in the platform's Stripe account so that they can **take their cut as an "application fee" from your donations** and lock your organization in.
+1. Your subscription and customer data are now held hostage by these platforms. Instead of the subscriptions and customer records living in your Stripe account, they now live in the platform's Stripe account so that they can **take their cut as an "application fee" from your donations** and lock your organisation in.
    \
    Check this out as an example (real-world screenshot):
    ![Raisely Stripe Transaction](/imgs/uk-fundraising-platform-fees/raisely-stripe-transaction.png)
@@ -71,11 +71,14 @@ As if the above numbers aren't enough, you also end up with a vendor lock-in.
 
 ---
 
-## The "donor covers fees" per platform &amp; other fees
+## The "donor covers fees" per platform & other fees
+
+To compile the list below, I found live donation forms for each platform and checked the tips requested for £3, £5, £10, £20, £50, £100, £200, £500 and £1000.
 
 ### Donorbox
 
 Asks donors to cover the following fees:
+- 11.3% for £3
 - 9.2% for £5
 - 6.8% for £10
 - 5.6% for £20
@@ -89,7 +92,7 @@ If you use it for free, they charge you 2.95% per donation, but you don't get ac
 
 ![Donorbox's Pricing](/imgs/uk-fundraising-platform-fees/donorbox-pricing.png)
 
-Here is a real payment example. Donorbox is one of the decent platforms that only charge you their flat rate, and passes the rest of the "covered fees" to your charity.
+Here is a real payment example. Donorbox is one of the few fair platforms that only charges you their flat rate, and passes the rest of the "covered fees" to your charity.
 
 ![Donorbox transaction example](/imgs/uk-fundraising-platform-fees/donorbox-example.png)
 
@@ -144,7 +147,7 @@ If the donor does not "cover the fee", they charge your charity 4% of the donati
 
 ### Funraisin
 
-I went through some donation forms and tried the following donation amounts one by one, these are the "cover the fees" they ask the donor to add to the amount:
+I went through some donation forms and tried the following donation amounts one by one. These are the "cover the fees" they ask the donor to add to the amount:
 - 34.3% for £3
 - 22.2% for £5
 - 13.3% for £10
@@ -185,7 +188,7 @@ Based on tests I ran on real Raisely forms, this is how much they ask donors to 
 - 4.6% for £500
 - 4.55% for £1000
 
-If you have more than 2000 donation per year, or if you want access to their Pro features, you need to pay AUD$179/month + 10% GST or AUD $1074 + GST if you do it annually.
+If you have more than 2000 donations per year, or if you want access to their Pro features, you need to pay AUD$179/month + 10% GST or AUD $1074 + GST if you do it annually.
 
 ![Raisely's Pricing](/imgs/uk-fundraising-platform-fees/raisely-pricing.png)
 
@@ -202,7 +205,7 @@ They prompt donors for a tip of 17% to 7% on larger amounts.
 - 7.05% for £200
 - 6.93% for £1000
 
-Monthly fees of £39.99/month for donations and £24.99/month for fundraising forms. They charge 5% if you disable the "cover fees". Not just that, they also take 5% from your GiftAid claims!
+Monthly fees of £39.99/month for donations and £24.99/month for fundraising forms. They charge 5% if you disable the "cover fees". Not just that, they also take 5% from your Gift Aid claims!
 
 ![Enthuse Pricing](/imgs/uk-fundraising-platform-fees/enthuse-pricing.png)
 
@@ -210,6 +213,6 @@ Monthly fees of £39.99/month for donations and £24.99/month for fundraising fo
 
 ## Wrapping up
 
-Above are just a few examples. All of these platforms run this way. It's called the "tip-based business model" and you want to **avoid it.**
+All of these platforms run this way. It's called the "tip-based business model" and you want to **avoid it as much as possible.**
 
-Bottom line: Own your donation forms and don't fall for the hidden lock-in mechanism where your org's subscriptions are owned by one of these platforms.
+Bottom line: **Own your donation forms** by paying for the software and not per donation. And don't fall for the hidden **lock-in mechanism** where your org's recurring subscriptions are owned by one of these platforms.
