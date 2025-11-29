@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import type { Globals } from "./NavigationBar.vue";
-import SocialLinks from "./SocialLinks.vue";
+import type { Globals } from './NavigationBar.vue'
+import SocialLinks from './SocialLinks.vue'
 
 export interface SocialLink {
-  service: string;
-  url: string;
+  service: string
+  url: string
 }
 
 export interface NavigationItem {
-  id: string;
-  title: string;
-  url?: string | null;
+  id: string
+  title: string
+  url?: string | null
 }
 
 export interface FooterProps {
   navigation: {
-    items: NavigationItem[];
-  };
-  globals: Globals;
+    items: NavigationItem[]
+  }
+  globals: Globals
 }
 
-const props = defineProps<FooterProps>();
+const props = defineProps<FooterProps>()
 </script>
 
 <template>
@@ -32,11 +32,7 @@ const props = defineProps<FooterProps>();
             <Logo />
           </NuxtLink>
 
-          <p
-            v-if="props.globals.description"
-            ref="description"
-            class="text-muted-foreground mt-2"
-          >
+          <p v-if="props.globals.description" ref="description" class="text-muted-foreground mt-2">
             <span>
               {{ props.globals.description }}
             </span>
@@ -52,10 +48,7 @@ const props = defineProps<FooterProps>();
         </div>
 
         <div class="flex flex-1 flex-col items-start md:items-end">
-          <nav
-            v-if="props.navigation.items?.length"
-            class="w-full text-left md:w-auto"
-          >
+          <nav v-if="props.navigation.items?.length" class="w-full text-left md:w-auto">
             <ul class="space-y-4">
               <li v-for="item in props.navigation.items" :key="item.id">
                 <NuxtLink

@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
@@ -37,22 +37,17 @@
   --sidebar-accent-foreground: hsl(340 15.7895% 14.902%);
   --sidebar-border: hsl(0 0% 87.8431%);
   --sidebar-ring: hsl(0 0% 63.1373%);
-  --font-sans: "Montserrat", sans-serif;
+  --font-sans: 'Montserrat', sans-serif;
   --font-serif: Merriweather, serif;
   --font-mono: JetBrains Mono, monospace;
   --radius: 0.625rem;
   --shadow-2xs: 1px 2px 5px 1px hsl(0 0% 0% / 0.03);
   --shadow-xs: 1px 2px 5px 1px hsl(0 0% 0% / 0.03);
-  --shadow-sm:
-    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
-  --shadow:
-    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
-  --shadow-md:
-    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 2px 4px 0px hsl(0 0% 0% / 0.06);
-  --shadow-lg:
-    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 4px 6px 0px hsl(0 0% 0% / 0.06);
-  --shadow-xl:
-    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 8px 10px 0px hsl(0 0% 0% / 0.06);
+  --shadow-sm: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
+  --shadow: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
+  --shadow-md: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 2px 4px 0px hsl(0 0% 0% / 0.06);
+  --shadow-lg: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 4px 6px 0px hsl(0 0% 0% / 0.06);
+  --shadow-xl: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 8px 10px 0px hsl(0 0% 0% / 0.06);
   --shadow-2xl: 1px 2px 5px 1px hsl(0 0% 0% / 0.15);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
@@ -94,16 +89,11 @@
   --radius: 0.5rem;
   --shadow-2xs: 1px 2px 5px 1px hsl(0 0% 0% / 0.03);
   --shadow-xs: 1px 2px 5px 1px hsl(0 0% 0% / 0.03);
-  --shadow-sm:
-    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
-  --shadow:
-    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
-  --shadow-md:
-    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 2px 4px 0px hsl(0 0% 0% / 0.06);
-  --shadow-lg:
-    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 4px 6px 0px hsl(0 0% 0% / 0.06);
-  --shadow-xl:
-    1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 8px 10px 0px hsl(0 0% 0% / 0.06);
+  --shadow-sm: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
+  --shadow: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
+  --shadow-md: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 2px 4px 0px hsl(0 0% 0% / 0.06);
+  --shadow-lg: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 4px 6px 0px hsl(0 0% 0% / 0.06);
+  --shadow-xl: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 8px 10px 0px hsl(0 0% 0% / 0.06);
   --shadow-2xl: 1px 2px 5px 1px hsl(0 0% 0% / 0.15);
 }
 
@@ -185,8 +175,7 @@
   }
 
   /* Mozilla Headline, Anton, Fjalla One, Bricolage Grotesque */
-  --font-heading: "Anton",
-  var(--font-sans);
+  --font-heading: 'Anton', var(--font-sans);
 }
 
 @layer base {
@@ -216,7 +205,6 @@
 }
 
 @layer utilities {
-
   .prose h1,
   .prose h2,
   .prose h3,
@@ -262,7 +250,6 @@ select {
 }
 
 .dark {
-
   input,
   textarea,
   select {

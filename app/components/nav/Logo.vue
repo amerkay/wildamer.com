@@ -25,9 +25,7 @@
         >
           Amer Kawar
         </div>
-        <div class="text-[0.72rem] sm:text-[0.9rem] text-foreground">
-          Wildlife Tech Consultant
-        </div>
+        <div class="text-[0.72rem] sm:text-[0.9rem] text-foreground">Wildlife Tech Consultant</div>
       </div>
     </div>
   </div>

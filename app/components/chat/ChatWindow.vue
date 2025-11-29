@@ -1,79 +1,78 @@
 <script setup lang="ts">
-import { useIntersectionObserver, useScroll } from "@vueuse/core";
-import { computed, nextTick, ref, withDefaults } from "vue";
-import ChatBubble from "~/components/chat/ChatBubble.vue";
-import Button from "~/components/ui/button/Button.vue";
+import { useIntersectionObserver, useScroll } from '@vueuse/core'
+import { computed, nextTick, ref, withDefaults } from 'vue'
+import ChatBubble from '~/components/chat/ChatBubble.vue'
+import Button from '~/components/ui/button/Button.vue'
 
 interface Participant {
-  id: string;
-  label: string;
-  emoji: string;
-  avatarImg?: string;
-  avatarClass?: string;
+  id: string
+  label: string
+  emoji: string
+  avatarImg?: string
+  avatarClass?: string
 }
 
 type ScriptLine = {
-  id?: string;
-  from: string;
-  text: string;
-  typingMs?: number;
-  afterDelay?: number;
-  showName?: boolean;
-};
+  id?: string
+  from: string
+  text: string
+  typingMs?: number
+  afterDelay?: number
+  showName?: boolean
+}
 
 interface Props {
-  participants: Participant[];
-  script: ScriptLine[];
-  startThreshold?: number;
+  participants: Participant[]
+  script: ScriptLine[]
+  startThreshold?: number
 }
 const props = withDefaults(defineProps<Props>(), {
-  startThreshold: 0.3,
-});
+  startThreshold: 0.3
+})
 
 // Add IDs to script lines if they don't have them
 const scriptWithIds = computed(() =>
   props.script.map((m, idx) => ({
     ...m,
-    id: m.id || `m-${idx}`,
+    id: m.id || `m-${idx}`
   }))
-);
+)
 
-const participantById = Object.fromEntries(
-  props.participants.map((p) => [p.id, p])
-) as Record<string, Participant>;
+const participantById = Object.fromEntries(props.participants.map((p) => [p.id, p])) as Record<
+  string,
+  Participant
+>
 
-const participantsWithImages = computed(() =>
-  props.participants.filter((p) => p.avatarImg)
-);
+const participantsWithImages = computed(() => props.participants.filter((p) => p.avatarImg))
 
 function senderLabel(from: string): string {
-  return participantById[from]?.label || "";
+  return participantById[from]?.label || ''
 }
 function avatarClass(from: string): string {
-  return participantById[from]?.avatarClass || "";
+  return participantById[from]?.avatarClass || ''
 }
 function participantEmoji(from: string): string {
-  return participantById[from]?.emoji || "";
+  return participantById[from]?.emoji || ''
 }
 function participantAvatarImg(from: string): string | undefined {
-  return participantById[from]?.avatarImg;
+  return participantById[from]?.avatarImg
 }
 
-const listEl = ref<HTMLDivElement | null>(null);
-const containerEl = ref<HTMLDivElement | null>(null);
-const { y: scrollY } = useScroll(listEl);
-const isScrollable = computed(() => scrollY.value > 0);
+const listEl = ref<HTMLDivElement | null>(null)
+const containerEl = ref<HTMLDivElement | null>(null)
+const { y: scrollY } = useScroll(listEl)
+const isScrollable = computed(() => scrollY.value > 0)
 const visible = ref<
   Array<{
-    id: string;
-    from: string;
-    text?: string;
-    typing?: boolean;
-    showName?: boolean;
+    id: string
+    from: string
+    text?: string
+    typing?: boolean
+    showName?: boolean
   }>
->([]);
-const isScriptComplete = ref(false);
-const hasStarted = ref(false);
+>([])
+const isScriptComplete = ref(false)
+const hasStarted = ref(false)
 
 // Set up intersection observer
 useIntersectionObserver(
@@ -85,84 +84,84 @@ useIntersectionObserver(
       entry.intersectionRatio >= props.startThreshold &&
       !hasStarted.value
     ) {
-      hasStarted.value = true;
-      replay();
+      hasStarted.value = true
+      replay()
     }
   },
   {
-    threshold: props.startThreshold,
+    threshold: props.startThreshold
   }
-);
+)
 
-let currentRun = 0;
-let activeTimers: number[] = [];
+let currentRun = 0
+let activeTimers: number[] = []
 function clearTimers() {
-  activeTimers.forEach((id) => clearTimeout(id));
-  activeTimers = [];
+  activeTimers.forEach((id) => clearTimeout(id))
+  activeTimers = []
 }
 function wait(ms: number, run: number): Promise<void> {
   return new Promise((resolve) => {
-    if (ms <= 0) return resolve();
+    if (ms <= 0) return resolve()
     const id = setTimeout(() => {
-      if (run === currentRun) resolve();
-    }, ms);
-    activeTimers.push(id as unknown as number);
-  });
+      if (run === currentRun) resolve()
+    }, ms)
+    activeTimers.push(id as unknown as number)
+  })
 }
 
 async function playOnce(run: number) {
-  visible.value = [];
-  isScriptComplete.value = false;
+  visible.value = []
+  isScriptComplete.value = false
   for (const m of scriptWithIds.value) {
-    if (run !== currentRun) break;
+    if (run !== currentRun) break
     if (m.typingMs && m.typingMs > 0) {
       visible.value.push({
         id: `${m.id}-t`,
         from: m.from,
         typing: true,
-        showName: m.showName,
-      });
-      await nextTick();
-      scrollToBottom();
-      await wait(m.typingMs, run);
-      if (run !== currentRun) break;
+        showName: m.showName
+      })
+      await nextTick()
+      scrollToBottom()
+      await wait(m.typingMs, run)
+      if (run !== currentRun) break
       visible.value.splice(visible.value.length - 1, 1, {
         id: m.id!,
         from: m.from,
         text: m.text,
-        showName: m.showName,
-      });
+        showName: m.showName
+      })
     } else {
       visible.value.push({
         id: m.id!,
         from: m.from,
         text: m.text,
-        showName: m.showName,
-      });
+        showName: m.showName
+      })
     }
-    await nextTick();
-    scrollToBottom();
-    await wait(m.afterDelay ?? 250, run);
+    await nextTick()
+    scrollToBottom()
+    await wait(m.afterDelay ?? 250, run)
   }
   if (run === currentRun) {
-    isScriptComplete.value = true;
-    await nextTick();
-    scrollToBottom();
+    isScriptComplete.value = true
+    await nextTick()
+    scrollToBottom()
   }
 }
 
 function scrollToBottom() {
-  const div = listEl.value;
-  if (!div) return;
+  const div = listEl.value
+  if (!div) return
   requestAnimationFrame(() => {
-    div.scrollTo({ top: div.scrollHeight, behavior: "smooth" });
-  });
+    div.scrollTo({ top: div.scrollHeight, behavior: 'smooth' })
+  })
 }
 
 async function replay() {
-  currentRun += 1;
-  clearTimers();
-  await playOnce(currentRun);
+  currentRun += 1
+  clearTimers()
+  await playOnce(currentRun)
 }
 </script>
 
@@ -217,8 +216,8 @@ async function replay() {
             type: 'spring',
             stiffness: 180,
             damping: 18,
-            delay: i * 0.04,
-          },
+            delay: i * 0.04
+          }
         }"
       >
         <ChatBubble

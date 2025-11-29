@@ -1,62 +1,63 @@
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    "@nuxt/content",
-    "@nuxt/eslint",
-    "@nuxt/fonts",
-    "@nuxt/icon",
-    "@nuxt/image",
+    '@nuxt/content',
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@nuxt/icon',
+    '@nuxt/image',
     // docs @ https://www.shadcn-vue.com/docs/installation/nuxt.html
-    "shadcn-nuxt",
-    "@nuxtjs/color-mode",
+    'shadcn-nuxt',
+    '@nuxtjs/color-mode',
     // docs @ https://motion.vueuse.org/getting-started/nuxt
-    "@vueuse/motion/nuxt",
-    "nuxt-og-image",
-    "@nuxtjs/seo",
+    '@vueuse/motion/nuxt',
+    'nuxt-og-image',
+    '@nuxtjs/seo'
   ],
   ssr: true,
 
   components: [
-    { path: "~/components", pathPrefix: false },
+    { path: '~/components', pathPrefix: false },
+
     // { path: "~/components/block", pathPrefix: false, priority: 2 },
     // { path: "~/components/shared", pathPrefix: false },
     // { path: "~/components/base", pathPrefix: false },
     // { path: "~/components/forms", pathPrefix: false },
     {
-      path: "~/components/ui",
-      extensions: [".vue"],
+      path: '~/components/ui',
+      extensions: ['.vue'],
       pathPrefix: false,
-      priority: 1,
-    },
+      priority: 1
+    }
   ],
   devtools: { enabled: true },
 
-  css: ["~/assets/css/tailwind.css"],
+  css: ['~/assets/css/tailwind.css'],
 
   site: {
-    url: "https://wildamer.com",
-    name: "Amer Kawar - Wildlife Conservation Tech Consultant",
+    url: 'https://wildamer.com',
+    name: 'Amer Kawar - Wildlife Conservation Tech Consultant'
   },
 
   colorMode: {
-    preference: "system",
-    fallback: "light",
-    classSuffix: "",
+    preference: 'system',
+    fallback: 'light',
+    classSuffix: ''
   },
 
   content: {
-    experimental: { sqliteConnector: "native" },
+    experimental: { sqliteConnector: 'native' }
   },
-  compatibilityDate: "2025-07-15",
+  compatibilityDate: '2025-07-15',
   nitro: {
     prerender: {
-      ignore: [/^\/\.netlify\/images/], // skip Netlify Image CDN endpoints
-    },
+      ignore: [/^\/\.netlify\/images/] // skip Netlify Image CDN endpoints
+    }
   },
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss()]
   },
 
   image: {
@@ -70,56 +71,56 @@ export default defineNuxtConfig({
       md: 768,
       lg: 1024,
       xl: 1280,
-      xxl: 1536,
+      xxl: 1536
     },
     // Default format
-    format: ["webp", "png", "jpg"],
+    format: ['webp', 'png', 'jpg'],
     // Densities for high-DPI screens
     densities: [1, 2],
     // Presets for common use cases
     presets: {
       avatar: {
         modifiers: {
-          format: "webp",
+          format: 'webp',
           width: 44,
           height: 44,
-          quality: 85,
-        },
+          quality: 85
+        }
       },
       hero: {
         modifiers: {
-          format: "webp",
-          quality: 85,
-        },
+          format: 'webp',
+          quality: 85
+        }
       },
       thumbnail: {
         modifiers: {
-          format: "webp",
-          quality: 80,
-        },
-      },
-    },
+          format: 'webp',
+          quality: 80
+        }
+      }
+    }
   },
 
   ogImage: {
-    fonts: ["Anton:400", "Montserrat:400", "Montserrat:700", "Montserrat:900"],
+    fonts: ['Anton:400', 'Montserrat:400', 'Montserrat:700', 'Montserrat:900'],
     zeroRuntime: true,
 
     defaults: {
       cacheMaxAgeSeconds: 60,
-      component: "OGWildAmer",
-    },
+      component: 'OGWildAmer'
+    }
   },
 
   shadcn: {
     /**
      * Prefix for all the imported component
      */
-    prefix: "",
+    prefix: '',
     /**
      * Directory that the component lives in.
      * @default "./components/ui"
      */
-    componentDir: "./app/components/ui",
-  },
-});
+    componentDir: './app/components/ui'
+  }
+})

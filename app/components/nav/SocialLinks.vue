@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 
 const props = defineProps<{
-  linkedin?: string;
-  github?: string;
-}>();
+  linkedin?: string
+  github?: string
+}>()
 </script>
 
 <template>

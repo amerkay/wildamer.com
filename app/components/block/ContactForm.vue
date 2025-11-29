@@ -1,74 +1,66 @@
 <script setup lang="ts">
-import { navigateTo } from "#app";
-import { toTypedSchema } from "@vee-validate/zod";
-import { useForm } from "vee-validate";
-import { toast } from "vue-sonner";
-import * as z from "zod";
+import { navigateTo } from '#app'
+import { toTypedSchema } from '@vee-validate/zod'
+import { useForm } from 'vee-validate'
+import { toast } from 'vue-sonner'
+import * as z from 'zod'
 
-import { Button } from "@/components/ui/button";
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from '@/components/ui/button'
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
 
 // Define form schema with Zod
 const formSchema = toTypedSchema(
   z.object({
     name: z
-      .string("Name is required")
-      .min(2, "Name must be at least 2 characters")
-      .max(100, "Name must be less than 100 characters"),
-    email: z.email("Please enter a valid email address"),
+      .string('Name is required')
+      .min(2, 'Name must be at least 2 characters')
+      .max(100, 'Name must be less than 100 characters'),
+    email: z.email('Please enter a valid email address'),
     message: z
-      .string("A message is required")
-      .min(10, "Message must be at least 10 characters")
-      .max(1000, "Message must be less than 1000 characters"),
+      .string('A message is required')
+      .min(10, 'Message must be at least 10 characters')
+      .max(1000, 'Message must be less than 1000 characters')
   })
-);
+)
 
 // Initialize form with vee-validate
 const form = useForm({
-  validationSchema: formSchema,
-});
+  validationSchema: formSchema
+})
 
 // Form submission handler
 const onSubmit = form.handleSubmit(async (values) => {
   try {
     // Create form data for Netlify
-    const formData = new FormData();
-    formData.append("form-name", "contact");
-    formData.append("name", values.name);
-    formData.append("email", values.email);
-    formData.append("message", values.message);
+    const formData = new FormData()
+    formData.append('form-name', 'contact')
+    formData.append('name', values.name)
+    formData.append('email', values.email)
+    formData.append('message', values.message)
 
     // Submit to Netlify
-    const response = await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(
-        formData as unknown as Record<string, string>
-      ).toString(),
-    });
+    const response = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData as unknown as Record<string, string>).toString()
+    })
 
     if (response.ok) {
       // Success - redirect to success page
-      await navigateTo("/contact/success");
+      await navigateTo('/contact/success')
     } else {
-      throw new Error("Form submission failed");
+      throw new Error('Form submission failed')
     }
   } catch (error) {
     // Show error toast
-    toast.error("Failed to send message", {
-      description: "Please try again or contact me directly.",
-    });
-    console.error("Form submission error:", error);
+    toast.error('Failed to send message', {
+      description: 'Please try again or contact me directly.'
+    })
+    console.error('Form submission error:', error)
   }
-});
+})
 </script>
 
 <template>
@@ -76,8 +68,8 @@ const onSubmit = form.handleSubmit(async (values) => {
     <div class="mb-8">
       <h2 class="text-3xl tracking-tight mb-4 font-heading">Get in Touch</h2>
       <p class="text-muted-foreground">
-        Have a project in mind or need help with wildlife conservation
-        technology? I'd love to hear from you.
+        Have a project in mind or need help with wildlife conservation technology? I'd love to hear
+        from you.
       </p>
     </div>
 
@@ -96,11 +88,7 @@ const onSubmit = form.handleSubmit(async (values) => {
         <FormItem>
           <FormLabel>Name *</FormLabel>
           <FormControl>
-            <Input
-              type="text"
-              placeholder="Your name"
-              v-bind="componentField"
-            />
+            <Input type="text" placeholder="Your name" v-bind="componentField" />
           </FormControl>
           <FormMessage />
         </FormItem>
@@ -110,11 +98,7 @@ const onSubmit = form.handleSubmit(async (values) => {
         <FormItem>
           <FormLabel>Email *</FormLabel>
           <FormControl>
-            <Input
-              type="email"
-              placeholder="your.email@awesome.org"
-              v-bind="componentField"
-            />
+            <Input type="email" placeholder="your.email@awesome.org" v-bind="componentField" />
           </FormControl>
           <FormMessage />
         </FormItem>
@@ -135,7 +119,7 @@ const onSubmit = form.handleSubmit(async (values) => {
       </FormField>
 
       <Button type="submit" class="w-full" :disabled="form.isSubmitting.value">
-        {{ form.isSubmitting.value ? "Sending..." : "Send Message" }}
+        {{ form.isSubmitting.value ? 'Sending...' : 'Send Message' }}
       </Button>
     </form>
   </div>

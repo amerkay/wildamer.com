@@ -48,15 +48,15 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from "~/lib/utils";
+import { cn } from '~/lib/utils'
 
 interface Props {
-  image?: string;
-  imageDark?: string;
-  video?: string;
-  videoDark?: string;
-  alt?: string;
-  mediaClasses?: string;
+  image?: string
+  imageDark?: string
+  video?: string
+  videoDark?: string
+  alt?: string
+  mediaClasses?: string
 }
 
 withDefaults(defineProps<Props>(), {
@@ -65,6 +65,6 @@ withDefaults(defineProps<Props>(), {
   video: undefined,
   videoDark: undefined,
   alt: undefined,
-  mediaClasses: "h-80 object-cover",
-});
+  mediaClasses: 'h-80 object-cover'
+})
 </script>

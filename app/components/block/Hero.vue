@@ -13,24 +13,18 @@
             <NuxtLink to="/contact" class="font-bold">Contact me</NuxtLink>
             <Icon name="lucide:arrow-right" class="ml-0.5 h-4 w-4" />
           </Badge>
-          <h1
-            class="mb-4 mt-7 text-4xl md:text-4xl lg:mb-6 lg:mt-5 xl:text-5xl font-heading"
-          >
+          <h1 class="mb-4 mt-7 text-4xl md:text-4xl lg:mb-6 lg:mt-5 xl:text-5xl font-heading">
             I'm on a mission to build tech for wildlife conservation
             <span>👋</span>
           </h1>
           <p class="text-lg text-muted-foreground lg:text-xl">
-            I help wildlife NGOs and conservationists with tech solutions that
-            save time and money. From CRM integrations to GIS mapping, let's
-            chat about how I can help your org thrive.
+            I help wildlife NGOs and conservationists with tech solutions that save time and money.
+            From CRM integrations to GIS mapping, let's chat about how I can help your org thrive.
           </p>
 
           <div class="mt-8 grid grid-cols-1 gap-3 lg:flex lg:mt-12">
             <NuxtLink to="#featured-projects">
-              <Button
-                size="lg"
-                variant="outline"
-                class="min-w-72 w-full sm:w-auto lg:min-w-auto"
+              <Button size="lg" variant="outline" class="min-w-72 w-full sm:w-auto lg:min-w-auto"
                 >My recent projects</Button
               >
             </NuxtLink>
@@ -42,8 +36,7 @@
             </NuxtLink>
           </div>
           <p class="mt-5 text-sm text-muted-foreground">
-            Note: For-profit consultations hourly rate is $150. Please reach out
-            before booking.
+            Note: For-profit consultations hourly rate is $150. Please reach out before booking.
           </p>
         </div>
       </div>

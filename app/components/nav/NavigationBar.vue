@@ -6,65 +6,61 @@ import {
   Menu,
   MenuButton,
   MenuItem,
-  MenuItems,
-} from "@headlessui/vue";
+  MenuItems
+} from '@headlessui/vue'
 
 interface NavigationItem {
-  id: string;
-  title: string;
-  url?: string;
-  variant?: string;
-  children?: NavigationItem[];
-  isDropdown?: boolean;
+  id: string
+  title: string
+  url?: string
+  variant?: string
+  children?: NavigationItem[]
+  isDropdown?: boolean
 }
 
 interface Navigation {
-  items: NavigationItem[];
+  items: NavigationItem[]
 }
 
 export interface Globals {
-  title: string;
-  description: string;
-  linkedin?: string;
-  github?: string;
+  title: string
+  description: string
+  linkedin?: string
+  github?: string
 }
 
 const _props = defineProps<{
-  navigation: Navigation;
-  globals: Globals;
-}>();
+  navigation: Navigation
+  globals: Globals
+}>()
 
 // Common styles
-const getItemClasses = (
-  isActive: boolean,
-  variant?: string,
-  isMobile = false
-) => {
+const getItemClasses = (isActive: boolean, variant?: string, isMobile = false) => {
   const base = isMobile
-    ? "block rounded-md px-3 py-2 text-base font-medium"
-    : "rounded-md px-3 py-2 text-base font-medium";
+    ? 'block rounded-md px-3 py-2 text-base font-medium'
+    : 'rounded-md px-3 py-2 text-base font-medium'
 
-  if (variant === "primary") {
+  if (variant === 'primary') {
     return [
       isActive
-        ? "bg-primary text-primary-foreground"
-        : "bg-primary text-primary-foreground hover:bg-primary/90",
-      base,
-    ];
+        ? 'bg-primary text-primary-foreground'
+        : 'bg-primary text-primary-foreground hover:bg-primary/90',
+      base
+    ]
   }
 
   return [
     isActive
-      ? "bg-secondary text-secondary-foreground"
-      : "text-foreground hover:bg-secondary hover:text-secondary-foreground",
-    base,
-  ];
-};
+      ? 'bg-secondary text-secondary-foreground'
+      : 'text-foreground hover:bg-secondary hover:text-secondary-foreground',
+    base
+  ]
+}
 
 const getDropdownClasses = (active: boolean) => [
-  active ? "bg-secondary text-secondary-foreground" : "text-card-foreground",
-  "block px-4 py-2 text-base",
-];
+  active ? 'bg-secondary text-secondary-foreground' : 'text-card-foreground',
+  'block px-4 py-2 text-base'
+]
 </script>
 
 <template>
@@ -82,25 +78,11 @@ const getDropdownClasses = (active: boolean) => [
           >
             <span class="absolute -inset-0.5" />
             <span class="sr-only">Open main menu</span>
-            <Icon
-              v-if="!open"
-              name="lucide:menu"
-              class="block"
-              size="24"
-              aria-hidden="true"
-            />
-            <Icon
-              v-else
-              name="lucide:x"
-              class="block"
-              aria-hidden="true"
-              size="24"
-            />
+            <Icon v-if="!open" name="lucide:menu" class="block" size="24" aria-hidden="true" />
+            <Icon v-else name="lucide:x" class="block" aria-hidden="true" size="24" />
           </DisclosureButton>
         </div>
-        <div
-          class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
-        >
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <NuxtLink class="flex shrink-0 items-center" to="/" @click="close">
             <Logo />
           </NuxtLink>
@@ -112,11 +94,7 @@ const getDropdownClasses = (active: boolean) => [
             <div class="flex space-x-1">
               <template v-for="item in navigation.items" :key="item.id">
                 <!-- Dropdown menus -->
-                <Menu
-                  v-if="item.children?.length || item.isDropdown"
-                  class="relative"
-                  as="div"
-                >
+                <Menu v-if="item.children?.length || item.isDropdown" class="relative" as="div">
                   <div>
                     <MenuButton
                       class="inline-flex items-center justify-center rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-secondary hover:text-secondary-foreground focus:outline-none"
@@ -159,12 +137,7 @@ const getDropdownClasses = (active: boolean) => [
                 </Menu>
 
                 <!-- Regular navigation items -->
-                <NuxtLink
-                  v-else
-                  v-slot="{ isActive, href, navigate }"
-                  :to="item.url || '#'"
-                  custom
-                >
+                <NuxtLink v-else v-slot="{ isActive, href, navigate }" :to="item.url || '#'" custom>
                   <a
                     :href="href"
                     :class="getItemClasses(isActive, item.variant)"
@@ -202,10 +175,7 @@ const getDropdownClasses = (active: boolean) => [
                 <span>{{ item.title }}</span>
                 <Icon
                   :name="`lucide:chevron-down`"
-                  :class="[
-                    childOpen ? 'rotate-180 transform' : '',
-                    'size-5 text-foreground/70',
-                  ]"
+                  :class="[childOpen ? 'rotate-180 transform' : '', 'size-5 text-foreground/70']"
                   size="18"
                 />
               </DisclosureButton>
@@ -234,11 +204,7 @@ const getDropdownClasses = (active: boolean) => [
 
           <!-- Mobile regular items -->
           <template v-else>
-            <NuxtLink
-              v-slot="{ isActive, href, navigate }"
-              :to="item.url || '#'"
-              custom
-            >
+            <NuxtLink v-slot="{ isActive, href, navigate }" :to="item.url || '#'" custom>
               <DisclosureButton
                 as="a"
                 :href="href"

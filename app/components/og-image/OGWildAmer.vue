@@ -1,16 +1,16 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    title?: string;
-    cta?: string;
-    image?: string;
+    title?: string
+    cta?: string
+    image?: string
   }>(),
   {
     title: "I'm on a mission to build tech for wildlife conservation",
     cta: undefined,
-    image: undefined,
+    image: undefined
   }
-);
+)
 </script>
 
 <template>
@@ -19,7 +19,7 @@ withDefaults(
     :style="{
       backgroundColor: '#17130f',
       color: 'hsl(60 20% 99.0196%)',
-      fontFamily: 'Montserrat, sans-serif',
+      fontFamily: 'Montserrat, sans-serif'
     }"
   >
     <div v-if="!image" class="absolute top-0 right-0 w-full h-[100vh]">
@@ -78,11 +78,7 @@ withDefaults(
     <div class="flex flex-row gap-8 w-full h-full">
       <div
         class="flex flex-col flex-1"
-        :class="
-          !image
-            ? 'justify-center items-center'
-            : 'justify-center min-w-xl mr-10'
-        "
+        :class="!image ? 'justify-center items-center' : 'justify-center min-w-xl mr-10'"
       >
         <!-- Main Content -->
         <div
@@ -98,7 +94,7 @@ withDefaults(
             :class="[title.length < 65 ? 'text-7xl' : 'text-6xl']"
             :style="{
               fontFamily: 'Anton, sans-serif',
-              lineHeight: '1.1em',
+              lineHeight: '1.1em'
             }"
           >
             {{ title }}
@@ -109,7 +105,7 @@ withDefaults(
             class="text-3xl font-bold block px-12 py-6 rounded-lg"
             :style="{
               color: 'hsl(20 92% 4%)',
-              backgroundColor: 'hsl(300 52% 90%)',
+              backgroundColor: 'hsl(300 52% 90%)'
             }"
           >
             {{ cta }}
@@ -129,7 +125,7 @@ withDefaults(
             class="w-24 h-24 rounded-full border-4 flex items-center justify-center overflow-hidden shadow-lg"
             :style="{
               backgroundColor: '#4a7c59',
-              borderColor: 'hsla(300, 52%, 90%, 0.7)',
+              borderColor: 'hsla(300, 52%, 90%, 0.7)'
             }"
           >
             <img
@@ -148,7 +144,7 @@ withDefaults(
               class="text-4xl font-normal leading-none mb-0 w-full"
               :class="!image ? 'text-center mt-4' : ''"
               :style="{
-                fontFamily: 'Anton, sans-serif',
+                fontFamily: 'Anton, sans-serif'
               }"
             >
               Amer Kawar

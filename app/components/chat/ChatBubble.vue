@@ -5,9 +5,7 @@
       v-if="!isMe && (avatarEmoji || avatarImg)"
       class="shrink-0 size-11 rounded-full border grid place-items-center overflow-hidden"
       :class="
-        avatarImg
-          ? 'bg-transparent p-0'
-          : 'bg-secondary text-secondary-foreground ' + avatarClass
+        avatarImg ? 'bg-transparent p-0' : 'bg-secondary text-secondary-foreground ' + avatarClass
       "
       :aria-label="avatarAriaLabel"
     >
@@ -26,11 +24,7 @@
       <p v-if="showName" class="text-[11px] mb-0.5 opacity-92">
         {{ label }}
       </p>
-      <div
-        v-if="typing"
-        class="flex items-center gap-1 h-6"
-        aria-label="typing"
-      >
+      <div v-if="typing" class="flex items-center gap-1 h-6" aria-label="typing">
         <span class="sr-only">{{ label }} is typing</span>
         <span class="dot" /><span class="dot" /><span class="dot" />
       </div>
@@ -44,11 +38,7 @@
     <div
       v-if="isMe && (avatarEmoji || avatarImg)"
       class="shrink-0 size-11 rounded-full grid place-items-center border overflow-hidden shadow-sm"
-      :class="
-        avatarImg
-          ? 'bg-transparent p-0'
-          : 'bg-secondary text-secondary-foreground'
-      "
+      :class="avatarImg ? 'bg-transparent p-0' : 'bg-secondary text-secondary-foreground'"
       :aria-label="avatarAriaLabel"
     >
       <NuxtImg
@@ -64,43 +54,42 @@
 </template>
 
 <script setup lang="ts">
-import { computed, toRefs } from "vue";
+import { computed, toRefs } from 'vue'
 
 interface Props {
-  isMe: boolean;
-  text?: string;
-  typing?: boolean;
-  showName?: boolean;
-  label?: string;
-  avatarEmoji?: string;
-  avatarImg?: string;
-  avatarClass?: string;
+  isMe: boolean
+  text?: string
+  typing?: boolean
+  showName?: boolean
+  label?: string
+  avatarEmoji?: string
+  avatarImg?: string
+  avatarClass?: string
 }
-const props = defineProps<Props>();
+const props = defineProps<Props>()
 
 const containerClasses = computed(() => {
-  return props.isMe ? "justify-end" : "justify-start";
-});
+  return props.isMe ? 'justify-end' : 'justify-start'
+})
 
 const classes = computed(() => {
-  const base =
-    "chat-bubble max-w-[85%] px-3 py-2 text-sm shadow-xs rounded-2xl";
+  const base = 'chat-bubble max-w-[85%] px-3 py-2 text-sm shadow-xs rounded-2xl'
   const side = props.isMe
-    ? "bg-secondary text-secondary-foreground ml-auto rounded-tr-none"
-    : "bg-primary text-primary-foreground rounded-tl-none";
-  const typing = props.typing ? "border-dashed" : "";
-  return [base, side, typing].join(" ");
-});
+    ? 'bg-secondary text-secondary-foreground ml-auto rounded-tr-none'
+    : 'bg-primary text-primary-foreground rounded-tl-none'
+  const typing = props.typing ? 'border-dashed' : ''
+  return [base, side, typing].join(' ')
+})
 
 const ariaLabel = computed(() => {
-  return props.label ? `${props.label} message bubble` : "Message bubble";
-});
+  return props.label ? `${props.label} message bubble` : 'Message bubble'
+})
 
 const avatarAriaLabel = computed(() => {
-  return props.label ? `${props.label} avatar` : "Avatar";
-});
+  return props.label ? `${props.label} avatar` : 'Avatar'
+})
 
-const { text, typing, showName, label } = toRefs(props);
+const { text, typing, showName, label } = toRefs(props)
 </script>
 
 <style scoped>
