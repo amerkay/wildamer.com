@@ -1,32 +1,20 @@
 <template>
   <section id="featured-projects" class="border-t text-foreground">
     <Container>
-      <h2
-        class="text-base/7 font-semibold text-secondary-foreground dark:text-secondary"
-      >
+      <h2 class="text-base/7 font-semibold text-secondary-foreground dark:text-secondary">
         Featured projects
       </h2>
-      <p
-        class="mt-2 max-w-xl text-4xl font-heading tracking-tight text-foreground sm:text-5xl"
-      >
+      <p class="mt-2 max-w-xl text-4xl font-heading tracking-tight text-foreground sm:text-5xl">
         Time &amp; money saving projects I worked on for non-profits
       </p>
-      <div
-        v-if="featuredProjects && featuredProjects.length > 0"
-        class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6"
-      >
-        <ProjectCard
-          v-for="(project, index) in featuredProjects"
-          :key="project.path || index"
-          :project="project"
+      <div v-if="featuredProjects && featuredProjects.length > 0"
+        class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6">
+        <ProjectCard v-for="(project, index) in featuredProjects" :key="project.path || index" :project="project"
           :grid-classes="cardLayouts[index]?.gridClasses || ''"
           :background-modifiers="cardLayouts[index]?.backgroundModifiers"
           :content-modifiers="cardLayouts[index]?.contentModifiers"
-          :border-modifiers="cardLayouts[index]?.borderModifiers"
-          :media-classes="
-            cardLayouts[index]?.mediaClasses || 'h-80 object-cover'
-          "
-        />
+          :border-modifiers="cardLayouts[index]?.borderModifiers" :media-classes="cardLayouts[index]?.mediaClasses || 'h-80 object-cover'
+            " />
       </div>
     </Container>
   </section>
@@ -36,7 +24,7 @@
 const { data: featuredProjects } = await useAsyncData(
   "featured-projects",
   () => {
-    return queryCollection("projects")
+    return queryCollection("project")
       .where("isFeatured", "=", true)
       .order("featuredOrder", "ASC")
       .order("date", "DESC")

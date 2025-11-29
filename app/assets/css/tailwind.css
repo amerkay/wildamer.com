@@ -63,7 +63,7 @@
   --foreground: hsl(37.3585 54.6392% 80.9804%);
   --card: hsl(22.5 12.1212% 12.9412%);
   --card-foreground: hsl(37.3585 54.6392% 80.9804%);
-  --popover: hsl(22.5 12.1212% 12.9412%);
+  --popover: hsl(22.5 12.1212% 9.9412%);
   --popover-foreground: hsl(37.3585 54.6392% 80.9804%);
   --primary: hsl(90, 76%, 27%);
   --primary-foreground: hsl(0 0% 100%);
@@ -163,39 +163,48 @@
 @theme inline {
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+
   @keyframes accordion-down {
     from {
       height: 0;
     }
+
     to {
       height: var(--reka-accordion-content-height);
     }
   }
+
   @keyframes accordion-up {
     from {
       height: var(--reka-accordion-content-height);
     }
+
     to {
       height: 0;
     }
   }
+
   /* Mozilla Headline, Anton, Fjalla One, Bricolage Grotesque */
-  --font-heading: "Anton", var(--font-sans);
+  --font-heading: "Anton",
+  var(--font-sans);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   button {
     @apply cursor-pointer;
   }
 
   a[href] {
     @apply text-primary;
+
     &:hover {
       @apply underline;
     }
@@ -206,16 +215,41 @@
   }
 }
 
-/* @layer components {
-  .text-2xl,
-  .text-3xl,
-  .text-4xl,
-  .text-5xl,
-  .text-6xl,
-  .text-7xl {
-    @apply font-heading;
+@layer utilities {
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    @apply font-normal font-heading text-muted-foreground;
   }
-} */
+
+  .prose a {
+    @apply text-muted-foreground no-underline;
+  }
+
+  .prose a:hover {
+    @apply underline;
+    color: color-mix(in srgb, var(--muted-foreground) 85%, white);
+  }
+
+  .prose ul,
+  .prose ol {
+    @apply -mt-3.5;
+  }
+
+  .prose img {
+    @apply border-2 !rounded;
+  }
+
+  .dark .prose img {
+    @apply opacity-80 transition-opacity duration-300;
+  }
+
+  .dark .prose img:hover {
+    @apply opacity-100;
+  }
+}
 
 html {
   scroll-behavior: smooth;
@@ -228,6 +262,7 @@ select {
 }
 
 .dark {
+
   input,
   textarea,
   select {

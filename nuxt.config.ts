@@ -102,7 +102,7 @@ export default defineNuxtConfig({
   },
 
   ogImage: {
-    fonts: ["Anton:400", "Montserrat:400", "Montserrat:700"],
+    fonts: ["Anton:400", "Montserrat:400", "Montserrat:700", "Montserrat:900"],
     zeroRuntime: true,
 
     defaults: {

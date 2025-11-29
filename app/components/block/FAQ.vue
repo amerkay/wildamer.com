@@ -3,9 +3,7 @@
     <Container>
       <div class="lg:grid lg:grid-cols-12 lg:gap-8">
         <div class="lg:col-span-5">
-          <h2
-            class="text-3xl tracking-tight text-pretty sm:text-4xl font-heading"
-          >
+          <h2 class="text-3xl tracking-tight text-pretty sm:text-4xl font-heading">
             Why volunteer, and what's my goal?
           </h2>
           <p class="mt-4 text-base/7 text-pretty text-muted-foreground">
@@ -14,60 +12,32 @@
           </p>
         </div>
         <div class="mt-10 lg:col-span-7 lg:mt-0">
-          <Accordion
-            v-model="activeItem"
-            type="single"
-            class="w-full space-y-4"
-            collapsible
-            :default-value="defaultValue"
-          >
-            <AccordionItem
-              v-for="(faq, idx) in parsedFaqs"
-              :key="faq.question"
-              :value="`item-${idx}`"
-              class="mb-0"
-            >
-              <AccordionTrigger
-                :class="[
-                  'text-base/7 font-bold text-foreground',
-                  { 'pt-0': idx === 0 },
-                ]"
-                >{{ faq.question }}</AccordionTrigger
-              >
+          <Accordion v-model="activeItem" type="single" class="w-full space-y-4" collapsible
+            :default-value="defaultValue">
+            <AccordionItem v-for="(faq, idx) in parsedFaqs" :key="faq.question" :value="`item-${idx}`" class="mb-0">
+              <AccordionTrigger :class="[
+                'text-base/7 font-bold text-foreground',
+                { 'pt-0': idx === 0 },
+              ]">{{ faq.question }}</AccordionTrigger>
               <AccordionContent class="mt-2 text-base/7">
                 <template v-if="faq.type === 'timeline'">
-                  <div
-                    v-if="
-                      faq.parsedParagraphsBefore &&
-                      faq.parsedParagraphsBefore.length
-                    "
-                    class="prose prose-stone dark:!prose-inverse max-w-none mb-6 [&>p]:mb-3 [&>p:last-child]:mb-0 text-muted-foreground"
-                  >
-                    <div
-                      v-for="(paragraph, i) in faq.parsedParagraphsBefore"
-                      :key="i"
-                      v-html="paragraph"
-                    />
+                  <div v-if="
+                    faq.parsedParagraphsBefore &&
+                    faq.parsedParagraphsBefore.length
+                  "
+                    class="prose prose-stone dark:!prose-inverse max-w-none mb-6 [&>p]:mb-3 [&>p:last-child]:mb-0 text-muted-foreground">
+                    <div v-for="(paragraph, i) in faq.parsedParagraphsBefore" :key="i" v-html="paragraph" />
                   </div>
-                  <Timeline
-                    :items="faq.content"
-                    :class="{
-                      'mt-6':
-                        faq.parsedParagraphsBefore &&
-                        faq.parsedParagraphsBefore.length,
-                    }"
-                    class="mb-4"
-                  />
+                  <Timeline :items="faq.content" :class="{
+                    'mt-6':
+                      faq.parsedParagraphsBefore &&
+                      faq.parsedParagraphsBefore.length,
+                  }" class="mb-4" />
                 </template>
                 <template v-else>
                   <div
-                    class="prose prose-stone dark:prose-invert max-w-none [&>div]:mb-3 [&>div:last-child]:mb-0 [&_p]:mb-2 [&_p:last-child]:mb-0 text-muted-foreground"
-                  >
-                    <div
-                      v-for="(paragraph, i) in faq.parsedContent"
-                      :key="i"
-                      v-html="paragraph"
-                    />
+                    class="prose prose-stone dark:prose-invert max-w-none [&>div]:mb-3 [&>div:last-child]:mb-0 [&_p]:mb-2 [&_p:last-child]:mb-0 text-muted-foreground">
+                    <div v-for="(paragraph, i) in faq.parsedContent" :key="i" v-html="paragraph" />
                   </div>
                 </template>
               </AccordionContent>
@@ -80,7 +50,6 @@
 </template>
 
 <script setup>
-import Timeline from "@/components/project/Timeline.vue";
 import {
   Accordion,
   AccordionContent,
@@ -91,6 +60,7 @@ import { markdown } from "very-small-parser/esm";
 import { toText } from "very-small-parser/lib/html/toText";
 import { toHast } from "very-small-parser/lib/markdown/block/toHast";
 import { computed, ref, watch } from "vue";
+import Timeline from "~/components/base/Timeline.vue";
 
 const defaultValue = "item-0";
 const activeItem = ref(defaultValue);

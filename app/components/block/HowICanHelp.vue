@@ -9,9 +9,7 @@
         >
       </p> -->
 
-      <h2
-        class="mb-4 mt-3 text-4xl font-heading lg:mb-5 lg:text-5xl text-foreground max-w-2xl"
-      >
+      <h2 class="mb-4 mt-3 text-4xl font-heading lg:mb-5 lg:text-5xl text-foreground max-w-2xl">
         I'm offering to be your tech consultant volunteer.
       </h2>
 
@@ -23,35 +21,21 @@
         > -->
       </p>
 
-      <div
-        class="grid grid-cols-1 gap-y-10 py-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:gap-y-16 lg:py-16"
-      >
+      <div class="grid grid-cols-1 gap-y-10 py-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:gap-y-16 lg:py-16">
         <template v-for="(f, i) in features" :key="i">
-          <div
-            v-if="i < 3 || showAllFeatures"
-            class="group flex flex-col items-center justify-start transition-all duration-500 ease-in-out"
-            :class="{
+          <div v-if="i < 3 || showAllFeatures"
+            class="group flex flex-col items-center justify-start transition-all duration-500 ease-in-out" :class="{
               'animate-slide-up': showAllFeatures && i >= 3,
-            }"
-            :style="`animation-delay: ${(i - 3) * 100}ms`"
-          >
-            <div
-              class="flex p-4 items-center justify-center rounded-md border border-secondary"
-            >
-              <Icon
-                :name="f.icon"
-                size="24"
-                class="h-52 w-52 transition-transform duration-300 text-secondary-foreground/90 dark:text-white/90 transform group-hover:scale-110"
-              />
+            }" :style="`animation-delay: ${(i - 3) * 100}ms`">
+            <div class="flex p-4 items-center justify-center rounded-md border border-secondary">
+              <Icon :name="f.icon" size="24"
+                class="h-52 w-52 transition-transform duration-300 text-secondary-foreground/90 dark:text-white/90 transform group-hover:scale-110" />
             </div>
             <h3
-              class="mt-4 text-balance text-center text-lg font-semibold lg:mt-5 lg:text-xl text-secondary-foreground dark:text-secondary"
-            >
+              class="mt-4 text-balance text-center text-lg font-semibold lg:mt-5 lg:text-xl text-secondary-foreground dark:text-secondary">
               {{ f.title }}
             </h3>
-            <p
-              class="mt-1 max-w-[400px] text-balance text-center text-muted-foreground lg:mt-2"
-            >
+            <p class="mt-1 max-w-[400px] text-balance text-center text-muted-foreground lg:mt-2">
               {{ f.description }}
             </p>
           </div>
@@ -75,7 +59,7 @@ const showAllFeatures = ref(false);
 const features = [
   {
     icon: "lucide:users",
-    title: "CRM setup & configuration (Salesforce, CiviCRM)",
+    title: "CRM setup & configuration (Salesforce, CiviCRM, Beacon)",
     description:
       "Streamline your team's efforts with properly configured systems.",
   },
@@ -136,6 +120,7 @@ const features = [
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
