@@ -214,25 +214,15 @@
     @apply font-normal font-heading text-muted-foreground;
   }
 
-  .prose h1 a,
-  .prose h2 a,
-  .prose h3 a,
-  .prose h4 a {
-    @apply text-muted-foreground no-underline;
-  }
-
-  .prose h1 a:hover,
-  .prose h2 a:hover,
-  .prose h3 a:hover,
-  .prose h4 a:hover {
-    color: color-mix(in srgb, var(--muted-foreground) 85%, white);
-  }
-
-  .prose a {
+  .prose a[href] {
     @apply text-primary no-underline;
   }
 
-  .prose a:hover {
+  .dark .prose a[href] {
+    color: color-mix(in srgb, var(--primary) 75%, white);
+  }
+
+  .prose a[href]:hover {
     text-decoration: underline;
     color: color-mix(in srgb, var(--primary) 85%, white);
   }

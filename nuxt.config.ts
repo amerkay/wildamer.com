@@ -20,11 +20,6 @@ export default defineNuxtConfig({
 
   components: [
     { path: '~/components', pathPrefix: false },
-
-    // { path: "~/components/block", pathPrefix: false, priority: 2 },
-    // { path: "~/components/shared", pathPrefix: false },
-    // { path: "~/components/base", pathPrefix: false },
-    // { path: "~/components/forms", pathPrefix: false },
     {
       path: '~/components/ui',
       extensions: ['.vue'],

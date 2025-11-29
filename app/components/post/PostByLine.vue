@@ -1,6 +1,6 @@
 <template>
-  <div class="pt-4 md:pt-6 pb-8">
-    <div class="flex items-start gap-4 text-sm w-full mb-3">
+  <div class="mt-4 md:mt-6 mb-8 pb-3 border-b">
+    <div class="flex items-start gap-4 text-sm w-full">
       <MeAvatar class="size-10 shrink-0" />
       <div class="">
         <p class="font-medium text-foreground">Amer Kawar</p>
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div v-if="tags && tags.length > 0" class="flex items-center gap-2 flex-wrap">
+    <div v-if="tags && tags.length > 0" class="mt-3 flex items-center gap-2 flex-wrap">
       <Badge v-for="tag in tags" :key="tag" variant="outline">
         {{ tag }}
       </Badge>

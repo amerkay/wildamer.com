@@ -354,12 +354,15 @@ const getTooltipText = (totalDonations: number) => {
 
 <template>
   <div
-    class="not-prose w-full space-y-6 border-2 border-border px-4 py-6 sm:px-6 rounded-lg max-w-3xl mx-auto"
+    class="not-prose w-full space-y-6 border-2 border-border px-4 py-6 sm:px-6 rounded-lg max-w-4xl mx-auto"
   >
     <!-- Header -->
     <div class="space-y-2">
       <h2 class="text-3xl font-bold text-foreground">UK Fundraising Platform Fee Calculator</h2>
-      <p class="text-muted-foreground">Compare platform costs for your fundraising campaign</p>
+      <p class="text-muted-foreground">
+        Compare "donor cover fees" lost revenue. Most platforms also charge monthly subscription
+        fees, and some charge you ~5% of your Gift Aid's 25%.
+      </p>
     </div>
 
     <!-- Slider -->
@@ -459,7 +462,7 @@ const getTooltipText = (totalDonations: number) => {
       <Table>
         <TableHeader>
           <TableRow class="hover:bg-transparent">
-            <TableHead class="w-[275px]">Platform</TableHead>
+            <TableHead class="min-w-[250px]">Platform</TableHead>
             <TableHead class="text-right">
               <HelpTooltip
                 content="Total amount donors pay, including the base donation plus any platform fees or donor contributions."
@@ -472,7 +475,7 @@ const getTooltipText = (totalDonations: number) => {
               <HelpTooltip
                 content="Fees charged by the fundraising platform. For 'Your Own Form', this shows donor contributions collected. For other platforms, this is deducted from what the charity receives."
               >
-                <span>Platform Fees</span>
+                <span>Covered Fees</span>
                 <Icon name="lucide:circle-question-mark" size="14" />
               </HelpTooltip>
             </TableHead>
@@ -502,10 +505,10 @@ const getTooltipText = (totalDonations: number) => {
             <TableCell class="font-medium">
               <Accordion type="single" collapsible class="w-full">
                 <AccordionItem value="breakdown" class="border-none">
-                  <AccordionTrigger class="hover:no-underline p-0">
+                  <AccordionTrigger class="hover:no-underline p-0 font-sans">
                     <div class="flex items-center gap-2">
                       <div class="text-left">
-                        <div class="font-semibold">Your Own Form</div>
+                        <div class="font-bold text-foreground">Your Own Form</div>
                         <div class="text-xs text-muted-foreground">
                           {{ (baseline.contributionRate * 100).toFixed(1) }}% donor contribution
                         </div>
@@ -562,8 +565,8 @@ const getTooltipText = (totalDonations: number) => {
                 <Accordion type="single" collapsible class="w-full">
                   <AccordionItem value="breakdown" class="border-none">
                     <AccordionTrigger class="hover:no-underline p-0">
-                      <div class="text-left">
-                        <div>{{ result.platform }}</div>
+                      <div class="text-left font-sans">
+                        <div class="text-foreground">{{ result.platform }}</div>
                         <div class="text-xs text-muted-foreground">{{ result.description }}</div>
                       </div>
                     </AccordionTrigger>

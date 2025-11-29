@@ -164,7 +164,7 @@ withDefaults(
       <div v-if="image">
         <img
           :src="image"
-          class="border-[16px] rounded-3xl object-cover w-[550px] h-[115%] object-left-top"
+          class="border-16 rounded-3xl w-[550px] h-[115%] object-cover object-left"
           :style="{ borderColor: 'hsla(300, 52%, 90%, 0.25)' }"
         />
       </div>
