@@ -42,7 +42,7 @@ To simulate lost income accurately, I obtained 14k donation records over 12 mont
 | £500-£999.99     | 3     | 0.02%      |
 | £1000+           | 3     | 0.02%      |
 
-### So how to avoid this tax on your non-profit's fundraising success?
+### So how do you avoid this tax on your non-profit's fundraising success?
 
 Use a flat fee payment form. I compared multiple options and the best I found is GiveWP.
 
@@ -54,7 +54,7 @@ You pay $350/year (~£22/month), and that's it.
 
 #### When does it make sense to use these platforms?
 
-It only really makes sense for a charity to use a %-cut fundraising platform if you don't have a website or your charity is tiny (makes less than £500 per month).
+It only really makes sense for a charity to use a %-cut fundraising platform if you don't have a website or your charity is tiny (makes less than £500 per month). Even then, choose one of the platforms that covers your transaction fees (Stripe/PayPal fees) like Donorbox or FundraiserUp.
 
 ### Other reasons to avoid donation platforms
 
@@ -67,7 +67,7 @@ As if the above numbers aren't enough, you also end up with a vendor lock-in.
 
 2. Also, now because your customer data lives on their platform, you need to **pay for custom integrations with your CRM**.
    MoveData.io, as an example, charges $200 per month for a simple Raisely -> Salesforce integration. \
-   And don't even get me started on Zapier! For 500 donations per month x ~20 tasks per flow = 10,000 tasks per month; Zapier's Team plan costs £198.01/mo for 10 tasks/mo!
+   And don't even get me started on Zapier! For 500 donations per month x ~20 tasks per flow = 10,000 tasks per month, Zapier's Team plan costs £198.01/mo!
 
 ---
 
@@ -115,9 +115,9 @@ Plus 1.9% + 20p (per pledge) on UK/EU cards
 ### whydonate
 
 They ask donors for the following percentages on top of the donation amount:
-- 14% £5-£250
-- 11% £250-£500
-- 9% £500+
+- 14% for £5-£250
+- 11% for £250-£500
+- 9% for £500+
 
 They don't take fees from the charity. Your charity still needs to pay the Stripe fees.
 
@@ -138,7 +138,7 @@ They ask donors for the following percentages on top of each donation amount:
 - 12% for £5
 - 10% for £10
 - 8.5% for £20
-- 7.5% for £30-£200/month
+- 7.5% for £30-£200
 - 7% for £1000
 
 If the donor does not "cover the fee", they charge your charity 4% of the donation amount. Your charity still needs to pay the Stripe fees.
@@ -194,7 +194,7 @@ If you have more than 2000 donations per year, or if you want access to their Pr
 
 ### Enthuse
 
-They prompt donors for a tip of 17% to 7% on larger amounts. 
+They prompt donors for a tip of 17%, going down to 7% on larger amounts. 
 
 - 17% for £3 
 - 13% for £5
@@ -216,3 +216,4 @@ Monthly fees of £39.99/month for donations and £24.99/month for fundraising fo
 All of these platforms run this way. It's called the "tip-based business model" and you want to **avoid it as much as possible.**
 
 Bottom line: **Own your donation forms** by paying for the software and not per donation. And don't fall for the hidden **lock-in mechanism** where your org's recurring subscriptions are owned by one of these platforms.
+
