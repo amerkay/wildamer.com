@@ -7,7 +7,7 @@ imageDark: /imgs/hire-n8n-automation-expert-crm/givewp-beacon-crm-n8n-workflow-d
 navigation: true
 isFeatured: true
 featuredOrder: 2
-tags: [Hiring, Upwork, Automation, CRM]
+tags: [Hiring, CRM, Automation]
 ---
 
 I've been volunteering with a few charities in Europe, helping them setup their CRMs, tech stacks, donation funnels and automation flows. But I won't be available forever. This is why I am writing this post.

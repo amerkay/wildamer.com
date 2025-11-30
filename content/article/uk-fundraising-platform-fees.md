@@ -9,6 +9,7 @@ isComingSoon: false
 image: /imgs/uk-fundraising-platform-fees/uk-fundraising-platform-fee-calculator.png
 imageDark: /imgs/uk-fundraising-platform-fees/uk-fundraising-platform-fee-calculator-dark.png
 isHideFeaturedImageOnPage: true
+tags: [Fundraising, Calculator]
 ---
 
 ::cost-of-donation-platforms-calculator
@@ -67,7 +68,7 @@ As if the above numbers aren't enough, you also end up with a vendor lock-in.
 
 2. Also, now because your customer data lives on their platform, you need to **pay for custom integrations with your CRM**.
    MoveData.io, as an example, charges $200 per month for a simple Raisely -> Salesforce integration. \
-   And don't even get me started on Zapier! For 500 donations per month x ~20 tasks per flow = 10,000 tasks per month, Zapier's Team plan costs £198.01/mo!
+   And don't even get me started on Zapier! For 500 donations per month × ~20 tasks per flow = 10,000 tasks per month, Zapier's Team plan costs £198.01/mo!
 
 ---
 
@@ -75,7 +76,7 @@ As if the above numbers aren't enough, you also end up with a vendor lock-in.
 
 To compile the list below, I found live donation forms for each platform and checked the tips requested for £3, £5, £10, £20, £50, £100, £200, £500 and £1000.
 
-### Donorbox
+### Donorbox: Reasonable pricing, passes "donor covered" fees remainder, but integrations are paid
 
 Asks donors to cover the following fees:
 - 11.3% for £3
@@ -96,23 +97,47 @@ Here is a real payment example. Donorbox is one of the few fair platforms that o
 
 ![Donorbox transaction example](/imgs/uk-fundraising-platform-fees/donorbox-example.png)
 
-### GoFundMe
+### Givey.com: Reasonable pricing, covers Stripe fees, but no embedded forms
+
+Flat rate 5% on all donations, which includes the Stripe transaction fees. That's a good deal and it's unique! But you cannot embed the forms, and must send the traffic to their website.
+
+See [Givey's charges and fees](https://support.givey.com/en/articles/764870-what-are-your-charges-or-fees) page.
+
+![Givey's Pricing](/imgs/uk-fundraising-platform-fees/givey-fee-table.png)
+
+### FundraiserUp: Reasonable pricing, covers Stripe fees
+
+They ask donors for the following percentages on top of each donation amount:
+- 16.7% for £3
+- 12% for £5
+- 10% for £10
+- 8.5% for £20
+- 7.5% for £30-£200
+- 7% for £1000
+
+Similar to Donorbox, when they ask the donor to cover the fees, they still only take the 4%, not the entire tip. This means the remaining "covered fee" by the donor is used to cover the Stripe transaction fees. Fair!
+
+If the donor does not "cover the fee", they [charge your charity 4%](https://fundraiseup.com/support/tax-deductible-fees/) of the donation amount. Your charity still needs to pay the Stripe fees.
+
+![FundraiserUp's Pricing](/imgs/uk-fundraising-platform-fees/fundraiserup-pricing.png)
+
+### GoFundMe: Expensive "tip", does not cover Stripe transaction fees
 
 They ask donors to add 16.5% to any amount. It can be turned off.
 
-On top of that, they charge the charity 2.9% + 25p per donation. 
+On top of that, they charge the charity 2.9% + 25p per donation.
 
 ![GoFundMe's Pricing](/imgs/uk-fundraising-platform-fees/gofundme-pricing.png)
 
-### Crowdfunder.co.uk
+### Crowdfunder.co.uk: Expensive "tip", does not cover Stripe transaction fees
 
 They ask donors to add 20% to all amounts. It can be turned off.
 
-Plus 1.9% + 20p (per pledge) on UK/EU cards
+Plus 1.9% + 20p (per pledge) on UK/EU cards.
 
 ![Crowdfunder's Pricing](/imgs/uk-fundraising-platform-fees/crowdfunder-pricing.png)
 
-### whydonate
+### WhyDonate: Expensive "tip", does not cover Stripe transaction fees
 
 They ask donors for the following percentages on top of the donation amount:
 - 14% for £5-£250
@@ -123,29 +148,7 @@ They don't take fees from the charity. Your charity still needs to pay the Strip
 
 ![whydonate's pricing](/imgs/uk-fundraising-platform-fees/whydonate-pricing.png)
 
-### givey.com
-
-Flat rate 5% on all donations, which includes the Stripe transaction fees. That's a good deal and it's unique!
-
-See [Givey's charges and fees](https://support.givey.com/en/articles/764870-what-are-your-charges-or-fees) page.
-
-![Givey's Pricing](/imgs/uk-fundraising-platform-fees/givey-fee-table.png)
-
-### FundraiserUp:
-
-They ask donors for the following percentages on top of each donation amount:
-- 16.7% for £3
-- 12% for £5
-- 10% for £10
-- 8.5% for £20
-- 7.5% for £30-£200
-- 7% for £1000
-
-If the donor does not "cover the fee", they charge your charity 4% of the donation amount. Your charity still needs to pay the Stripe fees.
-
-![FundraiserUp's Pricing](/imgs/uk-fundraising-platform-fees/fundraiserup-pricing.png)
-
-### Funraisin
+### Funraisin: Expensive "tip", does not cover Stripe transaction fees
 
 I went through some donation forms and tried the following donation amounts one by one. These are the "cover the fees" they ask the donor to add to the amount:
 - 34.3% for £3
@@ -164,7 +167,9 @@ They do not publish their pricing, but from third-party sources, it seems that i
 
 Plus, Funraisin charges a fee of [4.75% for each Gift Aid](https://support.funraisin.co/blog/gift-aid-claim) claim.
 
-### JustGiving
+### JustGiving: Worst deal, high donor tip, does not cover Stripe transaction fees, no embedded forms
+
+JustGiving might be the worst of bunch reviewed here. They are expensive, do not cover transaction fees, and you must send your traffic to their website.
 
 - 33.3% for £3
 - 20% for £5
@@ -175,7 +180,7 @@ Plus 5% on Gift Aid income.
 ![JustGiving's Pricing](/imgs/uk-fundraising-platform-fees/justgiving-pricing.png)
 
 
-### Raisely
+### Raisely: High donor tip, does not cover Stripe transaction fees
 
 Based on tests I ran on real Raisely forms, this is how much they ask donors to add:
 - 34.7% for £3
@@ -192,11 +197,11 @@ If you have more than 2000 donations per year, or if you want access to their Pr
 
 ![Raisely's Pricing](/imgs/uk-fundraising-platform-fees/raisely-pricing.png)
 
-### Enthuse
+### Enthuse: High donor tip, does not cover Stripe transaction fees
 
-They prompt donors for a tip of 17%, going down to 7% on larger amounts. 
+They prompt donors for a tip of 17%, going down to 7% on larger amounts.
 
-- 17% for £3 
+- 17% for £3
 - 13% for £5
 - 9.9% for £10
 - 8.4% for £20
@@ -213,7 +218,10 @@ Monthly fees of £39.99/month for donations and £24.99/month for fundraising fo
 
 ## Wrapping up
 
-All of these platforms run this way. It's called the "tip-based business model" and you want to **avoid it as much as possible.**
+As you can see, almost all these platforms are masters of deception where they say it's "free to use", but in reality, they are costing your charity anywhere from 5% (reasonable) to 20% (predatory) of your donation income for simply providing you with a form while vendor-locking your org.
 
-Bottom line: **Own your donation forms** by paying for the software and not per donation. And don't fall for the hidden **lock-in mechanism** where your org's recurring subscriptions are owned by one of these platforms.
+All of these platforms run this way. It's called the "tip-based business model" and you want to **avoid it as much as possible**.
 
+Bottom line: 
+- **Own your donation forms** by paying for the software and not per donation. 
+- Don't fall for the hidden **lock-in mechanism** where your charity's recurring subscriptions are owned by one of these platforms.

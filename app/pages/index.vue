@@ -6,12 +6,13 @@
       collection-type="article"
       pre-heading="Featured articles"
       heading="Insights and guides for non-profit organizations"
+      class="dark"
     />
 
     <PostFeaturedBento
       collection-type="project"
       pre-heading="Featured projects"
-      heading="Time &amp; money saving projects I worked on for non-profits"
+      heading="Time &amp; money saving projects I worked on for wildlife conservation"
     />
 
     <FAQ />

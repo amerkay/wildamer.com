@@ -379,7 +379,7 @@ const getTooltipText = (totalDonations: number) => {
   >
     <!-- Header -->
     <div class="space-y-2">
-      <h2 class="text-3xl font-bold text-foreground">UK Fundraising Platform Fee Calculator</h2>
+      <h2 class="text-3xl font-bold text-foreground!">UK Fundraising Platform Fee Calculator</h2>
       <p class="text-muted-foreground">
         Compare "donor cover fees" lost revenue. Most platforms also charge monthly subscription
         fees, and some charge you ~5% of your Gift Aid's 25% on top of the covered fees below.

@@ -23,11 +23,11 @@
           </p>
 
           <div class="mt-8 grid grid-cols-1 gap-3 lg:flex lg:mt-12">
-            <NuxtLink to="#featured-projects">
+            <!-- <NuxtLink to="#featured-projects">
               <Button size="lg" variant="outline" class="min-w-72 w-full sm:w-auto lg:min-w-auto"
                 >My recent projects</Button
               >
-            </NuxtLink>
+            </NuxtLink> -->
             <NuxtLink to="/contact">
               <Button size="lg" class="min-w-72 w-full sm:w-auto"
                 >Let's talk

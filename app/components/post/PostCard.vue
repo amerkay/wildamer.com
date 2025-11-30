@@ -18,7 +18,7 @@
         :alt="post.title ?? ''"
         :media-classes="mediaClasses"
       />
-      <div class="p-10 pt-4">
+      <div class="py-10 px-6 md:px-10 pt-4">
         <div class="mb-2 md:flex md:items-center md:justify-between md:gap-x-4">
           <time
             v-if="post.publishedAt"
@@ -33,7 +33,7 @@
               })
             }}
           </time>
-          <div class="flex items-center gap-x-4 text-xs">
+          <div class="flex items-center gap-x-4 gap-y-2 text-xs flex-wrap">
             <template v-if="post.tags && post.tags.length > 0">
               <Badge v-for="tag in post.tags.slice(0, 3)" :key="tag" variant="outline">
                 {{ tag }}
@@ -45,13 +45,13 @@
         <NuxtLink
           v-if="!post?.isComingSoon"
           :to="post.path"
-          class="mt-2 text-lg font-medium tracking-tight text-foreground hover:text-foreground/90"
+          class="mt-2 text-xl font-normal text-foreground font-heading"
         >
           {{ post?.cardHeading || post.title }}
         </NuxtLink>
-        <p v-else class="mt-2 text-lg font-medium tracking-tight text-foreground">
+        <h3 v-else class="mt-2 text-xl font-normal text-muted-foreground font-heading">
           {{ post?.cardHeading || post.title }}
-        </p>
+        </h3>
         <p class="mt-2 max-w-lg text-sm/6 text-muted-foreground">
           {{ post?.description }}
         </p>

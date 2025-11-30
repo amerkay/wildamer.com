@@ -33,7 +33,7 @@ const participants = [
   },
   {
     id: 'elephant',
-    label: 'Pangea ElephantTrust',
+    label: 'Pangea Trust - Elephant Sanctuary',
     emoji: '🐘',
     avatarImg: '/imgs/avatar-elephant.png'
     // avatarClass: "bg-accent text-accent-foreground",

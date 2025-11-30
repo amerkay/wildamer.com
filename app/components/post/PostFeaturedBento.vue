@@ -1,10 +1,10 @@
 <template>
-  <section class="border-t text-foreground">
+  <section class="border-t text-foreground bg-background">
     <Container>
       <h2 class="text-base/7 font-semibold text-secondary-foreground dark:text-secondary">
         {{ preHeading }}
       </h2>
-      <p class="mt-2 max-w-xl text-4xl font-heading tracking-tight text-foreground sm:text-5xl">
+      <p class="mt-2 max-w-2xl text-4xl font-heading tracking-tight text-foreground sm:text-5xl">
         {{ heading }}
       </p>
       <div

@@ -38,7 +38,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <Container v-if="content" :width="containerWidth" :class="containerClass">
+  <Container v-if="content" :width="containerWidth" :class="[containerClass, 'pb-32 md:pb-40']">
     <h1 v-if="showTitle" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading">
       {{ content.title }}
     </h1>

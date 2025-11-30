@@ -1,7 +1,7 @@
 ---
 title: Barn Owl Sightings Web App using Kepler.gl for GIS data mapping
 description: I built a web app to visualize barn owl sightings using Kepler.gl, an open-source geospatial analysis tool.
-tags: [GIS, Web App, Barn Owl]
+tags: [Work In Progress, GIS Mapping, Web App]
 publishedAt: 2025-08-10
 
 image: /imgs/project-screenshots/barn-owl-sightings-gis-data-viz.jpg
