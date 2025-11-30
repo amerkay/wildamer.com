@@ -67,10 +67,19 @@ const cardLayouts = [
   },
   // Third card (bottom-left, small)
   {
-    gridClasses: 'lg:col-span-2',
-    backgroundModifiers: 'lg:rounded-bl-4xl',
-    contentModifiers: 'lg:rounded-bl-[calc(2rem+1px)]',
-    borderModifiers: 'lg:rounded-bl-4xl',
+    gridClasses: featuredPosts.value?.length === 3 ? 'lg:col-span-6' : 'lg:col-span-2',
+    backgroundModifiers:
+      featuredPosts.value?.length === 3
+        ? 'lg:rounded-bl-4xl lg:rounded-br-4xl'
+        : 'lg:rounded-bl-4xl',
+    contentModifiers:
+      featuredPosts.value?.length === 3
+        ? 'lg:rounded-bl-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]'
+        : 'lg:rounded-bl-[calc(2rem+1px)]',
+    borderModifiers:
+      featuredPosts.value?.length === 3
+        ? 'lg:rounded-bl-4xl lg:rounded-br-4xl'
+        : 'lg:rounded-bl-4xl',
     mediaClasses: ''
   },
   // Fourth card (bottom-center, small)
