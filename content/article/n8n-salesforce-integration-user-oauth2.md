@@ -1,5 +1,5 @@
 ---
-title: Steps to Create a Salesforce OAuth2 Integration User for your n8n Credential
+title: How to Create a Salesforce OAuth2 Integration User for your n8n Credential
 description: I am surprised at how confusing setting up an "Integration User" in Salesforce is. I wrote this tutorial on how to do so, to make life easier for future me and future you.
 publishedAt: 2025-11-28
 imageDark: /imgs/n8n-salesforce-integration-user/featured-salesforce-n8n-connected-app-dark.png
