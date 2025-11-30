@@ -29,7 +29,7 @@ I wanted a setup where:
 - Donors land on **one** URL. The site **chooses the right currency automatically** based on the user's IP location, but still lets donors override it.
 - **UTM data sticks for months**, not just for the first pageview and syncs to Beacon Payment and Subscription record types.
 
-The plugin I created does exactly that. It's published on my GitHub @ [amerkay/wp-beacon-multi-currency-forms](https://github.com/amerkay/wp-beacon-multi-currency-forms). It's published under the GPLv3 open source license. Totally free to use, modify and redistribute.
+The plugin I created does exactly that. It's published on my GitHub @ [amerkay/wp-beacon-multi-currency-forms](https://github.com/amerkay/wp-beacon-multi-currency-forms), under the GPLv3 open source license. Totally free to use, modify and redistribute.
 
 
 ## The £15,000 Question: Why Beacon Forms are great?
@@ -37,12 +37,12 @@ The plugin I created does exactly that. It's published on my GitHub @ [amerkay/w
 In my article on [UK fundraising platforms fees](/article/uk-fundraising-platform-fees), the calculator shows the same pattern across Donorbox, Raisely, FundraiserUp, JustGiving and friends:
 - They look "free", but in reality, they **tax your success** via "optional donor covers donation tips" and per-donation fees.
 - Over time, that "tip-based" business model can cost a small charity **£10k to £20k+** in avoidable fees&hellip; **every year**!
-- They setup the donation subscription in their own system, which ends up costing you extra in donation and locks you in so you can't really move the subscriptions away from their platforms.
+- They setup the donation subscriptions in their own system and Stripe accounts, which ends up costing you extra in custom integrations and locks you in so you can't really move the subscriptions away from their platforms.
 
 If your charity makes £10,000 per month in donations, you'd could lose about £1,000 to £2,000 if you use one of these platforms that keep the donor tip compared to setting up on your own "cover our fees" with Beacon CRM or GiveWP.
 
 The reason Beacon forms are great:
-- You **keep control of your subscriptions**: Beacon sets up subscriptions in your Stripe/PayPal account. No platform lock-in.
+- You **keep control of your subscriptions**: Beacon sets up subscriptions in your charity's Stripe/PayPal account. No platform lock-in.
 - You **keep the "cover our fees" upside** instead of outsourcing it to a tip-based platform. You can choose the percentage in your Beacon account.
 
 ![Beacon Forms Cover Donation Fees](/imgs/project-wp-beacon-multi-currency-forms/beacon-form-cover-fees.png)
