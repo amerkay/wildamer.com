@@ -51,19 +51,19 @@ const PLATFORMS: Platform[] = [
     name: 'Crowdfunder',
     feeRate: () => 0.2,
     includesStripe: false,
-    description: '20% covered fees + 1.9% + 20p per pledge'
+    description: '20% + 1.9% + 20p'
   },
   {
     name: 'GoFundMe',
     feeRate: () => 0.165,
     includesStripe: false,
-    description: '16.5% covered fees + charity pays 2.9% + 25p'
+    description: '16.5% + 2.9% + 25p'
   },
   {
     name: 'JustGiving',
     feeRate: (amt) => (amt <= 3 ? 0.333 : amt <= 5 ? 0.2 : 0.17),
     includesStripe: false,
-    description: '33.3% to 17% + 5% Gift Aid fee'
+    description: '33.3% to 17%'
   },
   {
     name: 'whydonate',
@@ -92,7 +92,7 @@ const PLATFORMS: Platform[] = [
       return 0.07
     },
     includesStripe: false,
-    description: '16.7% to 7% (charity pays 4% if uncovered)',
+    description: '16.7% to 7% (you pay 4%)',
     passesCoveredFeesOverPercent: 0.04
   },
   {
@@ -109,7 +109,7 @@ const PLATFORMS: Platform[] = [
       return 0.02
     },
     includesStripe: false,
-    description: '34.3% to 2% (£20 cap) + 4.75% Gift Aid fee',
+    description: '34% to 2% (£20 cap)',
     feeCap: 20
   },
   {
@@ -125,7 +125,7 @@ const PLATFORMS: Platform[] = [
       return 0.044
     },
     includesStripe: false,
-    description: '9.2% to 4.4%',
+    description: '9.2% to 4.4% (you pay 2.95%)',
     passesCoveredFeesOverPercent: 0.0295
   },
   {
@@ -157,7 +157,7 @@ const PLATFORMS: Platform[] = [
       return 0.0693
     },
     includesStripe: false,
-    description: '17% to 6.9% + £40/mo + 5% Gift Aid fee'
+    description: '17% to 6.9% + £40/mo'
   }
 ]
 
@@ -483,7 +483,7 @@ const getTooltipText = (totalDonations: number) => {
       <Table>
         <TableHeader>
           <TableRow class="hover:bg-transparent">
-            <TableHead class="min-w-[250px]">Platform</TableHead>
+            <TableHead class="min-w-[200px]">Platform</TableHead>
             <TableHead class="text-right">
               <HelpTooltip
                 content="Total amount donors pay, including the base donation plus any platform fees or donor contributions."
@@ -565,16 +565,18 @@ const getTooltipText = (totalDonations: number) => {
                 </AccordionItem>
               </Accordion>
             </TableCell>
-            <TableCell class="text-right font-medium">
+            <TableCell class="text-right font-medium font-mono">
               {{ fmt(baseline.totalDonorPayment) }}
             </TableCell>
-            <TableCell class="text-right text-emerald-600 dark:text-emerald-400">
+            <TableCell class="text-right text-emerald-600 dark:text-emerald-400 font-mono">
               +{{ fmt(baseline.donorContributions) }}
             </TableCell>
-            <TableCell class="text-right text-muted-foreground">
+            <TableCell class="text-right text-muted-foreground font-mono">
               −{{ fmt(baseline.stripeFees) }}
             </TableCell>
-            <TableCell class="text-right font-bold text-emerald-600 dark:text-emerald-400">
+            <TableCell
+              class="text-right font-bold text-emerald-600 dark:text-emerald-400 font-mono"
+            >
               {{ fmt(baseline.charityReceives) }}
             </TableCell>
           </TableRow>
@@ -620,17 +622,17 @@ const getTooltipText = (totalDonations: number) => {
                   </AccordionItem>
                 </Accordion>
               </TableCell>
-              <TableCell class="text-right">
+              <TableCell class="text-right font-mono">
                 {{ fmt(result.totalDonorPayment) }}
               </TableCell>
-              <TableCell class="text-right text-destructive">
+              <TableCell class="text-right text-destructive font-mono">
                 −{{ fmt(result.platformFees) }}
               </TableCell>
-              <TableCell class="text-right text-muted-foreground">
+              <TableCell class="text-right text-muted-foreground font-mono">
                 <span v-if="!result.includesStripe"> −{{ fmt(result.stripeFees) }} </span>
                 <span v-else class="text-xs italic"> included </span>
               </TableCell>
-              <TableCell class="text-right font-semibold">
+              <TableCell class="text-right font-semibold font-mono">
                 {{ fmt(result.charityReceives) }}
               </TableCell>
             </TableRow>
