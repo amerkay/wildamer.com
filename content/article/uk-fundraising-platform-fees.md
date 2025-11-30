@@ -23,11 +23,11 @@ In this article, I am going to focus on the UK, as that's where the 10 charities
 
 _TL;DR: You need to own your donation form and have your own "cover our fees" upsell that your org keeps. The "donor covers fees" offered by platforms will cost you thousands!_
 
-## How does the calculator above work?
+## How does the calculator above parentElementwork?
 
 The calculator above shows you lost income vs. potential gain by simulating incoming donations based on real data obtained from the charities I work with. It will help you estimate how much you'd lose by using each of the donation platforms listed compared to hosting your own form with a plugin like GiveWP.
 
-## Real data from 14,000 donations
+### Simulation based on 14,000 real donations data
 
 To simulate lost income accurately, I obtained 14k donation records over 12 months from the charities I work with. The distribution looks like this:
 
@@ -43,7 +43,7 @@ To simulate lost income accurately, I obtained 14k donation records over 12 mont
 | £500-£999.99     | 3     | 0.02%      |
 | £1000+           | 3     | 0.02%      |
 
-### So how do you avoid this tax on your non-profit's fundraising success?
+## So how do you avoid this tax on your non-profit's fundraising success?
 
 Use a flat fee payment form. I compared multiple options and the best I found is GiveWP.
 
@@ -53,11 +53,11 @@ You pay $350/year (~£22/month), and that's it.
 
 > I **do not** have any affiliation with GiveWP. I recommend GiveWP because they excel at what they do and their pricing model is an extremely reasonable flat rate of ~$350/year. Plus, most charities already use WordPress.
 
-#### When does it make sense to use these platforms?
+### When does it make sense to use these platforms?
 
 It only really makes sense for a charity to use a %-cut fundraising platform if you don't have a website or your charity is tiny (makes less than £500 per month). Even then, choose one of the platforms that covers your transaction fees (Stripe/PayPal fees) like Donorbox or FundraiserUp.
 
-### Other reasons to avoid donation platforms
+## Other reasons to avoid donation platforms
 
 As if the above numbers aren't enough, you also end up with a vendor lock-in.
 

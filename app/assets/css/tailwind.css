@@ -207,40 +207,40 @@
 
 @layer utilities {
 
-  .prose h1,
-  .prose h2,
-  .prose h3,
-  .prose h4 {
+  .prose h1:not(.not-prose *),
+  .prose h2:not(.not-prose *),
+  .prose h3:not(.not-prose *),
+  .prose h4:not(.not-prose *) {
     @apply font-normal font-heading text-muted-foreground;
   }
 
-  .prose a[href] {
+  .prose a[href]:not(.not-prose *) {
     @apply text-primary no-underline;
   }
 
-  .dark .prose a[href] {
+  .dark .prose a[href]:not(.not-prose *) {
     color: color-mix(in srgb, var(--primary) 75%, white);
   }
 
-  .prose a[href]:hover {
+  .prose a[href]:not(.not-prose *):hover {
     text-decoration: underline;
     color: color-mix(in srgb, var(--primary) 85%, white);
   }
 
-  .prose ul,
-  .prose ol {
+  .prose ul:not(.not-prose *),
+  .prose ol:not(.not-prose *) {
     @apply -mt-3.5;
   }
 
-  .prose img {
+  .prose img:not(.not-prose *) {
     @apply border-2 rounded;
   }
 
-  .dark .prose img {
+  .dark .prose img:not(.not-prose *) {
     @apply opacity-80 transition-opacity duration-300;
   }
 
-  .dark .prose img:hover {
+  .dark .prose img:not(.not-prose *):hover {
     @apply opacity-100;
   }
 }

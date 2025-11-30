@@ -10,6 +10,7 @@ featuredOrder: 2
 tags: [Hiring, CRM, Automation]
 ---
 
+
 I've been volunteering with a few charities in Europe, helping them setup their CRMs, tech stacks, donation funnels and automation flows. But I won't be available forever. This is why I am writing this post.
 
 There are many methods and platforms you can use to hire an expert. Upwork might be the easiest, so that's what I'll focus on in this post.
@@ -38,7 +39,7 @@ For this example, I will use an existing project I worked on for BOS-UK (Borneo 
 
 Job in a nutshell: They had 500+ **Stripe subscriptions** coming in every month, and they used to manually match those subscriptions to **Salesforce NPSP Opportunities** then import to Salesforce. This task took about 5 hours a month and needed to be automated.
 
-#### Example Job Description for a New Workflow integrating Stripe with Salesforce NPSP:
+#### Example Job Description for a New Workflow integrating Stripe with Salesforce NPSP
 
 ::TextBlock
 We are looking for an n8n automation expert to help us create a new workflow to integrate Stripe subscription payments to Salesforce NPSP.
@@ -203,6 +204,6 @@ The second option makes the consultant's life easier; you can create a **copy of
 For GiveWP you can invite them to your WordPress instance as a "GiveWP Manager" user:
 ![Create Wordpress GiveWP Manager user](imgs/hire-n8n-automation-expert-crm/givewp-create-manager-wp-user.png)
 
-## Wrapping up:
+## Wrapping up
 
 Hiring freelancers is not easy, but knowing what you want and clearly scoping the task will increase your odds of succeeding from the first attempt. Don't forget to make the deadline and your expectations crystal clear throughout the process.
