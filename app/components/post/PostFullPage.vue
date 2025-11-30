@@ -53,7 +53,7 @@ useSeoMeta({
       <p v-if="showDescription" class="opacity-90">{{ content.description }}</p>
 
       <MediaDisplay
-        v-if="!content.isHideFeaturedImageOnPage"
+        v-if="!content.isHideFeaturedImageOnPage && (content.image || content.video)"
         :image="content.image"
         :image-dark="content.imageDark"
         :video="content.video"

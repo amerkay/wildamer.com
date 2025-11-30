@@ -176,6 +176,8 @@ If you are asking for help with an **existing workflow**, you need to share a co
 
 Using **Salesforce**, you have the option to create an empty or Partial Copy sandbox for the consultant. See ["Create a Sandbox" Salesforce article](https://help.salesforce.com/s/articleView?id=platform.data_sandbox_create.htm&language=en_US&type=5).
 
+![Create new Salesforce Sandbox](/imgs/hire-n8n-automation-expert-crm/salesforce-new-sandbox-screenshot.png)
+
 ### Stripe Sandbox account
 
 **Stripe** is a bit trickier, as we do not want them to have full access. One mistake in an AI generated script, and they could cancel all your subscriptions or refund a bunch of payments. We don't want that to be even possible.

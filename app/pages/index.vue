@@ -6,7 +6,7 @@
       collection-type="article"
       pre-heading="Featured articles"
       heading="Insights and guides for non-profit organizations"
-      class="dark"
+      class=""
     />
 
     <PostFeaturedBento
