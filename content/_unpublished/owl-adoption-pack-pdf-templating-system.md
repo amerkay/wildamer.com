@@ -7,7 +7,7 @@ image: /imgs/project-screenshots/wildlife-adoption-pack-pdf-templating-system.pn
 imageDark: /imgs/project-screenshots/wildlife-adoption-pack-pdf-templating-system-dark.png
 
 # featuredOrder 1 is first, 2 is second, empty values shown after numbered items
-featuredOrder: 2
+featuredOrder: 5
 isFeatured: true
 isComingSoon: true
 

@@ -12,9 +12,16 @@ const participants = [
   },
   {
     id: 'owl',
-    label: 'Barn Owl Trust UK',
+    label: 'Wildlife Aid UK',
     emoji: '🦉',
     avatarImg: '/imgs/avatar-barnowl.jpg'
+    // avatarClass: "bg-secondary text-secondary-foreground",
+  },
+  {
+    id: 'orangutan',
+    label: 'Borneo Orangutan Survival Foundation',
+    emoji: '🦧',
+    avatarImg: '/imgs/avatar-orangutan.png'
     // avatarClass: "bg-secondary text-secondary-foreground",
   },
   {
@@ -50,8 +57,8 @@ const chatScript = [
     showName: true
   },
   {
-    from: 'seal',
-    text: "I'm drowning in Salesforce CRM fields, here. Can you streamline our flow?",
+    from: 'orangutan',
+    text: 'Is there a way to automate Salesforce and Stripe integration without me juggling bananas?',
     typingMs: 800,
     afterDelay: 300,
     showName: true

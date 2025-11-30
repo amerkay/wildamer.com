@@ -56,7 +56,8 @@
           {{ post?.description }}
         </p>
         <Badge v-if="post?.isComingSoon" variant="secondary" class="mt-4">
-          Write up<NuxtLink :to="post.path" class="!text-secondary-foreground"
+          Work in progress,
+          <NuxtLink :to="post.path" class="!text-secondary-foreground"
             >coming soon&hellip;</NuxtLink
           >
         </Badge>

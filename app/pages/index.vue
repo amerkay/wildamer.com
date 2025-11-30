@@ -13,7 +13,7 @@
       collection-type="project"
       pre-heading="Featured projects"
       heading="Time &amp; money saving projects I worked on for wildlife conservation"
-      class="dark"
+      class="bg-secondary/45 dark:bg-background!"
     />
 
     <FAQ />

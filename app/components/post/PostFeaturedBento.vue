@@ -47,6 +47,8 @@ const { data: featuredPosts } = await useAsyncData(`featured-${props.collectionT
     .all()
 })
 
+console.log('Featured Posts:', featuredPosts.value)
+
 // Define layout configurations for each card position
 const cardLayouts = [
   // First card (top-left, large)

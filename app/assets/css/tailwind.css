@@ -229,7 +229,7 @@
 
   .prose ul:not(.not-prose *),
   .prose ol:not(.not-prose *) {
-    @apply -mt-3.5;
+    @apply -mt-2;
   }
 
   .prose img:not(.not-prose *) {
@@ -237,7 +237,7 @@
   }
 
   .dark .prose img:not(.not-prose *) {
-    @apply opacity-80 transition-opacity duration-300;
+    @apply opacity-70 transition-opacity duration-300;
   }
 
   .dark .prose img:not(.not-prose *):hover {
