@@ -114,6 +114,8 @@ utm_source={{site_source_name}}
 &utm_id={{campaign.id}}
 ```
 
+![Meta Build a URL Parameter](/imgs/utm-tracking-for-charities/meta-build-url-parameter.png)
+
 ---
 
 ## Configuring UTM parameters with the Custom Built "Beacon Multi-Currency Forms" WordPress Plugin
