@@ -206,6 +206,10 @@
 }
 
 @layer utilities {
+  .shiki.shiki-themes {
+    @apply bg-muted/40;
+  }
+
 
   .prose h1:not(.not-prose *),
   .prose h2:not(.not-prose *),

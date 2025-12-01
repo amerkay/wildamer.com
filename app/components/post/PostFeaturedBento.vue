@@ -20,7 +20,7 @@
           :content-modifiers="cardLayouts[index]?.contentModifiers"
           :border-modifiers="cardLayouts[index]?.borderModifiers"
           :media-classes="
-            cn(['max-h-80 object-cover object-bottom', cardLayouts[index]?.mediaClasses])
+            cn(['max-h-80 object-cover object-top', cardLayouts[index]?.mediaClasses])
           "
         />
       </div>

@@ -69,6 +69,6 @@ withDefaults(defineProps<Props>(), {
   video: undefined,
   videoDark: undefined,
   alt: undefined,
-  mediaClasses: 'h-80 object-cover'
+  mediaClasses: 'h-80 object-cover object-top'
 })
 </script>
