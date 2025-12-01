@@ -219,12 +219,12 @@
   }
 
   .dark .prose a[href]:not(.not-prose *) {
-    color: color-mix(in srgb, var(--primary) 75%, white);
+    color: color-mix(in srgb, var(--primary) 60%, white);
   }
 
   .prose a[href]:not(.not-prose *):hover {
     text-decoration: underline;
-    color: color-mix(in srgb, var(--primary) 85%, white);
+    color: color-mix(in srgb, var(--primary) 70%, white);
   }
 
   .prose ul:not(.not-prose *),
@@ -237,7 +237,7 @@
   }
 
   .dark .prose img:not(.not-prose *) {
-    @apply opacity-70 transition-opacity duration-300;
+    @apply opacity-80 transition-opacity duration-300;
   }
 
   .dark .prose img:not(.not-prose *):hover {

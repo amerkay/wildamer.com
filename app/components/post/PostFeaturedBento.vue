@@ -50,7 +50,7 @@ const { data: featuredPosts } = await useAsyncData(`featured-${props.collectionT
 console.log('Featured Posts:', featuredPosts.value)
 
 // Define layout configurations for each card position
-const cardLayouts = [
+const cardLayouts = computed(() => [
   // First card (top-left, large)
   {
     gridClasses: 'lg:col-span-3',
@@ -84,12 +84,17 @@ const cardLayouts = [
         : 'lg:rounded-bl-4xl',
     mediaClasses: ''
   },
-  // Fourth card (bottom-center, small)
+  // Fourth card (bottom-center or bottom-right when 4 posts)
   {
-    gridClasses: 'lg:col-span-2',
-    backgroundModifiers: '',
-    contentModifiers: '',
-    borderModifiers: '',
+    gridClasses: featuredPosts.value?.length === 4 ? 'lg:col-span-4' : 'lg:col-span-2',
+    backgroundModifiers:
+      featuredPosts.value?.length === 4 ? 'max-lg:rounded-b-4xl lg:rounded-br-4xl' : '',
+    contentModifiers:
+      featuredPosts.value?.length === 4
+        ? 'max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]'
+        : '',
+    borderModifiers:
+      featuredPosts.value?.length === 4 ? 'max-lg:rounded-b-4xl lg:rounded-br-4xl' : '',
     mediaClasses: ''
   },
   // Fifth card (bottom-right, small)
@@ -100,5 +105,5 @@ const cardLayouts = [
     borderModifiers: 'max-lg:rounded-b-4xl lg:rounded-br-4xl',
     mediaClasses: ''
   }
-]
+])
 </script>

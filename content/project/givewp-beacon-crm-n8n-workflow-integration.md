@@ -245,4 +245,4 @@ A lot of work went into building this integration.
 - You can download the [WordPress plugin I created to allow you to get full meta data from GiveWP here](https://github.com/amerkay/wp-give-api-enhanced), and
 - You can [download the JSON for the n8n workflow above](https://gist.github.com/amerkay/cb6bd0d9feac98f99bdab37af4f68b9d).
 
-Hope this saves your charity time and money. Please [share your stories with me](/contact) if you find this useful.
+Hope this saves your charity time and money. Please [share your story with me](/contact) if you find this useful.
