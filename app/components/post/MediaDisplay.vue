@@ -31,17 +31,21 @@
         format="webp"
         quality="85"
         loading="lazy"
-        sizes="100vw sm:80vw md:70vw lg:50vw xl:40vw"
+        sizes="sm:100vw md:900px lg:1400px"
+        densities="1,2"
+        placeholder="blur"
       />
       <NuxtImg
         v-if="imageDark"
-        :class="cn('w-full', mediaClasses, 'hidden dark:block')"
+        :class="cn('w-full', mediaClasses, 'hidden dark:block dark:opacity-100!')"
         :src="imageDark"
         :alt="alt"
         format="webp"
         quality="85"
         loading="lazy"
-        sizes="100vw sm:80vw md:70vw lg:50vw xl:40vw"
+        sizes="sm:100vw md:900px lg:1400px"
+        densities="1,2"
+        placeholder="blur"
       />
     </template>
   </div>

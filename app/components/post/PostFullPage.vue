@@ -26,18 +26,6 @@ const { data: content } = await useAsyncData(route.path, () => {
   return queryCollection(props.collection).path(route.path).first()
 })
 
-function onTocHighlighted(ids: string[]) {
-  const firstId = ids[0]
-  if (!firstId) return
-  const activeLink = tocRef.value?.querySelector(`a[href="#${encodeURIComponent(firstId)}"]`)
-  if (activeLink) {
-    ;(activeLink as HTMLElement).style.scrollMargin = '3rem'
-    setTimeout(() => {
-      activeLink?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' })
-    }, 200)
-  }
-}
-
 // Throw 404 if content not found
 if (!content.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
@@ -53,6 +41,18 @@ useSeoMeta({
   description: content.value?.description,
   ogType: 'article'
 })
+
+function onTocHighlighted(ids: string[]) {
+  const firstId = ids[0]
+  if (!firstId) return
+  const activeLink = tocRef.value?.querySelector(`a[href="#${encodeURIComponent(firstId)}"]`)
+  if (activeLink) {
+    ;(activeLink as HTMLElement).style.scrollMargin = '3rem'
+    setTimeout(() => {
+      activeLink?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' })
+    }, 200)
+  }
+}
 </script>
 
 <template>

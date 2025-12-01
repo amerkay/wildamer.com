@@ -39,7 +39,7 @@ In my article on [UK fundraising platforms fees](/article/uk-fundraising-platfor
 - Over time, that "tip-based" business model can cost a small charity **£10k to £20k+** in avoidable fees&hellip; **every year**!
 - They setup the donation subscriptions in their own system and Stripe accounts, which ends up costing you extra in custom integrations and locks you in so you can't really move the subscriptions away from their platforms.
 
-If your charity makes £10,000 per month in donations, you'd could lose about £1,000 to £2,000 if you use one of these platforms that keep the donor tip compared to setting up on your own "cover our fees" with Beacon CRM or GiveWP.
+If your charity makes £10,000 per month in donations, you'd could be losing £1,000 to £2,000 a month of potential income if you use one of these platforms that keep the donor tip compared to setting up on your own "cover our fees" with Beacon CRM or GiveWP and using it as a way to increase donor value.
 
 The reason Beacon forms are great:
 - You **keep control of your subscriptions**: Beacon sets up subscriptions in your charity's Stripe/PayPal account. No platform lock-in.
