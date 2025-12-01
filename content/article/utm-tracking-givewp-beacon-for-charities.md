@@ -9,7 +9,7 @@ featuredOrder: 2
 tags: [UTM Tracking, CRM]
 ---
 
-## UTM Tags — Intro
+## UTM Tags &ndash Intro
 
 When you publish a link on Instagram, TikTok, or create Meta or Google Ads, you need to make sure that those links have the following three URL parameters set.
 
@@ -21,13 +21,13 @@ Side note: I didn't know this until recently, but **UTM stands for Urchin Tracki
 
 ![UTM Parameters URL Diagram](/imgs/utm-tracking-for-charities/utm-parameter-url-diagram.png)
 
-1. **utm_source** — Tracks *where* the traffic is coming from \
+1. **utm_source** &ndash Tracks *where* the traffic is coming from \
    **Common values:** `instagram`, `facebook`, `tiktok`, `youtube`, `linkedin`, `newsletter`, `google`, `meta`, `twitter` (or `x`), `reddit`, `sms`
 
-2. **utm_medium** — Tracks the *type* of marketing channel \
+2. **utm_medium** &ndash Tracks the *type* of marketing channel \
    **Common values:** `social` (organic social posts), `paid-social` (Meta, TikTok, LinkedIn paid ads), `cpc` (Google Ads / SEM), `email`, `sms`, `display`, `referral`, `organic`, `banner`, `qr`
 
-3. **utm_campaign** — Tracks the *specific campaign name* \
+3. **utm_campaign** &ndash Tracks the *specific campaign name* \
    **Example values:** `summer_campaign`, `donation_drive`
 
 To learn more, this is a good comprehensive [guide to UTM parameters in Google Analytics 4](https://www.analyticsmania.com/post/utm-parameters-in-google-analytics-4/).

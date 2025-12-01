@@ -37,7 +37,7 @@ The plugin I created does exactly that. It's published on my GitHub @ [amerkay/w
 
 ## What's Wrong with GiveWP's Default API
 
-GiveWP ships with an API, but it's designed for basic use cases. If you're trying to build serious automations—say syncing donations to a CRM, sending personalised thank-you emails, or generating Gift Aid reports—you'll quickly discover the limitations:
+GiveWP ships with an API, but it's designed for basic use cases. If you're trying to build serious automations, say syncing donations to a CRM, sending personalised thank-you emails, or generating Gift Aid reports, you'll quickly discover the limitations:
 
 **Problem 1: No Custom Field Access**
 
