@@ -104,19 +104,26 @@ You'll get back a complete donation object:
 ```json
 {
   "donation": {
-    "id": 123,
+    "id": 154,
     "amount": {
+      "amount": "10558",
       "currency": "GBP",
       "formatted": "105.58"
     },
-    // ...
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@example.com",
+    "status": "publish",
     "donor": {
       "id": 1,
+      "totalAmountDonated": {
+        "formatted": "570.11"
+      },
       "meta": {
         "_give_gift_aid_card_address": "1 Test Rd",
         "_give_gift_aid_card_zip": "L11 D11",
         "_give_gift_aid_opt_in_date": "2025-11-21 03:20:55"
-      },
+      }
     },
     "form": {
       "id": 10,
