@@ -42,7 +42,7 @@ A crowdfunding "progress bar" has been shown to have higher conversions and [**i
 
 ![GiveWP Donation Fundraising Page](/imgs/givewp-beacon-n8n-integration-workflow/givewp-donation-fundraising-page.png)
 
-They started by asking me to integrate JustGiving, but after some digging, I could not let them do that with good conscience. From my research, [JustGiving takes a **huge cut** from your donations by keeping about 20% collected under the pretense of "donor covers fees"](/article/uk-fundraising-platform-fees) and they **do not even cover your org's Stripe/PayPal transaction fees**. JustGiving also does not have embedded forms or campaigns, which means you need to **send your donors to their website** rather than keep them on your charity's website. 
+They started by asking me to integrate JustGiving, but after some digging, I could not let them do that with good conscience. From my research, [JustGiving takes a **huge cut** from your donations by keeping about 20% collected under the pretense of "donor covers fees"](/article/uk-fundraising-platform-fees) and they **do not even cover your org's Stripe/PayPal transaction fees**. JustGiving also does not have embedded forms or campaigns, which means you need to **send your donors to their website** rather than keep them on your charity's website. They made [£59m of income off of charities](https://www.independent.co.uk/news/uk/home-news/justgiving-charity-fees-gofundme-charges-b2626683.html) in 2023!
 
 **The solution**: The best method that does not take percentage cuts I found is **GiveWP Donations WordPress plugin (paid, no percentage, cheap flat-rate)**, which solves all these issues for us. This way Pangea owns their forms and donation flows.
 

@@ -1,7 +1,7 @@
 ---
 title: UK fundraising platforms with no fees don't exist, but this is how to make 15% more!
 description: I built a calculator to compare fees of the most popular UK fundraising platforms vs. owning your own form using GiveWP or BeaconCRM or similar, where you can keep the "fees covered" paid by donors and increase your charity's income.
-publishedAt: 2025-11-28
+publishedAt: 2025-11-27
 navigation: false
 isFeatured: true
 featuredOrder: 1
@@ -121,6 +121,20 @@ If the donor does not "cover the fee", they [charge your charity 4%](https://fun
 
 ![FundraiserUp's Pricing](/imgs/uk-fundraising-platform-fees/fundraiserup-pricing.png)
 
+
+### JustGiving: Worst deal, high donor tip, does not cover Stripe transaction fees, no embedded forms
+
+JustGiving might be the worst of bunch reviewed here. They are expensive, do not cover transaction fees, and you must send your traffic to their website. They made [£59m of income off of charities](https://www.independent.co.uk/news/uk/home-news/justgiving-charity-fees-gofundme-charges-b2626683.html) in 2023!
+
+- 33.3% for £3
+- 20% for £5
+- 17% for £10+
+
+Plus 5% on Gift Aid income.
+
+![JustGiving's Pricing](/imgs/uk-fundraising-platform-fees/justgiving-pricing.png)
+
+
 ### GoFundMe: Expensive "tip", does not cover Stripe transaction fees
 
 They ask donors to add 16.5% to any amount. It can be turned off.
@@ -166,18 +180,6 @@ Capped at £20.
 They do not publish their pricing, but from third-party sources, it seems that if the donor does not cover the fee, [they charge your charity 5%](https://www.zeffy.com/compare/zeffy-vs-funraisin).
 
 Plus, Funraisin charges a fee of [4.75% for each Gift Aid](https://support.funraisin.co/blog/gift-aid-claim) claim.
-
-### JustGiving: Worst deal, high donor tip, does not cover Stripe transaction fees, no embedded forms
-
-JustGiving might be the worst of bunch reviewed here. They are expensive, do not cover transaction fees, and you must send your traffic to their website.
-
-- 33.3% for £3
-- 20% for £5
-- 17% for £10+
-
-Plus 5% on Gift Aid income.
-
-![JustGiving's Pricing](/imgs/uk-fundraising-platform-fees/justgiving-pricing.png)
 
 
 ### Raisely: High donor tip, does not cover Stripe transaction fees

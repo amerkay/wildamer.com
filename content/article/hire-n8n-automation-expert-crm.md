@@ -1,7 +1,7 @@
 ---
 title: How to Hire an n8n Automation Expert for CRM Integrations (with Job Description Examples)
 description: As a charity, your organization needs integrations to streamline your day-to-day processes. You might already have an n8n or Zapier automation setup with your CRM but the techy who built it is not available. This tutorial is to help you hire the right Upwork expert.
-publishedAt: 2025-11-28
+publishedAt: 2025-11-29
 image: /imgs/hire-n8n-automation-expert-crm/givewp-beacon-crm-n8n-workflow.png
 imageDark: /imgs/hire-n8n-automation-expert-crm/givewp-beacon-crm-n8n-workflow-dark.png
 navigation: true
