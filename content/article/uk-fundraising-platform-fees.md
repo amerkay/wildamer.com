@@ -15,7 +15,7 @@ tags: [Fundraising, Calculator]
 ::cost-of-donation-platforms-calculator
 ::
 
-**No web form should ever cost more than $25/month. After all, it's a form!** JustGiving, Donorbox, Raisely, FundraiserUp and a dozen other services exist. All of them take a cut from your donation income, recurring, forever!
+**No web form should ever cost more than $35/month. After all, it's a form!** JustGiving, Donorbox, Raisely, FundraiserUp and a dozen other services exist. All of them take a cut from your donation income, recurring, forever!
 
 They all say their services are "free", but are they really? **NOT at all and it's infuriating!** Let's talk about that.
 
