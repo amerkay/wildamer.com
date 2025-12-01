@@ -2,7 +2,7 @@
 title: "Wordpress Plugin: A better GiveWP API, Enhanced with Full Donation Meta Data"
 description: I created this WordPress plugin in order to get access to the full GiveWP donor, donation and subscription metadata. It exposes 5 new API endpoints and uses the built-in GiveWP API Authentication mechanism.
 tags: [Wordpress plugin]
-publishedAt: 2025-11-30
+publishedAt: 2025-12-02
 
 image: /imgs/project-givewp-api-enhanced/givewp-api-enhanced.png
 imageDark: /imgs/project-givewp-api-enhanced/givewp-api-enhanced-dark.png
