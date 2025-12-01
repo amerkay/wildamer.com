@@ -1,7 +1,7 @@
 ---
 title: "GiveWP - Beacon CRM Integration: Full n8n Workflow"
 description: Beacon CRM does many things right, but their donation forms are rather basic and are missing many of the features GiveWP has. I created this n8n workflow to integrate GiveWP into Beacon so that when a donation is made the payments and subscriptions get automatically updated.
-tags: [n8n Workflow]
+tags: [Automation, Integration]
 publishedAt: 2025-12-01
 
 image: /imgs/givewp-beacon-n8n-integration-workflow/n8n-workflow-givewp-beacon-paths.png
@@ -19,17 +19,17 @@ forOrganizationLink: https://www.pangeatrust.org/
 
 While working with Pangea Trust, an Elephant Sanctuary in Portugal, I **set them up with Beacon CRM**. They did not have a CRM before that, so the first step was importing their data from spreadsheets to Beacon. 
 
-The setup works well, but we faced a few issues&hellip;
+The setup worked well, but we faced a few issues&hellip;
 
 ### Problem 1: Beacon's one currency per form and no UTM tracking (Built WP Plugin #1)
 
-Then we faced the first problem: Beacon requires one currency per form, and does not pass UTM tracking data automatically. 
+The first problem: Beacon requires one currency per form, and does not pass UTM tracking data automatically. 
 
-**The solution**: I created a new Wordpress plugin that [**integrates multi-currency Beacon forms into Wordpress**](/project/wordpress-beacon-crm-multi-currency-donation-forms) and passes UTM tracking data to the Payment and Subscription tables in Beacon. 
+**The solution**: I created a new WordPress plugin that [**integrates multi-currency Beacon forms into WordPress**](/project/wordpress-beacon-crm-multi-currency-donation-forms) and passes UTM tracking data to the Payment and Subscription tables in Beacon. 
 
 ![Wordpress Beacon Multi Currency Forms Plugin](/imgs/project-wp-beacon-multi-currency-forms/frontend-wp-beacon-multi-currency-forms-auto-currency-selection.png)
 
-This solution worked well, and they started raising funds while **retaining the "donor covers fees" upsell**, and **without any vendor lock-in**, as Beacon sets up the recurring payment subscriptions within the organisation's Stripe and Paypal account. 
+This solution worked well, and they started raising funds while **retaining the "donor covers fees" upsell**, and **without any vendor lock-in**, as Beacon sets up the recurring payment subscriptions within the organisation's Stripe and PayPal account. 
 
 Check out the [**calculator I created comparing the hidden-fees of fundraising platforms**](/article/uk-fundraising-platform-fees) and how these platforms take huge cuts from your donations while advertising that their services are "free". Not at all!
 
@@ -38,20 +38,20 @@ Check out the [**calculator I created comparing the hidden-fees of fundraising p
 
 The second issue was that Beacon only offers forms, but **no crowdfunding interface with goal progress bar**, recent and top donors to encourage more donations. 
 
-A crowdfunding "progress bar" has been shown to have higher conversions and [**increase donation amounts by up to 51%**](https://conversion.com/case-study/unicef/). So, it was important to figure crowdfunding for Pangea.
+A crowdfunding "progress bar" has been shown to have higher conversions and [**increase donation amounts by up to 51%**](https://conversion.com/case-study/unicef/). So, it was important to figure out crowdfunding for Pangea.
 
 ![GiveWP Donation Fundraising Page](/imgs/givewp-beacon-n8n-integration-workflow/givewp-donation-fundraising-page.png)
 
-They started by asking me to integrate JustGiving, but after some digging, I could not let them do that with good conscience. From my research, [JustGiving takes a **huge cut** from your donations by keeping about 20% collected under the pretense of "donor covers fees"](/article/uk-fundraising-platform-fees) and they **do not even cover your org's Stripe/Paypal transaction fees**. JustGiving also does not have embedded forms or campaigns, which means you need to **send your donors to their website** rather than keep them on your charity's website. 
+They started by asking me to integrate JustGiving, but after some digging, I could not let them do that with good conscience. From my research, [JustGiving takes a **huge cut** from your donations by keeping about 20% collected under the pretense of "donor covers fees"](/article/uk-fundraising-platform-fees) and they **do not even cover your org's Stripe/PayPal transaction fees**. JustGiving also does not have embedded forms or campaigns, which means you need to **send your donors to their website** rather than keep them on your charity's website. 
 
-**The solution**: The best method that does not take percentage cuts I found is **GiveWP Donations Wordpress plugin (paid, no percentage, cheap flat-rate)**, which solves all these issues for us. This way Pangea owns their forms and donation flows.
+**The solution**: The best method that does not take percentage cuts I found is **GiveWP Donations WordPress plugin (paid, no percentage, cheap flat-rate)**, which solves all these issues for us. This way Pangea owns their forms and donation flows.
 
 
 ### Problem 3: GiveWP's API is too basic (So I Built WordPress Plugin #2)
 
-As of version 4.13.1 of GiveWP, their API exposed to developers does not return the full meta data of the donor, donation and subscriptions. This meant that **I could not access the data I needed to build this integration**.
+As of version 4.13.1 of GiveWP, their built-in API does not return the full meta data of the donor, donation and subscriptions. This meant that **I could not access the data I needed to build this integration**.
 
-**The solution**: To fix this issue, I **built a new [Wordpress plugin called `GiveWP Enhanced API`](https://github.com/amerkay/wp-give-api-enhanced) that adds 5 GiveWP enhanced endpoints with full custom field and Gift Aid data**. It uses the same API authentication method as the built-in API that you can find from GiveWP -> Tools -> API on your Wordpress installation.
+**The solution**: To fix this issue, I **built a new [WordPress plugin called `GiveWP Enhanced API`](https://github.com/amerkay/wp-give-api-enhanced) that adds 5 GiveWP enhanced endpoints with full custom field and Gift Aid data**. It uses the same API authentication method as the built-in API that you can find from GiveWP -> Tools -> API on your WordPress installation.
 
 You can download and install the plugin from the [releases page on the Github repo](https://github.com/amerkay/wp-give-api-enhanced/releases).
 
@@ -61,9 +61,9 @@ You can download and install the plugin from the [releases page on the Github re
 
 ## The GiveWP → Beacon CRM Integration (n8n Workflow)
 
-Now, that we have GiveWP installed and setup, we need it to talk to Beacon CRM so that **all donation data is synced to Beacon immediately**. 
+Now that we have GiveWP installed and set up, we need it to talk to Beacon CRM so that **all donation data is synced to Beacon immediately**. 
 
-This is what the rest of the article is about: The n8n workflow.
+This is what the rest of the article is about: the n8n workflow.
 
 > Compulsory Zapier side-rant: They are unreasonably priced! \
 > For 500 donations per month × ~20 tasks per flow = 10,000 tasks per month, Zapier's Team plan costs £198.01/mo! \
@@ -150,7 +150,7 @@ Using the campaign data from GiveWP, the flow:
   * The **Campaign**
   * With status **“Successful”**
 
-If it finds more than one membership record, it stops with an error to avoid duplicates.
+If it finds more than one membership record, it stops with an error so you can resolve the duplicate records.
 
 ![n8n Sync Beacon - GiveWP Campaign and campaign member](/imgs/givewp-beacon-n8n-integration-workflow/n8n-sync-givewp-beacon-campaign-members.png)
 
@@ -200,7 +200,7 @@ If GiveWP sends a **subscription event** (not an individual donation):
 2. It finds the matching **Subscription** in Beacon (by external ID).
 3. If it's been cancelled, Beacon's subscription is set to **“Cancelled”**.
 
-This means Beacon will always show the correct subscription status without manual updates.
+This means Beacon will show the correct subscription status without manual updates.
 
 ![n8n Sync Beacon - GiveWP: Subscription cancellation branch](/imgs/givewp-beacon-n8n-integration-workflow/n8n-sync-givewp-beacon-cancelled-subscription.png)
 
@@ -232,7 +232,7 @@ Whenever you want to tweak the logic (e.g. field mappings, frequency rules, mapp
 > {{ /* original expression here */ }}
 > ```
 > 
-> Your updates MUST edit the expression minimally, use meainingful variable names and be readable and maintanable Javascript code.
+> Your updates MUST edit the expression minimally, use meaningful variable names and be readable and maintainable Javascript code.
 > Reply with the full updated expression so that it: **describe your change here**.
 
 3. Paste the updated expression back into n8n.
@@ -241,8 +241,8 @@ Whenever you want to tweak the logic (e.g. field mappings, frequency rules, mapp
 
 ## Wrapping up
 
-A lot of work went into getting this integration ready. 
-- You can download the [Wordpress plugin I created to allow you to get full meta data from GiveWP here](https://github.com/amerkay/wp-give-api-enhanced), and
+A lot of work went into building this integration. 
+- You can download the [WordPress plugin I created to allow you to get full meta data from GiveWP here](https://github.com/amerkay/wp-give-api-enhanced), and
 - You can [download the JSON for the n8n workflow above](https://gist.github.com/amerkay/cb6bd0d9feac98f99bdab37af4f68b9d).
 
-Hope this saves your charity time and money. Please [share you stories with me](/contact) if you find this useful. 
+Hope this saves your charity time and money. Please [share your stories with me](/contact) if you find this useful.
