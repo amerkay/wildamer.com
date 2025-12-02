@@ -322,9 +322,9 @@ Whenever you want to tweak the logic (e.g. field mappings, frequency rules, mapp
 
 ## Download &amp; Import this n8n Workflow
 
-You can [**download the full n8n GiveWP - Beacon Sync workflow** here TODO](#). Click `Raw` then `Save Page As` and save it as a `.json` file.
+You can [**download the full n8n Stripe to Salesforce NPSP Sync workflow** here](https://github.com/amerkay/n8n-workflow-templates-for-charity-non-profit/tree/main/stripe-subscriptions-payments-salesforce-npsp). For each of the flows and subflows click `Raw` then `Save Page As` and save it as a `.json` file.
 
-You can import it to your n8n account from the dot-menu on the upper right hand side: 
+You can import the flows and subflows to your n8n account from the dot-menu on the upper right hand side: 
 ![n8n Import Workflow from JSON](/imgs/givewp-beacon-n8n-integration-workflow/n8n-import-workflow-from-json.png)
 
 > Keep in mind, the subflow IDs will be different, so you will need to update these to the correct subflows in the two main workflows.
