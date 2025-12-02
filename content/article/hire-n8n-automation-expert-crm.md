@@ -2,14 +2,13 @@
 title: How to Hire an n8n Automation Expert for CRM Integrations (with Job Description Examples)
 description: As a charity, your organization needs integrations to streamline your day-to-day processes. You might already have an n8n or Zapier automation setup with your CRM but the techy who built it is not available. This tutorial is to help you hire the right Upwork expert.
 publishedAt: 2025-11-29
-image: /imgs/hire-n8n-automation-expert-crm/givewp-beacon-crm-n8n-workflow.png
-imageDark: /imgs/hire-n8n-automation-expert-crm/givewp-beacon-crm-n8n-workflow-dark.png
+image: /imgs/article-hire-n8n-automation-expert-crm/hire-n8n-expert-cover.png
+imageDark: /imgs/article-hire-n8n-automation-expert-crm/hire-n8n-expert-cover-dark.png
 navigation: true
 isFeatured: true
 featuredOrder: 2
 tags: [Hiring, CRM, Automation]
 ---
-
 
 I've been volunteering with a few charities in Europe, helping them setup their CRMs, tech stacks, donation funnels and automation flows. But I won't be available forever. This is why I am writing this post.
 
@@ -145,7 +144,7 @@ Here is an [example Upwork search link for "n8n Stripe" experts](https://www.Upw
 ## How to shortlist candidates
 
 I would focus on the "Completed Jobs" of the candidate, especially ones that match your requirements. Here is an example of a freelancer with Stripe + n8n past jobs:
-![n8n expert matching previous projects](imgs/hire-n8n-automation-expert-crm/n8n-expert-matching-previous-projects.png)
+![n8n expert matching previous projects](imgs/article-hire-n8n-automation-expert-crm/n8n-expert-matching-previous-projects.png)
 
 Then talk to them and make sure they understand the task and are confident they can deliver within the expected time frame.
 
@@ -162,7 +161,7 @@ For each service, you need to provide the consultant with safe access. I'll cove
 ### n8n Access - Member level access & sharing existing flows:
 
 Member level access is sufficient. You can do that by navigating to your n8n settings as an admin user and inviting the consultant:
-![n8n invite user as member](imgs/hire-n8n-automation-expert-crm/n8n-invite-user-as-member.png)
+![n8n invite user as member](imgs/article-hire-n8n-automation-expert-crm/n8n-invite-user-as-member.png)
 
 #### New workflow
 
@@ -171,13 +170,13 @@ If they are **starting from scratch**, they would not need access to existing wo
 #### Existing workflow
 
 If you are asking for help with an **existing workflow**, you need to share a copy of that workflow with them. You can do that by "**Duplicating**" the workflow and "**Sharing**" it with them. They will need to create new Credentials with the Sandbox accounts you share with them from Stripe, Salesforce, etc.
-![n8n duplicate existing workflow](imgs/hire-n8n-automation-expert-crm/n8n-duplicate-existing-workflow.png)
+![n8n duplicate existing workflow](imgs/article-hire-n8n-automation-expert-crm/n8n-duplicate-existing-workflow.png)
 
 ### Salesforce Sandbox account
 
 Using **Salesforce**, you have the option to create an empty or Partial Copy sandbox for the consultant. See ["Create a Sandbox" Salesforce article](https://help.salesforce.com/s/articleView?id=platform.data_sandbox_create.htm&language=en_US&type=5).
 
-![Create new Salesforce Sandbox](/imgs/hire-n8n-automation-expert-crm/salesforce-new-sandbox-screenshot.png)
+![Create new Salesforce Sandbox](/imgs/article-hire-n8n-automation-expert-crm/salesforce-new-sandbox-screenshot.png)
 
 ### Stripe Sandbox account
 
@@ -187,7 +186,7 @@ First, you need to create a **Stripe Sandbox and invite the consultant** to it: 
 
 Second, they cannot work blindfolded, so you also need to provide them with **sample event data from your live production Stripe account**, without giving them developer or admin access to your live account. You can do so by logging into your org's Stripe account as an admin, and running `stripe events` commands one-by-one and pasting the content into a new .json or .docx file on your machine and sending it to them over email or better even over Upwork chat (more secure than email).
 
-![Stripe Shell get sample events](imgs/hire-n8n-automation-expert-crm/stripe-get-sample-events.png)
+![Stripe Shell get sample events](imgs/article-hire-n8n-automation-expert-crm/stripe-get-sample-events.png)
 
 > Example command for successful payments:
 > `stripe events list --limit 100 -d "types[]=invoice.payment_succeeded"`
@@ -202,7 +201,7 @@ The second option makes the consultant's life easier; you can create a **copy of
 ### GiveWP "Manager" account
 
 For GiveWP you can invite them to your WordPress instance as a "GiveWP Manager" user:
-![Create Wordpress GiveWP Manager user](imgs/hire-n8n-automation-expert-crm/givewp-create-manager-wp-user.png)
+![Create Wordpress GiveWP Manager user](imgs/article-hire-n8n-automation-expert-crm/givewp-create-manager-wp-user.png)
 
 ## Wrapping up
 
