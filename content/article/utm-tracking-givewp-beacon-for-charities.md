@@ -137,12 +137,12 @@ When configured properly, the parameters are passed to GA4, as well as to Beacon
 
 ## Configuring UTM parameters with GiveWP and Beacon
 
-To get GiveWP to sync with Beacon, you will need to set up the [GiveWP &ndash; Beacon n8n integration automation](/project/givewp-beacon-crm-n8n-workflow-integration).
+To get GiveWP to sync with Beacon, you will need to set up the [GiveWP &ndash; Beacon n8n integration automation](/project/n8n-givewp-beacon-crm-workflow-integration).
 
 To configure GiveWP with Google Analytics:
 1. Follow the [GiveWP tutorial](https://givewp.com/documentation/add-ons/google-analytics/).
     ![GiveWP Google Analytics Settings](/imgs/utm-tracking-for-charities/givewp-settings-google-analytics.png)
-2. Make sure your n8n Upsert Subscription and Upsert Payment nodes passes the UTM parameters. That's all covered in my [GiveWP to Beacon n8n integration tutorial](/project/givewp-beacon-crm-n8n-workflow-integration).
+2. Make sure your n8n Upsert Subscription and Upsert Payment nodes passes the UTM parameters. That's all covered in my [GiveWP to Beacon n8n integration tutorial](/project/n8n-givewp-beacon-crm-workflow-integration).
     ![n8n GiveWP UTM Parameters](/imgs/utm-tracking-for-charities/n8n-givewp-utm-parameters.png)
 
 That's it!

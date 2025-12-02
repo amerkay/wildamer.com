@@ -206,7 +206,7 @@
 }
 
 @layer utilities {
-  .shiki.shiki-themes {
+  .shiki.language-json {
     @apply bg-muted/40;
   }
 

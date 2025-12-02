@@ -10,7 +10,7 @@ video: /imgs/project-screenshots/barn-owl-sightings-gis-data-viz.webm
 videoDark: /imgs/project-screenshots/barn-owl-sightings-gis-data-viz-dark.webm
 
 # featuredOrder 1 is first, 2 is second, empty values shown after numbered items
-featuredOrder: 3
+featuredOrder: 5
 isFeatured: true
 isComingSoon: true
 

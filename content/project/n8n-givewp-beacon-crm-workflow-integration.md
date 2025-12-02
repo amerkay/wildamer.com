@@ -1,5 +1,5 @@
 ---
-title: "GiveWP - Beacon CRM Integration: Full n8n Workflow"
+title: "GiveWP ⇒ Beacon CRM Integration [Full Downloadable n8n Workflow Template]"
 description: Beacon CRM does many things right, but their donation forms are rather basic and are missing many of the features GiveWP has. I created this n8n workflow to integrate GiveWP into Beacon so that when a donation is made the payments and subscriptions get automatically updated.
 tags: [Automation, Integration]
 publishedAt: 2025-12-01
@@ -59,7 +59,7 @@ You can download and install the plugin from the [releases page on the Github re
 ---
 
 
-## The GiveWP → Beacon CRM Integration (n8n Workflow)
+## The GiveWP → Beacon CRM Integration &ndash; n8n Workflow (High-level Overview)
 
 Now that we have GiveWP installed and set up, we need it to talk to Beacon CRM so that **all donation data is synced to Beacon immediately**. 
 
@@ -68,8 +68,6 @@ This is what the rest of the article is about: the n8n workflow.
 > Compulsory Zapier side-rant: They are unreasonably priced! \
 > For 500 donations per month × ~20 tasks per flow = 10,000 tasks per month, Zapier's Team plan costs £198.01/mo! \
 > That's why I always recommend n8n. It's open source with a huge community and a reasonable pricing model. The same 500 donations would cost €20/m.
-
-## High-level overview of the workflow
 
 This automation keeps **GiveWP**, **Beacon CRM**, **Stripe** and **PayPal** in sync.
 
@@ -90,12 +88,8 @@ Whenever something happens in GiveWP:
 * Keeps **subscriptions** and **payments** in Beacon in line with GiveWP & Stripe/PayPal
 * Records **refunds** where they happen
 
-## Download &amp; Import this n8n Workflow
 
-You can [**download the full n8n GiveWP - Beacon Sync workflow** here](https://gist.github.com/amerkay/cb6bd0d9feac98f99bdab37af4f68b9d). Click `Raw` then `Save Page As` and save it as a `.json` file.
-
-You can import it to your n8n account from the dot-menu on the upper right hand side: 
-![n8n Import Workflow from JSON](/imgs/givewp-beacon-n8n-integration-workflow/n8n-import-workflow-from-json.png)
+---
 
 ## Path A: Handling when a donation succeeds
 
@@ -236,6 +230,16 @@ Whenever you want to tweak the logic (e.g. field mappings, frequency rules, mapp
 > Reply with the full updated expression so that it: **describe your change here**.
 
 3. Paste the updated expression back into n8n.
+
+
+---
+
+## Download &amp; Import this n8n Workflow
+
+You can [**download the full n8n GiveWP - Beacon Sync workflow** here](https://gist.github.com/amerkay/cb6bd0d9feac98f99bdab37af4f68b9d). Click `Raw` then `Save Page As` and save it as a `.json` file.
+
+You can import it to your n8n account from the dot-menu on the upper right hand side: 
+![n8n Import Workflow from JSON](/imgs/givewp-beacon-n8n-integration-workflow/n8n-import-workflow-from-json.png)
 
 ---
 
