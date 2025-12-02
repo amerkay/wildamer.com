@@ -1,6 +1,6 @@
 ---
 title: "Stripe Subscriptions & Payments ⇒ Salesforce NPSP CRM Integration [Full Downloadable n8n Workflow Template]"
-description: Manually importing Stripe payments to Salesforce NPSP is a pain. This workflow automates the process so that as soon as any payment succeeds or gets refunded (Credit card or BACS debit), the Salesforce Opportunity would be closed accordingly. If a Stripe subscription is cancelled, the Recurring Donation in SF would reflect that. Full n8n downloadable workflow included.
+description: Manually importing Stripe payments to Salesforce NPSP is a pain. This workflow automates the process so that as soon as any payment succeeds or gets refunded, the Salesforce Opportunity would be closed accordingly. Also, if a Stripe subscription is cancelled, the Recurring Donation in SF gets updated according.
 tags: [Automation, Integration]
 publishedAt: 2025-12-03
 
@@ -16,9 +16,10 @@ forOrganizationLink: https://borneoorangutansurvival.org/
 
 ## Why build this n8n → Stripe → Salesforce NPSP flow?
 
-While volunteering as a tech consultant with Borneo Orangutan Survival Foundation UK, they needed help automating Stripe to Salesforce NPSP updates.
+While volunteering as a tech consultant with [Borneo Orangutan Survival Foundation UK](https://borneoorangutansurvival.org/), they needed help automating integrating Stripe to Salesforce NPSP.
 
-They were using **Stripe** for recurring donations and had legacy Direct Debit subscriptions imported from an older provider, **Access Paysuite**. This process needed to be automated.
+They use **Stripe** for recurring donations and had legacy Direct Debit subscriptions imported from an older provider, **Access Paysuite**. This process needed to be automated.
+
 
 ### The problem: Monthly manual imports 🤦
 
@@ -28,11 +29,11 @@ Once a month, Melissa would export CSVs, manually match **Stripe / Access Paysui
 This meant: \
 **Fundraising dashboards were always outdated** mid-month and the process was time-consuming and error-prone.
 
-**Solution**: I built **two main n8n flows**:
+**Solution**: I built **two main n8n automation flows**:
 1. **Stripe Subscription → Salesforce Recurring Donation (Update/Create)**
 2. **Stripe Recurring-only Payment → Salesforce Opportunity (Update)**
 
-And a couple of subflows to match Contacts and Recurring Donations without duplicating nodes.
+&hellip;and a couple of subflows to match Contacts and Recurring Donations without duplicating nodes.
 
 ### Note Regarding `Access_Paysuite_URN` ⚠️
 
@@ -71,8 +72,6 @@ This flow is what keeps **Stripe subscriptions** tied neatly to **Salesforce NPS
 
 ![n8n Workflow: Stripe Subscriptions -> Salesforce Recurring Donations](/imgs/project-n8n-stripe-salesforce/n8n-stripe-subscription-salesforce-npsp-recurring-donation.png)
 
-> ⚠️ Keep in mind, this workflow is purpose-built for BOS-UK that migrated from **Access Paysuite**, with `Access_Paysuite_URN` stored on their Recurring Donations and Stripe Subscriptions. 
-
 
 ### A1. Stripe sends a subscription event → n8n fetches the full details
 
@@ -86,7 +85,7 @@ This gives the flow all the details it needs to decide how to update Salesforce.
 ![Stripe trigger to subscription fetch](/imgs/project-n8n-stripe-salesforce/n8n-stripe-subscription-salesforce-npsp-recurring-donation-trigger.png)
 
 
-### A2. Prepare clean values for Salesforce
+### A2. Prepare Salesforce-ready field values 
 
 Now we need to prepare the values so they are Salesforce compatible. That's what the `Prepare values` node does.
 
@@ -97,7 +96,7 @@ It outputs:
 * **npsp_status**: mapped from Stripe's subscription status
 * **start_date** / **end_date**: ISO dates
 * **first_name**, **last_name**: parsed from Stripe's customer name
-* **payment_method**: friendly labels (“Credit / Debit Card”, “Direct Debit”, etc.)
+* **payment_method**: SF compatible labels (“Credit / Debit Card”, “Direct Debit”, etc.)
 
 These fields are reused throughout the workflow.
 
@@ -110,7 +109,7 @@ Next, the flow calls a subflow that:
 * Looks up a Contact by **Email** or **Alternate Email**
 * Updates it if it already exists
 * Creates a brand new Contact if not
-* Returns the `contact_id` for us to use later
+* Returns the `contact_id` for us to use downstream
 
 This ensures every subscription is tied to a real, owned Salesforce Contact.
 
@@ -147,7 +146,7 @@ LIMIT 5
 
 And then:
 * If **0 found** → stops with: **“No Recurring Donation found!”**. \
-    _Note: If you're adapting this to also create new Recurring Donation for new Stripe Subscriptions, this is a case-specific precaution, and you will need to modify the subflow by simply replacing the error with a "Return" node._
+    _⚠️ Note: If you're adapting this to also create new Recurring Donation for new Stripe Subscriptions, this is a case-specific precaution, and you'll need to modify the subflow by simply replacing the error with a "Return" node._
 * If **>1 found** → stops with: **“More than 1 Recurring Donation found!”**. Something is off, this should never happen.
 * If **exactly 1** → returns the Recurring Donation record
 
@@ -162,7 +161,7 @@ The main flow now checks:
   * Check if there is an **Access Paysuite URN**
     * If yes → **create a new Recurring Donation**
     * If no → stop with error: **“Subscription with no Access Paysuite URN!”** \
-        _Note: this is case-specific to BOS-UK's use-case, you'll want to remove this logic if adapting to all subscriptions._
+        _⚠️ Note: this is case-specific to BOS-UK's use-case, you'll want to remove this logic if adapting this flow to all Stripe subscriptions._
 
 ![Decide whether to update or create a Salesforce Recurring Donation](/imgs/project-n8n-stripe-salesforce/n8n-stripe-subscription-salesforce-npsp-recurring-donation-create-or-update.png)
 
@@ -209,7 +208,7 @@ This second flow handles **each subscription payment**, updating the correct **O
 
 ![Update Salesforce Opportunity When a recurring Stripe payment succeeds or is refunded](/imgs/project-n8n-stripe-salesforce/n8n-stripe-payment-salesforce-npsp-opportunity.png)
 
-> ⚠️ Just like Flow A, this only runs for **Access Paysuite migrated subscriptions**. So, if you're adapting to all payments, you will need to remove URN checks.
+> ⚠️ Just like Flow A, this only runs for **Access Paysuite migrated subscriptions**. So, if you're adapting to all payments, you'll need to remove URN checks.
 
 
 ### B1. Fetch the fully expanded Stripe invoice
@@ -258,7 +257,7 @@ This prevents the flow from processing unrelated Stripe payments.
 
 ### B5. Find the correct Opportunity
 
-n8n runs a date-windowed SOQL query to match only the correct `Opportunity` record:
+The node executes a date-windowed SOQL query to match only the correct `Opportunity` record from Salesforce:
 
 ```sql
 SELECT Id, ContactId, npe03__Recurring_Donation__c,
@@ -327,7 +326,7 @@ You can [**download the full n8n Stripe to Salesforce NPSP Sync workflow** here]
 You can import the flows and subflows into your n8n account from the dot-menu on the upper right hand side: 
 ![n8n Import Workflow from JSON](/imgs/givewp-beacon-n8n-integration-workflow/n8n-import-workflow-from-json.png)
 
-> Keep in mind, the subflow IDs will be different, so you will need to update these to the correct subflows in the two main workflows.
+> Keep in mind, the subflow IDs will be different, so you'll need to update these to the correct subflows in the two main workflows.
 
 ---
 
