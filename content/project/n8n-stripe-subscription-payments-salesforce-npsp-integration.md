@@ -36,9 +36,11 @@ And a couple of subflows to match Contacts and Recurring Donations without dupli
 
 ### Note Regarding `Access_Paysuite_URN` ⚠️
 
-This specific workflow is built for organisations with historic Direct Debits that have an **`Access_Paysuite_URN`** stored as a custom field on the Salesforce Recurring Donation and Stripe's Subscription metadata.
+This specific workflow is built for BOS-UK with legacy Direct Debits that have an **`Access_Paysuite_URN`** stored as a custom field on the Salesforce Recurring Donation and Stripe's Subscription metadata.
 
-That URN is used as a *key part* of the matching logic. Most likely, your charity does not have this use-case. So you'll need to update some of the n8n nodes to match your use-case and remove the URN dependency. Or [contact me if you need help updating the workflow](/contact).
+That URN is used as a *key part* of the matching logic. 
+
+Most likely, your charity does not have this use-case. So you'll need to update some of the n8n nodes to match your use-case and remove the URN dependency. Or [contact me if you need help updating the workflow](/contact).
 
 ---
 
@@ -67,7 +69,7 @@ It listens to Stripe webhooks:
 
 ## Flow A: When a Stripe subscription is created or updated
 
-This flow is what keeps **Stripe subscriptions** tied neatly to **Salesforce NPSP Recurring Donations and Contacts**, while respecting your historic **Access Paysuite URNs** so you don’t accidentally generate duplicate Recurring Donations.
+This flow is what keeps **Stripe subscriptions** tied neatly to **Salesforce NPSP Recurring Donations and Contacts**, while respecting legacy **Access Paysuite URNs** so we don't accidentally generate duplicate Recurring Donations.
 
 ![n8n Workflow: Stripe Subscriptions -> Salesforce Recurring Donations](/imgs/project-n8n-stripe-salesforce/n8n-stripe-subscription-salesforce-npsp-recurring-donation.png)
 
@@ -94,9 +96,9 @@ It outputs:
 * **amount**: donation amount in major units
 * **currency**: uppercase ISO
 * **day_of_month**: next billing date from Stripe
-* **npsp_status**: mapped from Stripe’s subscription status
+* **npsp_status**: mapped from Stripe's subscription status
 * **start_date** / **end_date**: ISO dates
-* **first_name**, **last_name**: parsed from Stripe’s customer name
+* **first_name**, **last_name**: parsed from Stripe's customer name
 * **payment_method**: friendly labels (“Credit / Debit Card”, “Direct Debit”, etc.)
 
 These fields are reused throughout the workflow.
