@@ -20,25 +20,25 @@ While volunteering as a tech consultant with Borneo Orangutan Survival Foundatio
 
 They were using **Stripe** for recurring donations and had legacy Direct Debit subscriptions imported from an older provider, **Access Paysuite**. This process needed to be automated.
 
-### The problem: monthly manual imports 🤦
+### The problem: Monthly manual imports 🤦
 
 Here's what they were doing before this n8n flow existed: \
 Once a month, Melissa would export CSVs, manually match **Stripe / Access Paysuite / Recurring Donations / Opportunities**, and then import everything into Salesforce.
 
 This meant: \
-**Fundraising dashboards were always outdated** mid-month, and the process is time-consuming and error-prone.
+**Fundraising dashboards were always outdated** mid-month and the process was time-consuming and error-prone.
 
 **Solution**: I built **two main n8n flows**:
 1. **Stripe Subscription → Salesforce Recurring Donation (Update/Create)**
 2. **Stripe Recurring-only Payment → Salesforce Opportunity (Update)**
 
-&hellip;and a couple of subflows to match Contacts and Recurring Donations without duplicating nodes.
+And a couple of subflows to match Contacts and Recurring Donations without duplicating nodes.
 
-### Note regarding `Access_Paysuite_URN` ⚠️
+### Note Regarding `Access_Paysuite_URN` ⚠️
 
-This specific workflow is built for with historic Direct Debits that have an **`Access_Paysuite_URN`** stored as a custom field on the Salesforce Recurring Donation and Stripe's Subscription meta data.
+This specific workflow is built for organisations with historic Direct Debits that have an **`Access_Paysuite_URN`** stored as a custom field on the Salesforce Recurring Donation and Stripe's Subscription metadata.
 
-That URN is used as a *key part* of the matching logic. Most probably, your charity does not have this use-case. So, you'll need to update some of the n8n nodes to match your use-case and remove the URN dependency. Or [contact me if you need help updating the workflow](/contact).
+That URN is used as a *key part* of the matching logic. Most likely, your charity does not have this use-case. So you'll need to update some of the n8n nodes to match your use-case and remove the URN dependency. Or [contact me if you need help updating the workflow](/contact).
 
 ---
 
@@ -120,7 +120,7 @@ This ensures every subscription is tied to a real, owned Salesforce Contact.
 
 This is the most important step in the entire flow. 
 
-We call the **“Salesforce find existing recurring donation”** subflow and pass in:
+We call the **"Salesforce find existing recurring donation"** subflow and pass in:
 * `access_paysuite_urn`
 * `stripe_subscription_id`
 * `stripe_customer_id`
@@ -162,7 +162,7 @@ The main flow now checks:
   * Check if there is an **Access Paysuite URN**
     * If yes → **create a new Recurring Donation**
     * If no → stop with error: **“Subscription with no Access Paysuite URN!”** \
-        _Note: this is case specific to BOS-UK's use-case, you'll want to remove this logic if adapting to all subscriptions._
+        _Note: this is case-specific to BOS-UK's use-case, you'll want to remove this logic if adapting to all subscriptions._
 
 ![Decide whether to update or create a Salesforce Recurring Donation](/imgs/project-n8n-stripe-salesforce/n8n-stripe-subscription-salesforce-npsp-recurring-donation-create-or-update.png)
 
@@ -209,7 +209,7 @@ This second flow handles **each subscription payment**, updating the correct **O
 
 ![Update Salesforce Opportunity When a recurring Stripe payment succeeds or is refunded](/imgs/project-n8n-stripe-salesforce/n8n-stripe-payment-salesforce-npsp-opportunity.png)
 
-> ⚠️ Just like Flow A, this only runs for **Access Paysuite migrated subscriptions**. So, if you're adapting to all payments, you will need remove URN checks.
+> ⚠️ Just like Flow A, this only runs for **Access Paysuite migrated subscriptions**. So, if you're adapting to all payments, you will need to remove URN checks.
 
 
 ### B1. Fetch the fully expanded Stripe invoice
@@ -258,7 +258,7 @@ This prevents the flow from processing unrelated Stripe payments.
 
 ### B5. Find the correct Opportunity
 
-n8n runs a date-windowed SOQL query to ensure matching only the correct `Opportunity` record:
+n8n runs a date-windowed SOQL query to match only the correct `Opportunity` record:
 
 ```sql
 SELECT Id, ContactId, npe03__Recurring_Donation__c,
@@ -324,13 +324,12 @@ Whenever you want to tweak the logic (e.g. field mappings, frequency rules, mapp
 
 You can [**download the full n8n Stripe to Salesforce NPSP Sync workflow** here](https://github.com/amerkay/n8n-workflow-templates-for-charity-non-profit/tree/main/stripe-subscriptions-payments-salesforce-npsp). For each of the flows and subflows click `Raw` then `Save Page As` and save it as a `.json` file.
 
-You can import the flows and subflows to your n8n account from the dot-menu on the upper right hand side: 
+You can import the flows and subflows into your n8n account from the dot-menu on the upper right hand side: 
 ![n8n Import Workflow from JSON](/imgs/givewp-beacon-n8n-integration-workflow/n8n-import-workflow-from-json.png)
 
 > Keep in mind, the subflow IDs will be different, so you will need to update these to the correct subflows in the two main workflows.
 
 ---
-
 
 ## Wrapping up
 
