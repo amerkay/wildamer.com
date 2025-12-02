@@ -55,7 +55,7 @@ const cardLayouts = computed(() => [
     backgroundModifiers: 'max-lg:rounded-t-4xl lg:rounded-tl-4xl',
     contentModifiers: 'max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]',
     borderModifiers: 'max-lg:rounded-t-4xl lg:rounded-tl-4xl',
-    mediaClasses: ''
+    mediaClasses: 'max-h-80'
   },
   // Second card (top-right, large)
   {
@@ -63,7 +63,7 @@ const cardLayouts = computed(() => [
     backgroundModifiers: 'lg:rounded-tr-4xl',
     contentModifiers: 'lg:rounded-tr-[calc(2rem+1px)]',
     borderModifiers: 'lg:rounded-tr-4xl',
-    mediaClasses: ''
+    mediaClasses: 'max-h-80'
   },
   // Third card (bottom-left, small)
   {
