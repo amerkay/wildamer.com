@@ -247,6 +247,16 @@
   .dark .prose img:not(.not-prose *):hover {
     @apply opacity-100;
   }
+
+  .prose blockquote p:not(.not-prose *) {
+
+    /* remove the before and after */
+    &::before,
+    &::after {
+      content: none;
+    }
+
+  }
 }
 
 html {

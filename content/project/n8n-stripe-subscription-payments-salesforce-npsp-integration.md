@@ -36,9 +36,7 @@ And a couple of subflows to match Contacts and Recurring Donations without dupli
 
 ### Note Regarding `Access_Paysuite_URN` ⚠️
 
-This specific workflow is built for BOS-UK with legacy Direct Debits that have an **`Access_Paysuite_URN`** stored as a custom field on the Salesforce Recurring Donation and Stripe's Subscription metadata.
-
-That URN is used as a *key part* of the matching logic. 
+This specific workflow was built for BOS-UK with legacy Direct Debits that have an **`Access_Paysuite_URN`** stored as a custom field on the Salesforce Recurring Donation and Stripe's Subscription metadata. That URN is used as a *key part* of the matching logic. 
 
 Most likely, your charity does not have this use-case. So you'll need to update some of the n8n nodes to match your use-case and remove the URN dependency. Or [contact me if you need help updating the workflow](/contact).
 
