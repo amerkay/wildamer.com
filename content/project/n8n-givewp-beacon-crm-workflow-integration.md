@@ -246,6 +246,6 @@ You can import it to your n8n account from the dot-menu on the upper right hand 
 A lot of work went into building this integration.
 
 - You can download the [WordPress plugin I created to allow you to get full meta data from GiveWP here](https://github.com/amerkay/wp-give-api-enhanced), and
-- You can [download the JSON for the n8n workflow above](https://gist.github.com/amerkay/cb6bd0d9feac98f99bdab37af4f68b9d).
+- You can download the JSON for the n8n workflow from the link above.
 
 Hope this saves your charity time and money. Please [share your story with me](/contact) if you find this useful.
