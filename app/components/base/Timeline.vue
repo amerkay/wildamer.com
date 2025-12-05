@@ -6,7 +6,7 @@
       :class="['ms-6', index < items.length - 1 ? 'mb-10' : 'mb-0']"
     >
       <span
-        class="absolute flex items-center justify-center w-8 h-8 bg-secondary rounded-full -start-4 ring-8 ring-background -mt-0.5"
+        class="absolute flex items-center justify-center w-8 h-8 bg-secondary rounded-full -start-4 -mt-0.5"
       >
         <Icon :name="item.icon || 'lucide:calendar-days'" class="text-secondary-foreground" />
       </span>

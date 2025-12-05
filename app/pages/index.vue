@@ -1,7 +1,10 @@
 <template>
   <section>
     <Hero />
-    <!-- <HowICanHelp /> -->
+
+    <FAQ class="bg-secondary/20 dark:bg-background-darker!" />
+    <CTA />
+
     <PostFeaturedBento
       collection-type="article"
       pre-heading="Featured articles"
@@ -13,11 +16,10 @@
       collection-type="project"
       pre-heading="Featured projects"
       heading="Time &amp; money saving projects I worked on for wildlife conservation"
-      class="bg-secondary/45 dark:bg-background!"
+      class="bg-secondary/20 dark:bg-background!"
     />
 
-    <FAQ />
-    <CTA />
+    <!-- <HowICanHelp /> -->
   </section>
 </template>
 

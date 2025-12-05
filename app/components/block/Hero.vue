@@ -7,10 +7,12 @@
         <div class="text-center lg:text-left">
           <Badge
             to="#"
-            variant="outline"
+            variant="secondary"
             class="px-3 py-1.5 text-xs font-normal lg:text-sm lg:py-2 flex-wrap tracking-tight"
             >Actively volunteering (no charge) &ndash;
-            <NuxtLink to="/contact" class="font-bold">Contact me</NuxtLink>
+            <NuxtLink to="/contact" class="font-bold text-foreground dark:text-background"
+              >Contact me</NuxtLink
+            >
             <Icon name="lucide:arrow-right" class="ml-0.5 h-4 w-4" />
           </Badge>
           <h1 class="mb-4 mt-7 text-4xl md:text-4xl lg:mb-6 lg:mt-5 xl:text-5xl font-heading">

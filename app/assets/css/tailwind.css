@@ -282,3 +282,7 @@ select {
 .dark .bg-background {
   background-color: color-mix(in srgb, var(--background) 70%, black);
 }
+
+.dark .bg-background-darker {
+  background-color: color-mix(in srgb, var(--background) 80%, black);
+}
